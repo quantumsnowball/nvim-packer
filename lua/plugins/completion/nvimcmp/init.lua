@@ -56,6 +56,8 @@ use {
         -- print('Special init: ' .. lsp) -- debug
         args.settings = { Lua = { diagnostics = { globals = { 'vim' } } } }
       end
+      -- add shortcut for lsp services
+      args.on_attach = require('plugins.completion.lsp.keymaps')
       -- print('Normal init: ' .. lsp) -- debug
       lspconfig[lsp].setup(args)
     end
