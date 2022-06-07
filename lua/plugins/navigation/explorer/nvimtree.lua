@@ -15,6 +15,6 @@ use {
       git = { ignore = false }
     }
     -- toggle keymap
-    vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>')
+    vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { silent = true })
   end
 }
