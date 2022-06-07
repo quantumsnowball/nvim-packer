@@ -3,7 +3,10 @@ local use = require('packer').use
 -- https://github.com/nvim-lualine/lualine.nvim
 use {
   'nvim-lualine/lualine.nvim',
-  requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+  requires = {
+    { 'kyazdani42/nvim-web-devicons', opt = true },
+    'nvim-lua/lsp-status.nvim'
+  },
   config = function()
     require('lualine').setup{
       options = {
@@ -12,7 +15,15 @@ use {
         theme = 'powerline_dark'
       },
       sections = {
-        -- the 3rd left component on the status bar
+        lualine_c = { { 'filename', path = 1 } },
+        lualine_x = {
+          function() return require('lsp-status').status() end,
+          'filetype',
+          'encoding',
+          'fileformat',
+        },
+      },
+      inactive_sections = {
         lualine_c = { { 'filename', path = 1 } }
       }
     }
