@@ -13,7 +13,9 @@ use {
         -- Gallery
         -- https://github.com/nvim-lualine/lualine.nvim/blob/master/THEMES.md
         theme = 'powerline_dark',
-        disabled_filetypes = { 'packer', 'NvimTree' }
+        disabled_filetypes = { 'packer', 'NvimTree' },
+        component_separators = { left = '', right = ''},
+        section_separators = { left = '', right = ''},
       },
       sections = {
         lualine_c = { { 'filename', path = 1 } },
