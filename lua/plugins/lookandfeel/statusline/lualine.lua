@@ -12,7 +12,8 @@ use {
       options = {
         -- Gallery
         -- https://github.com/nvim-lualine/lualine.nvim/blob/master/THEMES.md
-        theme = 'powerline_dark'
+        theme = 'powerline_dark',
+        disabled_filetypes = { 'packer', 'NvimTree' }
       },
       sections = {
         lualine_c = { { 'filename', path = 1 } },
