@@ -9,7 +9,7 @@ vim.keymap.set('n', '<F12>', ':tabnew<cr>')
 -- copy and paste to system clipboard
 vim.cmd 'set clipboard^=unnamed,unnamedplus'
 -- cancel search highlight after search
-vim.keymap.set('n', '<esc><esc>', ':noh<cr>', { silent = true })
+vim.keymap.set('n', 'znn', ':noh<cr>', { silent = true })
 -------------
 -- keymaps --
 -------------
