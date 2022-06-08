@@ -10,6 +10,9 @@ vim.keymap.set('n', '<F12>', ':tabnew<cr>')
 vim.cmd 'set clipboard^=unnamed,unnamedplus'
 -- cancel search highlight after search
 vim.keymap.set('n', 'znn', ':noh<cr>', { silent = true })
+-- home and end
+vim.keymap.set('n', 'gh', '^')
+vim.keymap.set('n', 'gl', '$')
 -------------
 -- keymaps --
 -------------
