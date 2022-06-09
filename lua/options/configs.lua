@@ -4,3 +4,5 @@ vim.opt.termguicolors = true
 vim.opt.mouse = 'a'
 -- vim buildin syntax highlight
 vim.cmd 'syntax on'
+-- match parenthesizes formatting
+vim.cmd('autocmd BufEnter * hi MatchParen ctermbg=Gray guibg=Gray')
