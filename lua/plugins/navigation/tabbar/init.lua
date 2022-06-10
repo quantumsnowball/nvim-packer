@@ -11,8 +11,10 @@ use 'moll/vim-bbye'
 
 -- some common related shortcuts
 -- navigate between buffers
-vim.keymap.set('n', '<M-j>', ':bprevious<CR>')
-vim.keymap.set('n', '<M-k>', ':bnext<CR>')
+vim.keymap.set('n', '<space>h', ':bprevious<CR>')
+vim.keymap.set('n', '<space>j', ':bprevious<CR>')
+vim.keymap.set('n', '<space>k', ':bnext<CR>')
+vim.keymap.set('n', '<space>l', ':bnext<CR>')
 -- default split to right and below
 vim.opt.splitbelow = true
 vim.opt.splitright = true
