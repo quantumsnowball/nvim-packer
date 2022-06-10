@@ -19,5 +19,6 @@ use {
   -- close buffer key-bindings
   -- needs vim-bbye plugins
   vim.keymap.set('n', '<M-w>', ':Bdelete<CR>')
+  vim.keymap.set('n', '<space>x', ':Bdelete<CR>')
   end
 }
