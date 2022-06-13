@@ -48,5 +48,6 @@ vim.keymap.set('n', '<leader>c', '"+c')
 vim.keymap.set('v', '<leader>c', '"+c')
 vim.keymap.set('n', '<leader>C', '"+C')
 vim.keymap.set('v', '<leader>C', '"+C')
--- paste replace
-vim.cmd 'xnoremap <silent> p p:let @+=@0<CR>'
+-- visual mode replace without copying the deleted text
+vim.keymap.set('v', 'p', '"_dP')
+vim.keymap.set('v', 'P', '"_dP')
