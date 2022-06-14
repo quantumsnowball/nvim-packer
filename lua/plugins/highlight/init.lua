@@ -6,7 +6,7 @@ use {
   'nvim-treesitter/nvim-treesitter',
   run = ':TSUpdate',
   config = function()
-    require('nvim-treesitter.configs').setup{
+    require('nvim-treesitter.configs').setup {
       ensure_installed = 'all',
       ignore_install = { "phpdoc" }, -- can never download successfully on macos
       highlight = { enable = true },
@@ -29,7 +29,7 @@ use {
     vim.opt.list = true
     vim.opt.listchars:append("space:⋅")
     vim.opt.listchars:append("eol:↴")
-    require("indent_blankline").setup{
+    require("indent_blankline").setup {
       show_end_of_line = true,
       space_char_blankline = " ",
       show_current_context = true,
@@ -67,7 +67,7 @@ use {
 use {
   'norcalli/nvim-colorizer.lua',
   config = function()
-    require('colorizer').setup{
+    require('colorizer').setup {
       '*'; -- Highlight all files, but customize some others.
       css = { rgb_fn = true; }; -- Enable parsing rgb(...) functions in css.
       html = { names = false; } -- Disable parsing "names" like Blue or Gray
@@ -80,7 +80,7 @@ use {
   'p00f/nvim-ts-rainbow',
   config = function()
     require("nvim-treesitter.configs").setup {
-      highlight = { },
+      highlight = {},
       rainbow = {
         enable = true,
         -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for

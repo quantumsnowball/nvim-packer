@@ -14,7 +14,7 @@ use 'thinca/vim-visualstar'
 use {
   'windwp/nvim-autopairs',
   config = function()
-    require('nvim-autopairs').setup{}
+    require('nvim-autopairs').setup {}
   end
 }
 -- toggle comment line
@@ -22,7 +22,7 @@ use {
 use {
   'numToStr/Comment.nvim',
   config = function()
-    require('Comment').setup{}
+    require('Comment').setup {}
     -- remap <leader>/ to line comment toggle
     vim.cmd 'nmap <leader>/ gcc'
   end

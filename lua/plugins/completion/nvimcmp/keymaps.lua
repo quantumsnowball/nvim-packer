@@ -1,4 +1,4 @@
-return function (cmp, luasnip)
+return function(cmp, luasnip)
   return {
     -- scrolling
     ["<PageUp>"] = cmp.mapping.scroll_docs(-4),

@@ -24,7 +24,7 @@ require('plugins.navigation.tabbar')
 use {
   'declancm/cinnamon.nvim',
   config = function()
-    require('cinnamon').setup{
+    require('cinnamon').setup {
       default_delay = 2
     }
   end
@@ -46,7 +46,7 @@ use {
   'akinsho/toggleterm.nvim',
   tag = 'v1.*',
   config = function()
-    require("toggleterm").setup{
+    require("toggleterm").setup {
       open_mapping = '<leader>t',
       direction = 'float',
       float_opts = {

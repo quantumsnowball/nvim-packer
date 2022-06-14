@@ -9,7 +9,7 @@ use {
     'hrsh7th/cmp-path',
     'f3fora/cmp-spell',
   },
-  config = function ()
+  config = function()
     local cmp = require('cmp')
     local luasnip = require('luasnip')
     cmp.setup({
@@ -50,7 +50,7 @@ use {
     local servers = require('plugins.completion.lsp.servers')
     -- Setup lspconfig.
     local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-    for _,lsp in pairs(servers) do
+    for _, lsp in pairs(servers) do
       local args = { capabilities = capabilities }
       if lsp == 'sumneko_lua' then
         -- print('Special init: ' .. lsp) -- debug
@@ -90,7 +90,7 @@ use {
   'ray-x/lsp_signature.nvim',
   config = function()
     -- require('lspconfig').gopls.setup()
-    require('lsp_signature').setup{
+    require('lsp_signature').setup {
       bind = true, -- This is mandatory, otherwise border config won't get registered.
       handler_opts = {
         border = 'rounded' -- double, rounded, single, shadow, none
