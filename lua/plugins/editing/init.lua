@@ -1,5 +1,9 @@
 local use = require('packer').use
 
+-- some common editing related shortcuts
+-- shift-tab will go one tab backward
+vim.keymap.set('i', '<S-Tab>', '<C-d>')
+
 -- easy multiple line jumping
 use 'easymotion/vim-easymotion'
 -- easy shortcuts to change surrounds
