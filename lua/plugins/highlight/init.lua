@@ -39,22 +39,27 @@ use {
     vim.opt.breakindent = true
   end
 }
--- smart detect document indentation
--- https://github.com/Darazaki/indent-o-matic
+-- lazy detect file type
+-- https://github.com/nathom/filetype.nvim
 use {
-  'Darazaki/indent-o-matic',
+  'nathom/filetype.nvim',
+  config = function()
+    require('filetype').setup {
+      -- put default settings for file types here
+    }
+  end
+}
+-- smart detect document indentation
+-- https://github.com/tpope/vim-sleuth
+use {
+  'tpope/vim-sleuth',
   config = function()
     -- default neovim tabsize to 4 space
     vim.opt.tabstop = 4
-    vim.opt.shiftwidth = 0 -- match with tabstop
-    vim.opt.expandtab = true -- use space instead of tab char
-    -- specific file types to use tabsize of 2 space
-    -- TODO
-    -- only tabsize of 2 or 4 are necessary
-    -- then vim will follow the current tabsize of document
-    require('indent-o-matic').setup{
-      standard_widths = { 2, 4 },
-    }
+    -- shift width match with tabstop
+    vim.opt.shiftwidth = 4
+    -- use space instead of tab char
+    vim.opt.expandtab = true
   end
 }
 -- display color code on background
