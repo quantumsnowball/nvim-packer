@@ -12,7 +12,10 @@ use {
                 adaptive_size = true
             },
             renderer = { highlight_opened_files = 'all' },
-            git = { ignore = false }
+            -- default hide dotfiles and ignored files
+            -- simply type H I to toggle show
+            filters = { dotfiles = true },
+            git = { ignore = true }
         }
         -- toggle keymap
         vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { silent = true })
