@@ -7,7 +7,7 @@ use {
         -- format current document
         vim.keymap.set('n', ',fd', vim.lsp.buf.formatting)
         -- auto format document on save
-        -- vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()')
+        vim.cmd('autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()')
     end
 }
 -- LSP installer
