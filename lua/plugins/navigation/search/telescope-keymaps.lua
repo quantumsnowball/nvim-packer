@@ -22,4 +22,3 @@ vim.keymap.set('n', '<leader>fnf',
 -- find words, ignore hidden files
 vim.keymap.set('n', '<leader>fng',
     '<cmd>lua require("telescope.builtin").live_grep({layout_strategy="vertical"})<cr>')
-
