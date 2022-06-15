@@ -16,7 +16,7 @@ use {
   'williamboman/nvim-lsp-installer',
   requires = 'neovim/nvim-lspconfig',
   config = function()
-    local servers = require('plugins.completion.lsp.servers')
+    local servers = require('plugins.completion.lsp.servers.names')
     -- ensure installed
     require("nvim-lsp-installer").setup {
       ensure_installed = servers,

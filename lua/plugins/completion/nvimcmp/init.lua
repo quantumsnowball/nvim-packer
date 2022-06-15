@@ -47,34 +47,19 @@ use {
   requires = 'neovim/nvim-lspconfig',
   config = function()
     local lspconfig = require('lspconfig')
-    local servers = require('plugins.completion.lsp.servers')
+    local servers = require('plugins.completion.lsp.servers.names')
     -- Setup lspconfig.
     local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
     for _, lsp in pairs(servers) do
-      local args = { capabilities = capabilities }
-      -- lua
-      if lsp == 'sumneko_lua' then
-        -- print('Special init: ' .. lsp) -- debug
-        args.settings = { Lua = { diagnostics = { globals = { 'vim' } } } }
-      end
-      -- python
-      -- run :PylspInstall pyls-flake8 first to put these settings to work
-      if lsp == 'pylsp' then
-        args.settings = {
-          pylsp = {
-            plugins = {
-              flake8 = {
-                enabled = true,
-                ignore = { 'E501' },
-              }
-            }
-          }
-        }
-      end
-      -- add shortcut for lsp services
-      args.on_attach = require('plugins.completion.lsp.keymaps')
-      -- print('Normal init: ' .. lsp) -- debug
-      lspconfig[lsp].setup(args)
+      -- should only called once on the whole config process
+      lspconfig[lsp].setup({
+        -- update cmp capabilities
+        capabilities = capabilities,
+        -- custom individual language server settings
+        settings = require('plugins.completion.lsp.servers.settings')(lsp),
+        -- lsp related keymaps 
+        on_attach = require('plugins.completion.lsp.keymaps')
+      })
     end
   end
 }
