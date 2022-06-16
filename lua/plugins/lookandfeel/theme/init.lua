@@ -24,7 +24,9 @@ use {
                 "BufferLineSeparator",
                 "BufferLineIndicatorSelected",
             },
-            exclude = {}, -- table: groups you don't want to clear
+            exclude = {
+                "MatchParen"
+            }, -- table: groups you don't want to clear
         })
         -- custom key bindings
         -- avaiable commands:
