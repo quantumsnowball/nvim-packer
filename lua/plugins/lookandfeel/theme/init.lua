@@ -34,4 +34,12 @@ use {
         vim.keymap.set('n', '<M-u>', ':TransparentToggle<cr>')
         vim.keymap.set('n', '<F4>', ':TransparentToggle<cr>')
     end
+
 }
+-- autocmd clear after colorscheme change event
+vim.cmd [[
+    augroup ClearSpell
+        autocmd!
+        autocmd ColorScheme * lua require('options.utils').clear_spell_highlights()
+    augroup END
+]]

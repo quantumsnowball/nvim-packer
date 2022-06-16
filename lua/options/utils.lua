@@ -1,5 +1,16 @@
+local M = {}
+
+-- clear spell highlights
+function M.clear_spell_highlights()
+    for _, suffix in ipairs({ 'Bad', 'Local', 'Cap', 'Rare' }) do
+        vim.cmd('hi Spell' .. suffix .. ' ctermbg=NONE gui=NONE guifg=NONE guisp=NONE')
+    end
+end
+
 -- refresh the config
-vim.keymap.set('n', '<F7>', function()
+function M.refresh_configs()
     vim.cmd(':PackerCompile<cr>')
     vim.cmd(':LspRestart<cr>')
-end)
+end
+
+return M
