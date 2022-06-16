@@ -3,8 +3,8 @@ local use = require('packer').use
 --[[
 -- switch themes here
 --]]
--- require('plugins.lookandfeel.theme.monokai')
-require('plugins.lookandfeel.theme.sonokai')
+require('plugins.lookandfeel.theme.monokai')
+-- require('plugins.lookandfeel.theme.sonokai')
 
 -- enable transparent for all theme
 -- https://github.com/xiyaowong/nvim-transparent
