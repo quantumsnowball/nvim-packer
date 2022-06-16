@@ -1,4 +1,5 @@
 return {
+    'pyright', -- python
     'pylsp', -- python
     'sumneko_lua', -- lua
     'tsserver', -- js, ts
