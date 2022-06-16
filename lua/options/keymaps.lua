@@ -19,8 +19,8 @@ vim.keymap.set('n', 'gl', '$')
 -- shift-tab will go one tab backward
 vim.keymap.set('i', '<S-Tab>', '<C-d>')
 -- | and \ will break line before and after cursor
-vim.keymap.set('n', '|', 'i<C-m><esc>')
-vim.keymap.set('n', '\\', 'a<C-m><esc>')
+vim.keymap.set('n', '|', 'a<C-m><esc>')
+vim.keymap.set('n', '\\', 'i<C-m><esc>')
 -- go and gO will open new line but stay in normal mode
 vim.keymap.set('n', 'gO', 'O<esc>')
 vim.keymap.set('n', 'go', 'o<esc>')
