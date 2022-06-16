@@ -10,6 +10,9 @@ vim.keymap.set('n', 'g\\', ':vsplit<cr>')
 vim.keymap.set('n', '<F12>', ':tabnew<cr>')
 -- cancel search highlight after search
 vim.keymap.set('n', 'znn', ':noh<cr>', { silent = true })
+-- quick set shiftwidth
+vim.keymap.set('n', ',2', function() vim.opt.shiftwidth = 2 end)
+vim.keymap.set('n', ',4', function() vim.opt.shiftwidth = 4 end)
 -- home and end
 vim.keymap.set('n', 'gh', '^')
 vim.keymap.set('n', 'gl', '$')
