@@ -1,23 +1,31 @@
 -------------
 -- general --
 -------------
+-- leader
+vim.g.mapleader = ','
 -- toggle split windows
 vim.keymap.set('n', 'g-', ':split<cr>')
 vim.keymap.set('n', 'g\\', ':vsplit<cr>')
 -- toggle a new tabpage
 vim.keymap.set('n', '<F12>', ':tabnew<cr>')
--- copy and paste to system clipboard
-vim.cmd 'set clipboard^=unnamed,unnamedplus'
 -- cancel search highlight after search
 vim.keymap.set('n', 'znn', ':noh<cr>', { silent = true })
 -- home and end
 vim.keymap.set('n', 'gh', '^')
 vim.keymap.set('n', 'gl', '$')
--------------
--- keymaps --
--------------
--- leader
-vim.g.mapleader = ','
+-- shift-tab will go one tab backward
+vim.keymap.set('i', '<S-Tab>', '<C-d>')
+-- | and \ will break line before and after cursor
+vim.keymap.set('n', '|', 'i<C-m><esc>')
+vim.keymap.set('n', '\\', 'a<C-m><esc>')
+-- go and gO will open new line but stay in normal mode
+vim.keymap.set('n', 'gO', 'O<esc>')
+vim.keymap.set('n', 'go', 'o<esc>')
+---------------
+-- clipboard --
+---------------
+-- copy and paste to system clipboard
+vim.cmd 'set clipboard^=unnamed,unnamedplus'
 -- swap ; :
 vim.keymap.set('n', ';', ':')
 vim.keymap.set('n', ':', ';')

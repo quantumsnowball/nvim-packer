@@ -1,15 +1,5 @@
 local use = require('packer').use
 
--- some common editing related shortcuts
--- shift-tab will go one tab backward
-vim.keymap.set('i', '<S-Tab>', '<C-d>')
--- | and \ will break line before and after cursor
-vim.keymap.set('n', '|', 'i<C-m><esc>')
-vim.keymap.set('n', '\\', 'a<C-m><esc>')
--- go and gO will open new line but stay in normal mode
-vim.keymap.set('n', 'gO', 'O<esc>')
-vim.keymap.set('n', 'go', 'o<esc>')
-
 -- easy multiple line jumping
 use 'easymotion/vim-easymotion'
 -- easy shortcuts to change surrounds
