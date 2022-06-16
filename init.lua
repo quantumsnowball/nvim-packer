@@ -1,6 +1,7 @@
 -- before loading any lua scripts
 require('options.configs')
 require('options.keymaps')
+require('options.utils')
 
 -- packer bootstrapping setup
 local fn = vim.fn
