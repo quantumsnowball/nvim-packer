@@ -6,5 +6,6 @@ use {
     'tanvirtin/monokai.nvim',
     config = function()
         vim.cmd 'colorscheme monokai_ristretto'
+        require('plugins.lookandfeel.theme.after')
     end
 }
