@@ -33,19 +33,5 @@ use {
         vim.cmd 'nmap <leader>/ gcc'
     end
 }
--- show git changes
--- https://github.com/lewis6991/gitsigns.nvim
-use {
-    'lewis6991/gitsigns.nvim',
-    config = function()
-        require('gitsigns').setup()
-        -- show line number
-        vim.opt.number = true
-        -- always include sign column to fix gutter width
-        vim.opt.signcolumn = 'yes'
-        -- highlight current line and column
-        vim.opt.cursorline = true
-        -- add margins when scrolling with curosr
-        vim.opt.scrolloff = 8
-    end
-}
+-- version control
+require('plugins.editing.versioning')

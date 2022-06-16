@@ -29,17 +29,6 @@ use {
         }
     end
 }
--- lazygit version control
---
-use {
-    'kdheepak/lazygit.nvim',
-    config = function()
-        -- toggle keymap
-        vim.keymap.set('n', '<leader>g', ':LazyGit<CR>')
-    end
-}
--- git fugitive
-use 'tpope/vim-fugitive'
 -- toggle terminal
 -- https://github.com/akinsho/toggleterm.nvim
 use {
