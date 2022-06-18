@@ -6,5 +6,6 @@ return {
     'html', -- html
     'jsonls', -- json, json5
     'solc', -- solidity
+    'clangd', -- cpp
     'zk'
 }
