@@ -27,6 +27,8 @@ vim.keymap.set('n', '\\', 'i<C-m><esc>')
 -- go and gO will open new line but stay in normal mode
 vim.keymap.set('n', 'gO', 'O<esc>')
 vim.keymap.set('n', 'go', 'o<esc>')
+-- C-o will also open new line in insert mode
+vim.keymap.set('i', '<C-o>', '<esc>o')
 -- utils
 vim.keymap.set('n', '<F7>', require('options.utils').refresh_configs)
 vim.keymap.set('n', '<F8>', require('options.utils').clear_spell_highlights)
