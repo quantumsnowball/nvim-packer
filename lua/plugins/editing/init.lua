@@ -1,7 +1,7 @@
 local use = require('packer').use
 
--- easy multiple line jumping
-use 'easymotion/vim-easymotion'
+-- jumping
+require('plugins.editing.jumping')
 -- easy shortcuts to change surrounds
 use 'tpope/vim-surround'
 -- expand * select-all function to visual mode selection
