@@ -13,9 +13,12 @@ vim.keymap.set('n', 'znn', ':noh<cr>', { silent = true })
 -- quick set shiftwidth
 vim.keymap.set('n', ',2', function() vim.opt.shiftwidth = 2 end)
 vim.keymap.set('n', ',4', function() vim.opt.shiftwidth = 4 end)
--- home and end
+-- home and end in normal mode
 vim.keymap.set('n', 'gh', '^')
 vim.keymap.set('n', 'gl', '$')
+-- home and end in insert mode
+vim.keymap.set('i', '<C-h>', '<home>')
+vim.keymap.set('i', '<C-l>', '<end>')
 -- shift-tab will go one tab backward
 vim.keymap.set('i', '<S-Tab>', '<C-d>')
 -- | and \ will break line before and after cursor
