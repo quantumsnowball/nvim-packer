@@ -67,6 +67,7 @@ use {
 -- https://github.com/L3MON4D3/LuaSnip
 use {
     'L3MON4D3/LuaSnip',
+    commit = '79b2019c68a2ff5ae4d732d50746c901dd45603a',
     requires = {
         'saadparwaiz1/cmp_luasnip',
         'rafamadriz/friendly-snippets'
