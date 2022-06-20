@@ -6,13 +6,23 @@ use {
     'dsznajder/vscode-es7-javascript-react-snippets',
     run = 'yarn install --frozen-lockfile && yarn compile'
 }
--- note:
--- LuaSnip commit:
--- e2a044f8fa4d8b86b63b4494c257bb1aa7379c97
--- seems to be the root cause of a bug when call this snippets
---
--- LuaSnip/lua/luasnip/nodes/snippet.lua:764: attempt to concatenate a nil value
---
--- the commit on master branch right before it is:
--- 79b2019c68a2ff5ae4d732d50746c901dd45603a
--- temporarily revert back to this commit in packer fixed the problem
+-- emmet
+-- https://github.com/aca/emmet-ls
+use {
+    'aca/emmet-ls',
+    config = function()
+        local lspconfig = require('lspconfig')
+        local capabilities = vim.lsp.protocol.make_client_capabilities()
+        capabilities.textDocument.completion.completionItem.snippetSupport = true
+        lspconfig.emmet_ls.setup({
+            -- on_attach = on_attach,
+            capabilities = capabilities,
+            filetypes = {
+                'html', 'typescriptreact', 'javascriptreact',
+                'css', 'sass', 'scss', 'less'
+            },
+        })
+        -- since this lsp is not list in LspInstaller,
+        -- needs to run :LspInstall emmet-ls when run for the first time
+    end
+}
