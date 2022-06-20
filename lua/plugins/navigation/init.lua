@@ -37,6 +37,7 @@ use {
     config = function()
         require("toggleterm").setup {
             open_mapping = '<leader>t',
+            insert_mappings = false,
             direction = 'float',
             float_opts = {
                 border = 'curved', -- 'single' | 'double' | 'shadow' | 'curved' |
