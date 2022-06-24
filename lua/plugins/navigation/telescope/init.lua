@@ -15,6 +15,6 @@ use {
             }
         }
         -- telescope keymaps
-        require('plugins.navigation.search.telescope-keymaps')
+        require('plugins.navigation.telescope.keymaps')
     end
 }

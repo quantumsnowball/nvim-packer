@@ -3,7 +3,7 @@ local use = require('packer').use
 -- file explorer
 require('plugins.navigation.explorer')
 -- fuzzy search for files
-require('plugins.navigation.search')
+require('plugins.navigation.telescope')
 -- hjkl navigator in vim and tmux windows
 use 'christoomey/vim-tmux-navigator'
 -- pop up for keymap hints
