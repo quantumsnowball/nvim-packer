@@ -22,3 +22,8 @@ vim.keymap.set('n', '<leader>fnf',
 -- find words, ignore hidden files
 vim.keymap.set('n', '<leader>fng',
     '<cmd>lua require("telescope.builtin").live_grep({layout_strategy="vertical"})<cr>')
+-- grep visual selected text directly
+vim.keymap.set('v', '<leader>fs',
+    '<cmd>lua require("telescope.builtin").grep_string({layout_strategy="vertical"})<cr>')
+vim.keymap.set('v', '<leader>*',
+    '<cmd>lua require("telescope.builtin").grep_string({layout_strategy="vertical"})<cr>')
