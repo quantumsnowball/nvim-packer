@@ -26,7 +26,13 @@ use {
     'nathom/filetype.nvim',
     config = function()
         require('filetype').setup {
-            -- put default settings for file types here
+            overrides = {
+                -- put default settings for file types here
+                -- match filename using Lua regex
+                complex = {
+                    ["%.conf"] = "conf"
+                }
+            }
         }
     end
 }
