@@ -25,3 +25,6 @@ use {
 }
 -- version control
 require('plugins.editing.versioning')
+-- sudo write files with permission
+-- https://github.com/lambdalisue/suda.vim
+use 'lambdalisue/suda.vim'
