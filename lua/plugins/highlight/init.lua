@@ -29,8 +29,8 @@ use {
             overrides = {
                 -- put default settings for file types here
                 -- match filename using Lua regex
-                complex = {
-                    ["%.conf"] = "conf"
+                extensions = {
+                    ["local"] = "conf"
                 }
             }
         }
