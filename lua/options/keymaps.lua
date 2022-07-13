@@ -39,7 +39,6 @@ vim.keymap.set('n', '<F8>', require('options.utils').clear_spell_highlights)
 vim.cmd 'set clipboard^=unnamed,unnamedplus'
 -- swap ; :
 vim.keymap.set('n', ';', ':')
-vim.keymap.set('n', ':', ';')
 -- delete
 vim.keymap.set('n', 'x', '"_x')
 vim.keymap.set('v', 'x', '"_x')
