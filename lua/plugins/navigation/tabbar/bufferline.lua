@@ -5,8 +5,7 @@ local use = require('packer').use
 use {
     'akinsho/bufferline.nvim', tag = "v2.*",
     requires = {
-        'kyazdani42/nvim-web-devicons',
-        'moll/vim-bbye'
+        'kyazdani42/nvim-web-devicons'
     },
     config = function()
         vim.opt.termguicolors = true
@@ -16,9 +15,5 @@ use {
                 show_close_icons = false
             }
         }
-        -- close buffer key-bindings
-        -- needs vim-bbye plugins
-        vim.keymap.set('n', '<M-w>', ':Bdelete<CR>')
-        vim.keymap.set('n', '<space>x', ':Bdelete<CR>')
     end
 }

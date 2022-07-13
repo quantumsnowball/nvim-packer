@@ -7,7 +7,20 @@ require('plugins.navigation.tabbar.bufferline')
 
 -- common useful plugin
 -- better buffer delete command
-use 'moll/vim-bbye'
+-- https://github.com/kazhala/close-buffers.nvim
+use {
+    'moll/vim-bbye',
+    requires = 'kazhala/close-buffers.nvim',
+    config = function()
+        -- close last buffer doesn't play well with nvimtree, using vim-bbye now
+        vim.keymap.set('n', '<M-w>', ':Bdelete<CR>')
+        vim.keymap.set('n', '<space>x', ':Bdelete<CR>')
+        -- close all and other buffer by close-buffers.nvim
+        local delete = require('close_buffers').delete
+        vim.keymap.set('n', '<space>co', function() delete({ type = 'other' }) end)
+        vim.keymap.set('n', '<space>ca', function() delete({ type = 'all' }) end)
+    end
+}
 
 -- some common related shortcuts
 -- navigate between buffers
