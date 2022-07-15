@@ -23,5 +23,6 @@ use {
             print(vim.inspect(target))
             current = current + 1
         end)
+        require('which-key').register({ ['<F3>'] = 'toggle_colorscheme()' })
     end
 }
