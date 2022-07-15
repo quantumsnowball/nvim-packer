@@ -3,6 +3,8 @@
 -------------
 -- leader
 vim.g.mapleader = ','
+-- show which-key root
+vim.keymap.set('n', '<F1>', ':WhichKey<cr>')
 -- toggle split windows
 vim.keymap.set('n', 'g-', ':split<cr>')
 vim.keymap.set('n', 'g\\', ':vsplit<cr>')
