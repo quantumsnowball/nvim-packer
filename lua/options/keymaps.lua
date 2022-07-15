@@ -31,9 +31,22 @@ vim.keymap.set('n', 'gO', 'O<esc>')
 vim.keymap.set('n', 'go', 'o<esc>')
 -- C-o will also open new line in insert mode
 vim.keymap.set('i', '<C-o>', '<esc>o')
--- utils
-vim.keymap.set('n', '<F7>', require('options.utils').refresh_configs)
-vim.keymap.set('n', '<F8>', require('options.utils').clear_spell_highlights)
+
+for _, item in pairs({
+    -- utils
+    { 'utils.refresh_configs()',
+        'n', '<F7>', require('options.utils').refresh_configs },
+    { 'utils.clear_spell_highlights()',
+        'n', '<F8>', require('options.utils').clear_spell_highlights }
+}) do
+    -- unpack values
+    -- -- neovim still using lua 5.1, new version use `table.unpack`
+    local hint, mode, keys, command = unpack(item)
+    -- register as vim key maps
+    vim.keymap.set(mode, keys, command)
+    -- register as which-key hints
+    require('which-key').register({ [keys] = hint })
+end
 ---------------
 -- clipboard --
 ---------------
