@@ -27,3 +27,6 @@ use {
         end
     end
 }
+
+-- better quickfix list
+require('plugins.navigation.telescope.bqf')
