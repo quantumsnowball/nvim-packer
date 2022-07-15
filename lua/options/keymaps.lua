@@ -1,86 +1,86 @@
--------------
--- general --
--------------
--- leader
+-- global leader key
 vim.g.mapleader = ','
--- show which-key root
-vim.keymap.set('n', '<F1>', ':WhichKey<cr>')
--- toggle split windows
-vim.keymap.set('n', 'g-', ':split<cr>')
-vim.keymap.set('n', 'g\\', ':vsplit<cr>')
--- toggle a new tabpage
-vim.keymap.set('n', '<F12>', ':tabnew<cr>')
--- cancel search highlight after search
-vim.keymap.set('n', 'znn', ':noh<cr>', { silent = true })
--- quick set shiftwidth
-vim.keymap.set('n', '<leader>2', ':set shiftwidth=2<cr>')
-vim.keymap.set('n', '<leader>4', ':set shiftwidth=4<cr>')
--- home and end in normal mode
-vim.keymap.set('n', 'gh', '^')
-vim.keymap.set('n', 'gl', '$')
--- home and end in insert mode
-vim.keymap.set('i', '<C-h>', '<home>')
-vim.keymap.set('i', '<C-l>', '<end>')
--- shift-tab will go one tab backward
-vim.keymap.set('i', '<S-Tab>', '<C-d>')
--- | and \ will break line before and after cursor
-vim.keymap.set('n', '|', 'a<C-m><esc>')
-vim.keymap.set('n', '\\', 'i<C-m><esc>')
--- go and gO will open new line but stay in normal mode
-vim.keymap.set('n', 'gO', 'O<esc>')
-vim.keymap.set('n', 'go', 'o<esc>')
--- C-o will also open new line in insert mode
-vim.keymap.set('i', '<C-o>', '<esc>o')
-
+-- copy and paste to system clipboard
+vim.cmd 'set clipboard^=unnamed,unnamedplus'
+-- keymaps and hints
 for _, item in pairs({
+    -------------
+    -- general --
+    -------------
+    -- show which-key root
+    { 'n', '<F1>', ':WhichKey<cr>' },
+    -- toggle split windows
+    { 'n', 'g-', ':split<cr>' },
+    { 'n', 'g\\', ':vsplit<cr>' },
+    -- toggle a new tabpage
+    { 'n', '<F12>', ':tabnew<cr>' },
+    -- cancel search highlight after search
+    { 'n', 'znn', ':noh<cr>' },
+    -- quick set shiftwidth
+    { 'n', '<leader>2', ':set shiftwidth=2<cr>' },
+    { 'n', '<leader>4', ':set shiftwidth=4<cr>' },
+    -- home and end in normal mode
+    { 'n', 'gh', '^' },
+    { 'n', 'gl', '$' },
+    -- home and end in insert mode
+    { 'i', '<C-h>', '<home>' },
+    { 'i', '<C-l>', '<end>' },
+    -- shift-tab will go one tab backward
+    { 'i', '<S-Tab>', '<C-d>' },
+    -- | and \ will break line before and after cursor
+    { 'n', '|', 'a<C-m><esc>' },
+    { 'n', '\\', 'i<C-m><esc>' },
+    -- go and gO will open new line but stay in normal mode
+    { 'n', 'gO', 'O<esc>' },
+    { 'n', 'go', 'o<esc>' },
+    -- C-o will also open new line in insert mode
+    { 'i', '<C-o>', '<esc>o' },
     -- utils
-    { 'utils.refresh_configs()',
-        'n', '<F7>', require('options.utils').refresh_configs },
-    { 'utils.clear_spell_highlights()',
-        'n', '<F8>', require('options.utils').clear_spell_highlights }
+    { 'n', '<F7>', require('options.utils').refresh_configs, 'utils.refresh_configs()' },
+    { 'n', '<F8>', require('options.utils').clear_spell_highlights, 'utils.clear_spell_highlights()' },
+    ---------------
+    -- clipboard --
+    ---------------
+    -- swap ; :
+    { 'n', ';', ':' },
+    -- delete
+    { 'n', 'x', '"_x' },
+    { 'v', 'x', '"_x' },
+    { 'n', 'X', '"_X' },
+    { 'v', 'X', '"_X' },
+    { 'n', 'd', '"_d' },
+    { 'v', 'd', '"_d' },
+    { 'n', 'D', '"_D' },
+    { 'v', 'D', '"_D' },
+    -- replace
+    { 'n', 'c', '"_c' },
+    { 'v', 'c', '"_c' },
+    { 'n', 'C', '"_C' },
+    { 'v', 'C', '"_C' },
+    -- cut
+    { 'n', '<leader>x', '"+x' },
+    { 'v', '<leader>x', '"+x' },
+    { 'n', '<leader>X', '"+X' },
+    { 'v', '<leader>X', '"+X' },
+    { 'n', '<leader>d', '"+d' },
+    { 'v', '<leader>d', '"+d' },
+    { 'n', '<leader>D', '"+D' },
+    { 'v', '<leader>D', '"+D' },
+    { 'n', '<leader>c', '"+c' },
+    { 'v', '<leader>c', '"+c' },
+    { 'n', '<leader>C', '"+C' },
+    { 'v', '<leader>C', '"+C' },
+    -- visual mode replace without copying the deleted text
+    { 'v', 'p', '"_dP' },
+    { 'v', 'P', '"_dP' },
 }) do
     -- unpack values
     -- -- neovim still using lua 5.1, new version use `table.unpack`
-    local hint, mode, keys, command = unpack(item)
+    local mode, keys, command, hint = unpack(item)
     -- register as vim key maps
     vim.keymap.set(mode, keys, command)
     -- register as which-key hints
-    require('which-key').register({ [keys] = hint })
+    if hint then
+        require('which-key').register({ [keys] = hint })
+    end
 end
----------------
--- clipboard --
----------------
--- copy and paste to system clipboard
-vim.cmd 'set clipboard^=unnamed,unnamedplus'
--- swap ; :
-vim.keymap.set('n', ';', ':')
--- delete
-vim.keymap.set('n', 'x', '"_x')
-vim.keymap.set('v', 'x', '"_x')
-vim.keymap.set('n', 'X', '"_X')
-vim.keymap.set('v', 'X', '"_X')
-vim.keymap.set('n', 'd', '"_d')
-vim.keymap.set('v', 'd', '"_d')
-vim.keymap.set('n', 'D', '"_D')
-vim.keymap.set('v', 'D', '"_D')
--- replace
-vim.keymap.set('n', 'c', '"_c')
-vim.keymap.set('v', 'c', '"_c')
-vim.keymap.set('n', 'C', '"_C')
-vim.keymap.set('v', 'C', '"_C')
--- cut
-vim.keymap.set('n', '<leader>x', '"+x')
-vim.keymap.set('v', '<leader>x', '"+x')
-vim.keymap.set('n', '<leader>X', '"+X')
-vim.keymap.set('v', '<leader>X', '"+X')
-vim.keymap.set('n', '<leader>d', '"+d')
-vim.keymap.set('v', '<leader>d', '"+d')
-vim.keymap.set('n', '<leader>D', '"+D')
-vim.keymap.set('v', '<leader>D', '"+D')
-vim.keymap.set('n', '<leader>c', '"+c')
-vim.keymap.set('v', '<leader>c', '"+c')
-vim.keymap.set('n', '<leader>C', '"+C')
-vim.keymap.set('v', '<leader>C', '"+C')
--- visual mode replace without copying the deleted text
-vim.keymap.set('v', 'p', '"_dP')
-vim.keymap.set('v', 'P', '"_dP')
