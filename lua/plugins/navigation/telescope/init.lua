@@ -15,6 +15,15 @@ use {
             }
         }
         -- telescope keymaps
-        require('plugins.navigation.telescope.keymaps')
+        local keymaps = require('plugins.navigation.telescope.keymaps')
+        for _, item in pairs(keymaps) do
+            -- unpack values
+            -- -- neovim still using lua 5.1, new version use `table.unpack`
+            local hint, mode, keys, command = unpack(item)
+            -- register as vim key maps
+            vim.keymap.set(mode, keys, command)
+            -- register as which-key hints
+            require('which-key').register({ [keys] = hint })
+        end
     end
 }
