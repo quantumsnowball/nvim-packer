@@ -27,3 +27,23 @@ vim.keymap.set('v', '<leader>fs',
     '<cmd>lua require("telescope.builtin").grep_string({layout_strategy="vertical"})<cr>')
 vim.keymap.set('v', '<leader>*',
     '<cmd>lua require("telescope.builtin").grep_string({layout_strategy="vertical"})<cr>')
+
+-- which-key hints
+require('which-key').register({
+    ['<leader>f'] = {
+        name = '+file',
+        f = 'telescope.find_files',
+        g = 'telescope.find_grep',
+        w = 'telescope.find_grep',
+        r = 'telescope.oldfiles',
+        b = 'telescope.buffers',
+        h = 'telescope.help_tags',
+        n = {
+            name = '+no-hidden',
+            f = 'telescope.find_files.no_hidden',
+            g = 'telescope.find_grep.no_hidden',
+        },
+        s = 'telescope.grep_string',
+        ['*'] = 'telescope.grep_string'
+    }
+})
