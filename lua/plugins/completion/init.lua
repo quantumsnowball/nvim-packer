@@ -4,3 +4,5 @@ require('plugins.completion.lsp')
 require('plugins.completion.nvimcmp')
 -- snippets
 require('plugins.completion.snippets')
+-- codeaction
+require('plugins.completion.codeaction')
