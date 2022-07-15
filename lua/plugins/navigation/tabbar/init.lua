@@ -17,8 +17,15 @@ use {
         vim.keymap.set('n', '<space>x', ':Bdelete<CR>')
         -- close all and other buffer by close-buffers.nvim
         local delete = require('close_buffers').delete
-        vim.keymap.set('n', '<space>co', function() delete({ type = 'other' }) end)
-        vim.keymap.set('n', '<space>ca', function() delete({ type = 'all' }) end)
+        for _, item in pairs({
+            { 'close_other_buffers()', 'n', '<space>co', function() delete({ type = 'other' }) end },
+            { 'close_all_buffers()', 'n', '<space>ca', function() delete({ type = 'all' }) end }
+        }) do
+            -- -- neovim still using lua 5.1, new version use `table.unpack`
+            local hint, mode, keys, command = unpack(item)
+            vim.keymap.set(mode, keys, command)
+            require('which-key').register({ [keys] = hint })
+        end
     end
 }
 
