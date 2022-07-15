@@ -1,5 +1,7 @@
 local use = require('packer').use
 
+-- session manager
+require('plugins.navigation.session')
 -- file explorer
 require('plugins.navigation.explorer')
 -- fuzzy search for files
