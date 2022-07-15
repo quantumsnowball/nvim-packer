@@ -18,11 +18,18 @@ use {
         -- close all and other buffer by close-buffers.nvim
         local delete = require('close_buffers').delete
         for _, item in pairs({
-            { 'close_other_buffers()', 'n', '<space>co', function() delete({ type = 'other' }) end },
-            { 'close_all_buffers()', 'n', '<space>ca', function() delete({ type = 'all' }) end }
+            { 'n', '<space>co', function()
+                vim.cmd('NvimTreeClose')
+                delete({ type = 'other' })
+            end, 'close_other_buffers()' },
+            { 'n', '<space>ca', function()
+                vim.cmd('NvimTreeClose')
+                vim.cmd('Alpha')
+                delete({ type = 'all' })
+            end, 'close_all_buffers()' }
         }) do
             -- -- neovim still using lua 5.1, new version use `table.unpack`
-            local hint, mode, keys, command = unpack(item)
+            local mode, keys, command, hint = unpack(item)
             vim.keymap.set(mode, keys, command)
             require('which-key').register({ [keys] = hint })
         end
