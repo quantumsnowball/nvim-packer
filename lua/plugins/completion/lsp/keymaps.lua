@@ -37,9 +37,10 @@ return function(client, bufnr)
             function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, bufopts },
         { 'lsp.buf.type_definition()', 'n', '<space>D', vim.lsp.buf.type_definition, bufopts },
         { 'lsp.buf.rename()', 'n', '<space>rn', vim.lsp.buf.rename, bufopts },
-        { 'lsp.buf.code_action()', 'n', '<space>ct', vim.lsp.buf.code_action, bufopts },
+        { 'lsp.buf.code_action()', 'n', '<leader>qf', vim.lsp.buf.code_action, bufopts },
         { 'lsp.buf.references()', 'n', 'gr', vim.lsp.buf.references, bufopts },
-        { 'lsp.buf.formatting()', 'n', '<space>f', vim.lsp.buf.formatting, bufopts }
+        { 'lsp.buf.formatting()', 'n', '<space>f', vim.lsp.buf.formatting, bufopts },
+        { 'lsp.buf.formatting()', 'n', '<leader>fd', vim.lsp.buf.formatting, bufopts }
     }) do
         -- unpack values
         -- -- neovim still using lua 5.1, new version use `table.unpack`

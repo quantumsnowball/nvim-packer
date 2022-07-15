@@ -4,8 +4,6 @@ local use = require('packer').use
 use {
     'neovim/nvim-lspconfig',
     config = function()
-        -- format current document
-        vim.keymap.set('n', ',fd', vim.lsp.buf.formatting)
         -- auto format document on save
         vim.cmd('autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()')
     end
