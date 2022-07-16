@@ -11,11 +11,12 @@ use {
         require("trouble").setup {
             height = 7,
             padding = false,
+            auto_close = true
         }
         -- keymaps
         for _, item in pairs({
-            { "n", "<leader>ss", "<cmd>Trouble<cr>", },
-            { "n", "<leader>sw", "<cmd>Trouble workspace_diagnostics<cr>", },
+            { "n", "<leader>ss", "<cmd>TroubleToggle<cr>", },
+            { "n", "<leaderw", "<cmd>Trouble workspace_diagnostics<cr>", },
             { "n", "<leader>sd", "<cmd>Trouble document_diagnostics<cr>", },
             { "n", "<leader>sl", "<cmd>Trouble loclist<cr>", },
             { "n", "<leader>sq", "<cmd>Trouble quickfix<cr>", },
