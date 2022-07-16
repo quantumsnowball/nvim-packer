@@ -1,5 +1,7 @@
 local use = require('packer').use
 
+-- diagnostics
+require('plugins.editing.diagnostics')
 -- jumping
 require('plugins.editing.jumping')
 -- easy shortcuts to change surrounds
