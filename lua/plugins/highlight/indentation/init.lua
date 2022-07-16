@@ -10,7 +10,6 @@ use {
         vim.opt.listchars:append("eol:↴")
         -- toggle space and eol chars
         vim.opt.list = false
-        vim.keymap.set('n', '<leader>s', ':set list!<CR>')
         vim.keymap.set('n', '<F5>', ':set list!<CR>')
         -- setup
         require("indent_blankline").setup {
