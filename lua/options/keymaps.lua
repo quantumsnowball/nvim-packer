@@ -43,6 +43,8 @@ for _, item in pairs({
     -- -- visual mode: easily select the opposite matching whole section
     -- -- operation pending mode: can delete, yank, or cut the whole section, very handy!
     { { 'n', 'v', 'o' }, '<Tab>', '%', { remap = true } },
+    { { 'n', 'v', 'o' }, '[<Tab>', '[%', { remap = true } },
+    { { 'n', 'v', 'o' }, ']<Tab>', ']%', { remap = true } },
     ---------------
     -- clipboard --
     ---------------
