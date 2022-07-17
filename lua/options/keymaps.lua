@@ -16,6 +16,8 @@ for _, item in pairs({
     { 'n', '<F12>', ':tabnew<cr>' },
     -- cancel search highlight after search
     { 'n', 'znn', ':noh<cr>', {}, 'Clear search result highlight' },
+    -- G also center line
+    { 'n', 'G', 'Gzz' },
     -- quick set shiftwidth
     { 'n', '<leader>2', ':set shiftwidth=2<cr>' },
     { 'n', '<leader>4', ':set shiftwidth=4<cr>' },
