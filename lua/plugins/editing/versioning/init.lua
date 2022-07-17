@@ -13,8 +13,6 @@ use {
         vim.opt.signcolumn = 'yes'
         -- highlight current line and column
         vim.opt.cursorline = true
-        -- add margins when scrolling with curosr
-        vim.opt.scrolloff = 8
     end
 }
 -- lazygit version control
