@@ -20,8 +20,8 @@ for _, item in pairs({
     { 'n', '<leader>2', ':set shiftwidth=2<cr>' },
     { 'n', '<leader>4', ':set shiftwidth=4<cr>' },
     -- home and end in normal mode
-    { 'n', 'gh', '^' },
-    { 'n', 'gl', '$' },
+    { { 'n', 'v', 'o' }, 'gh', '^', {}, 'Home' },
+    { { 'n', 'v', 'o' }, 'gl', '$', {}, 'End' },
     -- home and end in insert mode
     { 'i', '<C-h>', '<home>' },
     { 'i', '<C-l>', '<end>' },
