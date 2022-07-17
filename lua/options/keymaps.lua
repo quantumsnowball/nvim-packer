@@ -38,6 +38,11 @@ for _, item in pairs({
     -- utils
     { 'n', '<F7>', require('options.utils').refresh_configs, {}, 'utils.refresh_configs()' },
     { 'n', '<F8>', require('options.utils').clear_spell_highlights, {}, 'utils.clear_spell_highlights()' },
+    -- use Tab to toggle matching group
+    -- -- normal mode: matching brackets or tags (by matchit.vim, need to set remap=true)
+    -- -- visual mode: easily select the opposite matching whole section
+    -- -- operation pending mode: can delete, yank, or cut the whole section, very handy!
+    { { 'n', 'v', 'o' }, '<Tab>', '%', { remap = true } },
     ---------------
     -- clipboard --
     ---------------
