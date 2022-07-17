@@ -6,3 +6,5 @@ vim.opt.mouse = 'a'
 vim.cmd 'syntax on'
 -- match parenthesizes formatting
 vim.cmd('autocmd BufEnter * hi MatchParen ctermbg=Gray guibg=Gray')
+-- always open help in a new tab
+vim.cmd("autocmd BufEnter *.txt if &filetype == 'help' | silent wincmd T | endif")
