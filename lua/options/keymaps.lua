@@ -8,14 +8,14 @@ for _, item in pairs({
     -- general --
     -------------
     -- show which-key root
-    { 'n', '<F1>', ':WhichKey<cr>' },
+    { 'n', '<F1>', ':WhichKey<cr>', { silent = true } },
     -- toggle split windows
     { 'n', 'g-', ':split<cr>' },
     { 'n', 'g\\', ':vsplit<cr>' },
     -- toggle a new tabpage
     { 'n', '<F12>', ':tabnew<cr>' },
     -- cancel search highlight after search
-    { 'n', 'znn', ':noh<cr>' },
+    { 'n', 'znn', ':noh<cr>', {}, 'Clear search result highlight' },
     -- quick set shiftwidth
     { 'n', '<leader>2', ':set shiftwidth=2<cr>' },
     { 'n', '<leader>4', ':set shiftwidth=4<cr>' },
@@ -36,8 +36,8 @@ for _, item in pairs({
     -- C-o will also open new line in insert mode
     { 'i', '<C-o>', '<esc>o' },
     -- utils
-    { 'n', '<F7>', require('options.utils').refresh_configs, 'utils.refresh_configs()' },
-    { 'n', '<F8>', require('options.utils').clear_spell_highlights, 'utils.clear_spell_highlights()' },
+    { 'n', '<F7>', require('options.utils').refresh_configs, {}, 'utils.refresh_configs()' },
+    { 'n', '<F8>', require('options.utils').clear_spell_highlights, {}, 'utils.clear_spell_highlights()' },
     ---------------
     -- clipboard --
     ---------------
@@ -76,9 +76,9 @@ for _, item in pairs({
 }) do
     -- unpack values
     -- -- neovim still using lua 5.1, new version use `table.unpack`
-    local mode, keys, command, hint = unpack(item)
+    local mode, keys, command, options, hint = unpack(item)
     -- register as vim key maps
-    vim.keymap.set(mode, keys, command)
+    vim.keymap.set(mode, keys, command, options)
     -- register as which-key hints
     if hint then
         require('which-key').register({ [keys] = hint })
