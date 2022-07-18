@@ -9,10 +9,13 @@ use 'tpope/vim-surround'
 -- expand * select-all function to visual mode selection
 use 'thinca/vim-visualstar'
 -- auto pairing brackets
+-- https://github.com/windwp/nvim-autopairs
 use {
     'windwp/nvim-autopairs',
     config = function()
-        require('nvim-autopairs').setup {}
+        require('nvim-autopairs').setup {
+            disable_in_visualblock = true
+        }
     end
 }
 -- toggle comment line
