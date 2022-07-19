@@ -18,6 +18,8 @@ for _, item in pairs({
     { 'n', 'znn', ':noh<cr>', {}, 'Clear search result highlight' },
     -- G also center line
     { 'n', 'G', 'Gzz' },
+    -- yaa copy everything to clipboard
+    { 'n', 'yaa', 'ggVGy', {}, 'ggVGy, copy all' },
     -- <leader>Q records macro, q is free
     { 'n', '<leader>q', 'q' },
     { 'n', 'q', '<Nop>' },
