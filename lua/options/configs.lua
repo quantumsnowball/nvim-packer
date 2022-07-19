@@ -12,3 +12,6 @@ vim.cmd("autocmd BufEnter *.txt if &filetype == 'help' | silent wincmd T | endif
 vim.opt.scrolloff = 5
 -- set scroll=5 for normal buffer
 vim.cmd('autocmd BufEnter,WinScrolled * if &buftype == "" | set scroll=5 | endif')
+-- WipeReg
+vim.cmd('command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor')
+vim.cmd('autocmd VimEnter * WipeReg')
