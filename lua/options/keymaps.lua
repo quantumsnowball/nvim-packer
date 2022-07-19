@@ -18,6 +18,9 @@ for _, item in pairs({
     { 'n', 'znn', ':noh<cr>', {}, 'Clear search result highlight' },
     -- G also center line
     { 'n', 'G', 'Gzz' },
+    -- <leader>Q records macro, q is free
+    { 'n', '<leader>q', 'q' },
+    { 'n', 'q', '<Nop>' },
     -- quick set shiftwidth
     { 'n', '<leader>2', ':set shiftwidth=2<cr>' },
     { 'n', '<leader>4', ':set shiftwidth=4<cr>' },

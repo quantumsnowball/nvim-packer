@@ -95,7 +95,7 @@ use {
             handler_opts = {
                 border = 'rounded' -- double, rounded, single, shadow, none
             },
-            timer_interval = 100, -- default timer check interval set to lower value if you want to reduce latency
+            timer_interval = 200, -- default timer check interval set to lower value if you want to reduce latency
             toggle_key = '<C-s>' -- toggle signature on and off in insert mode,  e.g. toggle_key = '<M-x>'
         }
     end
