@@ -14,7 +14,7 @@ use {
     config = function()
         require("which-key").setup {
             plugins = {
-                registers = false -- this window is too big will disrupt workflow
+                -- registers = false -- this window is too big will disrupt workflow
             }
         }
     end
