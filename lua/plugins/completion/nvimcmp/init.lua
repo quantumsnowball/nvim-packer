@@ -97,6 +97,7 @@ use {
             timer_interval = 200, -- default timer check interval set to lower value if you want to reduce latency
             toggle_key = '<C-k>', -- toggle signature on and off in insert mode,  e.g. toggle_key = '<M-x>'
             floating_window = false, -- show hint in a floating window, set to false for virtual text only mode
+            auto_close_after = 5, -- autoclose signature float win after x sec, disabled if nil.
         }
     end
 }
