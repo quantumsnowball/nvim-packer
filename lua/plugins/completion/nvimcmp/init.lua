@@ -89,14 +89,14 @@ use {
 use {
     'ray-x/lsp_signature.nvim',
     config = function()
-        -- require('lspconfig').gopls.setup()
         require('lsp_signature').setup {
             bind = true, -- This is mandatory, otherwise border config won't get registered.
             handler_opts = {
                 border = 'rounded' -- double, rounded, single, shadow, none
             },
             timer_interval = 200, -- default timer check interval set to lower value if you want to reduce latency
-            toggle_key = '<C-s>' -- toggle signature on and off in insert mode,  e.g. toggle_key = '<M-x>'
+            toggle_key = '<C-k>', -- toggle signature on and off in insert mode,  e.g. toggle_key = '<M-x>'
+            floating_window = false, -- show hint in a floating window, set to false for virtual text only mode
         }
     end
 }
