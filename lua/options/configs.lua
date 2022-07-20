@@ -15,3 +15,5 @@ vim.cmd('autocmd BufEnter,WinScrolled * if &buftype == "" | set scroll=5 | endif
 -- WipeReg
 vim.cmd('command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor')
 vim.cmd('autocmd VimEnter * WipeReg')
+-- treat dash-connected word as single word
+vim.cmd('set iskeyword+=-')
