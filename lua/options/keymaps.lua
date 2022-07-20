@@ -18,8 +18,6 @@ for _, item in pairs({
     { 'n', 'znn', ':noh<cr>', {}, 'Clear search result highlight' },
     -- G also center line
     { 'n', 'G', 'Gzz' },
-    -- yaa copy everything to clipboard
-    { 'n', 'yaa', 'ggVGy', {}, 'ggVGy, copy all' },
     -- <leader>Q records macro, q is free
     { 'n', '<leader>q', 'q' },
     { 'n', 'q', '<Nop>' },
@@ -87,6 +85,12 @@ for _, item in pairs({
     -- visual mode replace without copying the deleted text
     { 'v', 'p', '"_dP' },
     { 'v', 'P', '"_dP' },
+    -- *aa as change all text operation
+    { 'n', 'vaa', 'ggVG', {}, 'select all text' },
+    { 'n', 'yaa', 'ggVGy', {}, 'copy all text' },
+    { 'n', 'daa', 'ggVG"_d', {}, 'delete all text' },
+    { 'n', '<leader>daa', 'ggVGd', {}, 'cut all text' },
+    { 'n', 'caa', 'ggVG"_c', {}, 'change all text' },
 }) do
     -- unpack values
     -- -- neovim still using lua 5.1, new version use `table.unpack`
