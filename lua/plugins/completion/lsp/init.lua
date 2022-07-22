@@ -1,5 +1,6 @@
 local use = require('packer').use
 
+
 -- LSP support for neovim
 use {
     'neovim/nvim-lspconfig',
@@ -22,3 +23,5 @@ use {
         }
     end
 }
+-- LSP enhanced - lspsaga
+require('plugins.completion.lsp.lspsaga')
