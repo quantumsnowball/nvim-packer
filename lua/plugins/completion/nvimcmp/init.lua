@@ -84,20 +84,20 @@ use {
         vim.opt.spelllang = { 'en_us' }
     end
 }
--- lsp signature
+-- lsp signature (disabled because floating window not dissappeaering in JSX linting)
 -- https://github.com/ray-x/lsp_signature.nvim
-use {
-    'ray-x/lsp_signature.nvim',
-    config = function()
-        require('lsp_signature').setup {
-            bind = true, -- This is mandatory, otherwise border config won't get registered.
-            handler_opts = {
-                border = 'rounded' -- double, rounded, single, shadow, none
-            },
-            timer_interval = 100, -- default timer check interval set to lower value if you want to reduce latency
-            toggle_key = '<C-k>', -- toggle signature on and off in insert mode,  e.g. toggle_key = '<M-x>'
-            floating_window = false, -- show hint in a floating window, set to false for virtual text only mode
-            auto_close_after = 5, -- autoclose signature float win after x sec, disabled if nil.
-        }
-    end
-}
+-- use {
+--     'ray-x/lsp_signature.nvim',
+--     config = function()
+--         require('lsp_signature').setup {
+--             bind = true, -- This is mandatory, otherwise border config won't get registered.
+--             handler_opts = {
+--                 border = 'rounded' -- double, rounded, single, shadow, none
+--             },
+--             timer_interval = 100, -- default timer check interval set to lower value if you want to reduce latency
+--             toggle_key = '<C-k>', -- toggle signature on and off in insert mode,  e.g. toggle_key = '<M-x>'
+--             floating_window = false, -- show hint in a floating window, set to false for virtual text only mode
+--             auto_close_after = 5, -- autoclose signature float win after x sec, disabled if nil.
+--         }
+--     end
+-- }

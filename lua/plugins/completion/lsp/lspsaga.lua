@@ -13,5 +13,7 @@ use({
             -- your configuration
         })
         -- keymaps
+        -- lsp finder to find the cursor word definition and reference
+        vim.keymap.set("n", "<leader>fs", require("lspsaga.finder").lsp_finder, { silent = true, noremap = true })
     end,
 })
