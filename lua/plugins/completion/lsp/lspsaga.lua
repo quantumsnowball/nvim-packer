@@ -11,7 +11,7 @@ use({
 
         -- configs
         saga.init_lsp_saga({
-            -- your configuration
+            border_style = "single", -- "single" | "double" | "rounded" | "bold" | "plus"
         })
 
         -- keymaps
