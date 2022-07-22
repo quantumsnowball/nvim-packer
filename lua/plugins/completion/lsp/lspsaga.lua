@@ -12,6 +12,7 @@ use({
         -- configs
         saga.init_lsp_saga({
             border_style = "single", -- "single" | "double" | "rounded" | "bold" | "plus"
+            move_in_saga = { prev = '<C-u>', next = '<C-d>' }
         })
 
         -- keymaps
