@@ -30,7 +30,7 @@ return function(client, bufnr)
         { 'lsp.buf.definition()', 'n', 'gd', vim.lsp.buf.definition, bufopts },
         -- { 'lsp.buf.hover()', 'n', 'K', vim.lsp.buf.hover, bufopts },
         { 'lsp.buf.implementation()', 'n', 'gi', vim.lsp.buf.implementation, bufopts },
-        { 'lsp.buf.signature_help()', 'n', 'gk', vim.lsp.buf.signature_help, bufopts },
+        -- { 'lsp.buf.signature_help()', 'n', 'gk', vim.lsp.buf.signature_help, bufopts },
         { 'lsp.buf.add_workspace_folder()', 'n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts },
         { 'lsp.buf.remove_workspace_folder()', 'n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts },
         { 'lsp.buf.list_workspace_folders()', 'n', '<space>wl',

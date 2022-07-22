@@ -23,6 +23,9 @@ use({
             { "n", "K", require("lspsaga.hover").render_hover_doc, opts, 'lspsaga.render_hover_doc()' },
             { "n", "<C-d>", function() require("lspsaga.action").smart_scroll_with_saga(1) end, opts, },
             { "n", "<C-u>", function() require("lspsaga.action").smart_scroll_with_saga(-1) end, opts, },
+            -- show signature help
+            { "n", "gk", require("lspsaga.signaturehelp").signature_help, opts, 'lspsaga.signaturehelp()' },
+            { "i", "<C-k>", require("lspsaga.signaturehelp").signature_help, opts, 'lspsaga.signaturehelp()' }
         }) do
             -- unpack values
             -- -- neovim still using lua 5.1, new version use `table.unpack`
