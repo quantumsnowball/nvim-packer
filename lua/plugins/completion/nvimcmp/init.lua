@@ -31,9 +31,9 @@ use {
             },
             mapping = require('plugins.completion.nvimcmp.keymaps')(cmp, luasnip),
             sources = {
-                { name = 'luasnip' },
                 { name = 'nvim_lsp' },
                 { name = "buffer" },
+                { name = 'luasnip' },
                 { name = "path" },
                 { name = "spell" },
             },
