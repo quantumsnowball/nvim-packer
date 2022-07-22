@@ -31,22 +31,22 @@ use {
         }
     end
 }
--- toggle terminal
+-- toggle terminal (disabled because using neovim 0.7 api)
 -- https://github.com/akinsho/toggleterm.nvim
-use {
-    'akinsho/toggleterm.nvim',
-    tag = 'v1.*',
-    config = function()
-        require("toggleterm").setup {
-            open_mapping = '<leader>t',
-            insert_mappings = false,
-            direction = 'float',
-            float_opts = {
-                border = 'curved', -- 'single' | 'double' | 'shadow' | 'curved' |
-            }
-        }
-    end
-}
+-- use {
+--     'akinsho/toggleterm.nvim',
+--     tag = 'v1.*',
+--     config = function()
+--         require("toggleterm").setup {
+--             open_mapping = '<leader>t',
+--             insert_mappings = false,
+--             direction = 'float',
+--             float_opts = {
+--                 border = 'curved', -- 'single' | 'double' | 'shadow' | 'curved' |
+--             }
+--         }
+--     end
+-- }
 -- outline
 -- https://github.com/simrat39/symbols-outline.nvim
 use {
