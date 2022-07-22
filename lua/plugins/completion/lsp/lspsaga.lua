@@ -12,7 +12,6 @@ use({
         -- configs
         saga.init_lsp_saga({
             border_style = "single", -- "single" | "double" | "rounded" | "bold" | "plus"
-            move_in_saga = { prev = '<C-u>', next = '<C-d>' },
             saga_winblend = 30,
             diagnostic_header = { "😡", "😥", "😤", "😐" },
             code_action_icon = "💡",
@@ -25,8 +24,8 @@ use({
             { "n", "<leader>fv", require("lspsaga.finder").lsp_finder, opts, 'lspsaga.lsp_finder()' },
             -- show hover doc, and scroll the doc
             { "n", "K", require("lspsaga.hover").render_hover_doc, opts, 'lspsaga.render_hover_doc()' },
-            { "n", "<C-d>", function() require("lspsaga.action").smart_scroll_with_saga(1) end, opts, },
-            { "n", "<C-u>", function() require("lspsaga.action").smart_scroll_with_saga(-1) end, opts, },
+            { "n", "<C-n>", function() require("lspsaga.action").smart_scroll_with_saga(1) end, opts, },
+            { "n", "<C-p>", function() require("lspsaga.action").smart_scroll_with_saga(-1) end, opts, },
             -- show signature help
             { "n", "gk", require("lspsaga.signaturehelp").signature_help, opts, 'lspsaga.signaturehelp()' },
             { "i", "<C-k>", require("lspsaga.signaturehelp").signature_help, opts, 'lspsaga.signaturehelp()' },
