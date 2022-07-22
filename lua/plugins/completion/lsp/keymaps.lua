@@ -2,10 +2,10 @@
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap = true, silent = true }
 for _, item in pairs({
-    { 'diagnostic.open_float()', 'n', '<space>e', vim.diagnostic.open_float, opts },
-    { 'diagnostic.goto_prev()', 'n', '[d', vim.diagnostic.goto_prev, opts },
-    { 'diagnostic.goto_next()', 'n', ']d', vim.diagnostic.goto_next, opts },
-    { 'diagnostic.setloclist()', 'n', '<space>q', vim.diagnostic.setloclist, opts }
+    -- { 'diagnostic.open_float()', 'n', '<space>e', vim.diagnostic.open_float, opts },
+    -- { 'diagnostic.goto_prev()', 'n', '[d', vim.diagnostic.goto_prev, opts },
+    -- { 'diagnostic.goto_next()', 'n', ']d', vim.diagnostic.goto_next, opts },
+    { 'diagnostic.setloclist()', 'n', '<space>qe', vim.diagnostic.setloclist, opts }
 }) do
     -- unpack values
     -- -- neovim still using lua 5.1, new version use `table.unpack`

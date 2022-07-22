@@ -27,7 +27,17 @@ use({
             { "n", "gk", require("lspsaga.signaturehelp").signature_help, opts, 'lspsaga.signaturehelp()' },
             { "i", "<C-k>", require("lspsaga.signaturehelp").signature_help, opts, 'lspsaga.signaturehelp()' },
             -- rename, close rename win use <C-c> in insert mode or `q` in normal mode or `:q`
-            { "n", "<leader>rn", require("lspsaga.rename").lsp_rename, opts, 'lspsaga.rename()' }
+            { "n", "<leader>rn", require("lspsaga.rename").lsp_rename, opts, 'lspsaga.rename()' },
+            -- diagnostic and errors
+            { "n", "<space>e", require("lspsaga.diagnostic").show_line_diagnostics, opts, 'lspsaga.diagnostic()' },
+            { "n", "[e", require("lspsaga.diagnostic").goto_prev, opts, 'lspsaga.diagnostic.goto_prev()' },
+            { "n", "]e", require("lspsaga.diagnostic").goto_next, opts, 'lspsaga.diagnostic.goto_next()' },
+            { "n", "[E", function()
+                require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR })
+            end, opts, 'lspsaga.diagnostic.goto_prev(ERROR)' },
+            { "n", "]E", function()
+                require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
+            end, opts, 'lspsaga.diagnostic.goto_next(ERROR)' }
         }) do
             -- unpack values
             -- -- neovim still using lua 5.1, new version use `table.unpack`
