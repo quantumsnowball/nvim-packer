@@ -13,6 +13,10 @@ use({
         saga.init_lsp_saga({
             border_style = "single", -- "single" | "double" | "rounded" | "bold" | "plus"
             saga_winblend = 30,
+            finder_action_keys = {
+                vsplit = "v",
+                split = "x"
+            },
             diagnostic_header = { "😡", "😥", "😤", "😐" },
             code_action_icon = "💡",
         })
