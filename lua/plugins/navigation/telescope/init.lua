@@ -43,6 +43,11 @@ use {
             { 'v', '<leader>*', function() tb.grep_string(vlayout) end, {}, 'telescope.grep_string(--visual-mode)' },
             -- color scheme
             { 'n', '<leader>fcs', function() tb.colorscheme(vlayout) end, {}, 'telescope.colorscheme()' },
+            -- git navigation
+            { 'n', '<leader>gc', function() tb.git_commits(vlayout) end, {}, 'telescope.git_commits()' },
+            { 'n', '<leader>gbc', function() tb.git_bcommits(vlayout) end, {}, 'telescope.git_bcommits()' },
+            { 'n', '<leader>gd', function() tb.git_status(vlayout) end, {}, 'telescope.git_status()' },
+
         }) do
             -- unpack values
             -- -- neovim still using lua 5.1, new version use `table.unpack`
