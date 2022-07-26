@@ -6,7 +6,7 @@ use {
     config = function()
         require('telescope').setup {
             defaults = {
-                layout_config = { vertical = { width = 0.8 } }
+                layout_config = { vertical = { width = 0.85 } }
             },
             pickers = {
                 find_files = {
