@@ -58,7 +58,7 @@ use {
             { 'n', '<leader>ft', function() tb.spell_suggest(vlayout) end, {}, 'telescope.spell_suggest()' },
         }) do
             local mode, keys, command, options, hint = unpack(item)
-            require('options.utils').map(mode, keys, command, options, hint)
+            require('utils').map(mode, keys, command, options, hint)
         end
     end
 }
