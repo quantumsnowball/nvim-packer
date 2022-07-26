@@ -46,7 +46,7 @@ use({
                 require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
             end, opts, 'lspsaga.diagnostic.goto_next(ERROR)' },
             -- float terminal
-            { 'n', '<leader>t', require('lspsaga.floaterm').open_float_terminal, opts, 'lspsaga.open_float_terminal()' }
+            { 'n', '<leader>tt', require('lspsaga.floaterm').open_float_terminal, opts, 'lspsaga.open_float_terminal()' }
         }) do
             -- unpack values
             -- -- neovim still using lua 5.1, new version use `table.unpack`
