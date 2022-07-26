@@ -62,7 +62,7 @@ use {
             { 'n', '<leader>fch', function() tb.command_history(vlayout) end, {}, 'telescope.command_history()' },
             { 'n', '<leader>fcc', function() tb.commands(vlayout) end, {}, 'telescope.command_custom()' },
             -- lsp
-            { 'n', '<leader>fr', function() tb.lsp_references(vlayout) end, {}, 'telescope.lsp_references()' },
+            { 'n', '<leader>fv', function() tb.lsp_references(vlayout) end, {}, 'telescope.lsp_references()' },
             { 'n', '<leader>fp', function() tb.diagnostics(vlayout) end, {}, 'telescope.diagnostics()' },
             -- spell
             { 'n', '<leader>ft', function() tb.spell_suggest(vlayout) end, {}, 'telescope.spell_suggest()' },

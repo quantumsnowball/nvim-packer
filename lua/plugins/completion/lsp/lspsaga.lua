@@ -25,7 +25,7 @@ use({
         local opts = { silent = true }
         for _, item in pairs({
             -- lsp finder to find the cursor word definition and reference
-            { "n", "<leader>fv", require("lspsaga.finder").lsp_finder, opts, 'lspsaga.lsp_finder()' },
+            { "n", "<leader>lv", require("lspsaga.finder").lsp_finder, opts, 'lspsaga.lsp_finder()' },
             -- show hover doc, and scroll the doc
             { "n", "K", require("lspsaga.hover").render_hover_doc, opts, 'lspsaga.render_hover_doc()' },
             { "n", "<C-n>", function() require("lspsaga.action").smart_scroll_with_saga(1) end, opts, },
