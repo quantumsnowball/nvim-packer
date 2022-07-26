@@ -22,11 +22,6 @@ use {
                     tb.find_files({ layout_strategy = "vertical", hidden = true })
                 end, {}, 'telescope.find_files()' },
             -- find words, including hidden
-            { 'n', '<leader>fg',
-                function()
-                    tb.live_grep({ layout_strategy = "vertical",
-                        additional_args = function() return { "--hidden" } end })
-                end, {}, 'telescope.live_grep()' },
             { 'n', '<leader>fw',
                 function()
                     tb.live_grep({ layout_strategy = "vertical",
@@ -53,7 +48,7 @@ use {
                     tb.find_files({ layout_strategy = "vertical" })
                 end, {}, 'telescope.find_files(--no-hidden)' },
             -- find words, ignore hidden files
-            { 'n', '<leader>fng',
+            { 'n', '<leader>fnw',
                 function()
                     tb.live_grep({ layout_strategy = "vertical" })
                 end, {}, 'telescope.live_grep(--no-hidden)' },
