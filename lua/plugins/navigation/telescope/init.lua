@@ -54,6 +54,8 @@ use {
             -- lsp
             { 'n', '<leader>fr', function() tb.lsp_references(vlayout) end, {}, 'telescope.lsp_references()' },
             { 'n', '<leader>fp', function() tb.diagnostics(vlayout) end, {}, 'telescope.diagnostics()' },
+            -- spell
+            { 'n', '<leader>ft', function() tb.spell_suggest(vlayout) end, {}, 'telescope.spell_suggest()' },
         }) do
             -- unpack values
             -- -- neovim still using lua 5.1, new version use `table.unpack`
