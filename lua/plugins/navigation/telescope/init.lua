@@ -57,14 +57,8 @@ use {
             -- spell
             { 'n', '<leader>ft', function() tb.spell_suggest(vlayout) end, {}, 'telescope.spell_suggest()' },
         }) do
-            -- unpack values
-            -- -- neovim still using lua 5.1, new version use `table.unpack`
-            -- local hint, mode, keys, command = unpack(item)
             local mode, keys, command, options, hint = unpack(item)
-            -- register as vim key maps
-            vim.keymap.set(mode, keys, command, options)
-            -- register as which-key hints
-            require('which-key').register({ [keys] = hint })
+            require('options.utils').map(mode, keys, command, options, hint)
         end
     end
 }
