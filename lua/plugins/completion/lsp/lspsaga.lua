@@ -48,15 +48,8 @@ use({
             -- float terminal
             { 'n', '<leader>tt', require('lspsaga.floaterm').open_float_terminal, opts, 'lspsaga.open_float_terminal()' }
         }) do
-            -- unpack values
-            -- -- neovim still using lua 5.1, new version use `table.unpack`
             local mode, keys, command, options, hint = unpack(item)
-            -- register as vim key maps
-            vim.keymap.set(mode, keys, command, options)
-            -- register as which-key hints
-            if hint then
-                require('which-key').register({ [keys] = hint })
-            end
+            require('utils').map(mode, keys, command, options, hint)
         end
     end,
 })

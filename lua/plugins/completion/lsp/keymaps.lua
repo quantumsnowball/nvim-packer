@@ -37,12 +37,7 @@ return function(client, bufnr)
         { 'lsp.buf.formatting()', 'n', '<space>f', vim.lsp.buf.formatting, bufopts },
         { 'lsp.buf.formatting()', 'n', '<leader>fd', vim.lsp.buf.formatting, bufopts }
     }) do
-        -- unpack values
-        -- -- neovim still using lua 5.1, new version use `table.unpack`
         local hint, mode, keys, command = unpack(item)
-        -- register as vim key maps
-        vim.keymap.set(mode, keys, command)
-        -- register as which-key hints
-        require('which-key').register({ [keys] = hint })
+        require('utils').map(mode, keys, command, nil, hint)
     end
 end
