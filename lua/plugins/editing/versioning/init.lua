@@ -51,7 +51,7 @@ use {
     'kdheepak/lazygit.nvim',
     config = function()
         -- toggle keymap
-        vim.keymap.set('n', '<leader>lg', ':LazyGit<CR>')
+        vim.keymap.set('n', '<leader>gl', ':LazyGit<CR>')
     end
 }
 -- git fugitive
