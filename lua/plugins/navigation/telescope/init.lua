@@ -41,6 +41,8 @@ use {
             -- grep visual selected text directly
             { 'v', '<leader>fs', function() tb.grep_string(vlayout) end, {}, 'telescope.grep_string(--visual-mode)' },
             { 'v', '<leader>*', function() tb.grep_string(vlayout) end, {}, 'telescope.grep_string(--visual-mode)' },
+            -- color scheme
+            { 'n', '<leader>fcs', function() tb.colorscheme(vlayout) end, {}, 'telescope.colorscheme()' },
         }) do
             -- unpack values
             -- -- neovim still using lua 5.1, new version use `table.unpack`
