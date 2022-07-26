@@ -14,6 +14,7 @@ use {
             auto_close = true
         }
         -- keymaps
+        local options = { silent = true, noremap = true }
         for _, item in pairs({
             { "n", "<leader>ss", "<cmd>TroubleToggle<cr>", },
             { "n", "<leaderw", "<cmd>Trouble workspace_diagnostics<cr>", },
@@ -29,8 +30,7 @@ use {
             end, "Trouble previous()" },
         }) do
             local mode, keys, command, hint = unpack(item)
-            vim.keymap.set(mode, keys, command, { silent = true, noremap = true })
-            require('which-key').register({ [keys] = hint })
+            require('utils').map(mode, keys, command, options, hint)
         end
     end
 }

@@ -28,10 +28,8 @@ use {
                 delete({ type = 'all' })
             end, 'close_all_buffers()' }
         }) do
-            -- -- neovim still using lua 5.1, new version use `table.unpack`
             local mode, keys, command, hint = unpack(item)
-            vim.keymap.set(mode, keys, command)
-            require('which-key').register({ [keys] = hint })
+            require('utils').map(mode, keys, command, nil, hint)
         end
     end
 }
