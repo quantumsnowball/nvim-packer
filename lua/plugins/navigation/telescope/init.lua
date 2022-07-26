@@ -51,6 +51,9 @@ use {
             { 'n', '<leader>f;', function() tb.command_history(vlayout) end, {}, 'telescope.command_history()' },
             { 'n', '<leader>fch', function() tb.command_history(vlayout) end, {}, 'telescope.command_history()' },
             { 'n', '<leader>fcc', function() tb.commands(vlayout) end, {}, 'telescope.command_custom()' },
+            -- lsp
+            { 'n', '<leader>fr', function() tb.lsp_references(vlayout) end, {}, 'telescope.lsp_references()' },
+            { 'n', '<leader>fp', function() tb.diagnostics(vlayout) end, {}, 'telescope.diagnostics()' },
         }) do
             -- unpack values
             -- -- neovim still using lua 5.1, new version use `table.unpack`
