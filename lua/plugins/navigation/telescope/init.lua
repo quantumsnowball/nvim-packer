@@ -2,7 +2,10 @@ local use = require('packer').use
 
 use {
     'nvim-telescope/telescope.nvim',
-    requires = { 'nvim-lua/plenary.nvim' },
+    requires = {
+        'nvim-lua/plenary.nvim',
+        'nvim-telescope/telescope-ui-select.nvim'
+    },
     config = function()
         require('telescope').setup {
             defaults = {
@@ -13,8 +16,14 @@ use {
                 find_files = {
                     find_command = { "fd", "--type", "f", "--strip-cwd-prefix" }
                 },
+            },
+            extensions = {
+                ["ui-select"] = {
+                    require("telescope.themes").get_dropdown({})
+                }
             }
         }
+        require("telescope").load_extension("ui-select")
         -- telescope keymaps
         local tb = require('telescope.builtin')
         local vlayout = { layout_strategy = "vertical" }
