@@ -47,7 +47,10 @@ use {
             { 'n', '<leader>gc', function() tb.git_commits(vlayout) end, {}, 'telescope.git_commits()' },
             { 'n', '<leader>gbc', function() tb.git_bcommits(vlayout) end, {}, 'telescope.git_bcommits()' },
             { 'n', '<leader>gd', function() tb.git_status(vlayout) end, {}, 'telescope.git_status()' },
-
+            -- vim commands
+            { 'n', '<leader>f;', function() tb.command_history(vlayout) end, {}, 'telescope.command_history()' },
+            { 'n', '<leader>fch', function() tb.command_history(vlayout) end, {}, 'telescope.command_history()' },
+            { 'n', '<leader>fcc', function() tb.commands(vlayout) end, {}, 'telescope.command_custom()' },
         }) do
             -- unpack values
             -- -- neovim still using lua 5.1, new version use `table.unpack`
