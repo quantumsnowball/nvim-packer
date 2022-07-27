@@ -64,6 +64,7 @@ use {
             -- lsp
             { 'n', '<leader>fv', function() tb.lsp_references(vlayout) end, {}, 'telescope.lsp_references()' },
             { 'n', '<leader>fe', function() tb.diagnostics(vlayout) end, {}, 'telescope.diagnostics()' },
+            { 'n', '<leader>fca', function() vim.lsp.buf.code_action() end, {}, 'telescope.code_action()' },
             -- spell
             { 'n', '<leader>ft', function() tb.spell_suggest(vlayout) end, {}, 'telescope.spell_suggest()' },
             -- keymaps
