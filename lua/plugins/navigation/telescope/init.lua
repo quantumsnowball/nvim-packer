@@ -28,6 +28,14 @@ use {
                 },
                 live_grep = { initial_mode = 'insert' },
                 help_tags = { initial_mode = 'insert' },
+                buffers = {
+                    layout_config = {
+                        width = 0.6,
+                        height = 0.7,
+                        preview_height = 0.35,
+                        prompt_position = "bottom",
+                    }
+                },
             },
             extensions = {
                 ["ui-select"] = {
