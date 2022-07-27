@@ -20,6 +20,7 @@ use {
                 winblend = 10,
                 initial_mode = 'normal',
                 border = true,
+                dynamic_preview_title = true,
             },
             pickers = {
                 find_files = {
