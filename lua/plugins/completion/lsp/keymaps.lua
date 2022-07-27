@@ -34,8 +34,8 @@ return function(client, bufnr)
         -- { 'lsp.buf.rename()', 'n', '<space>rn', vim.lsp.buf.rename, bufopts },
         { 'lsp.buf.code_action()', 'n', '<space>qf', vim.lsp.buf.code_action, bufopts },
         { 'lsp.buf.references()', 'n', 'gr', vim.lsp.buf.references, bufopts },
-        { 'lsp.buf.formatting()', 'n', '<space>f', vim.lsp.buf.formatting, bufopts },
-        { 'lsp.buf.formatting()', 'n', '<leader>fd', vim.lsp.buf.formatting, bufopts }
+        { 'lsp.buf.formatting()', 'n', '<space>f', vim.lsp.buf.format, bufopts },
+        { 'lsp.buf.formatting()', 'n', '<leader>fd', vim.lsp.buf.format, bufopts }
     }) do
         local hint, mode, keys, command = unpack(item)
         require('utils').map(mode, keys, command, nil, hint)
