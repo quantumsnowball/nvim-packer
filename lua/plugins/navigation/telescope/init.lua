@@ -16,9 +16,9 @@ use {
                     }
                 },
                 scroll_strategy = 'limit',
-                winblend = 20,
+                winblend = 10,
                 initial_mode = 'normal',
-                border = true,
+                border = false,
             },
             pickers = {
                 find_files = {
@@ -30,8 +30,9 @@ use {
             },
             extensions = {
                 ["ui-select"] = {
-                    require("telescope.themes").get_dropdown({}),
-                    border = false
+                    require("telescope.themes").get_dropdown({
+                        border = false
+                    }),
                 }
             },
         }
