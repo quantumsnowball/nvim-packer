@@ -9,7 +9,12 @@ use {
     config = function()
         require('telescope').setup {
             defaults = {
-                layout_config = { vertical = { width = 0.85 } },
+                layout_strategy = 'vertical',
+                layout_config = {
+                    vertical = {
+                        width = 0.85
+                    }
+                },
                 scroll_strategy = 'limit'
             },
             pickers = {
@@ -26,52 +31,49 @@ use {
         require("telescope").load_extension("ui-select")
         -- telescope keymaps
         local tb = require('telescope.builtin')
-        local vlayout = { layout_strategy = "vertical" }
         for _, item in pairs({
             { 'n', '<leader>ff',
                 function()
-                    tb.find_files({ layout_strategy = "vertical", hidden = true })
+                    tb.find_files({ hidden = true })
                 end, {}, 'telescope.find_files()' },
             -- find words, including hidden
             { 'n', '<leader>fw',
                 function()
-                    tb.live_grep({ layout_strategy = "vertical",
-                        additional_args = function() return { "--hidden" } end })
+                    tb.live_grep({ additional_args = function() return { "--hidden" } end })
                 end, {}, 'telescope.live_grep()' },
             -- find recent files
-            { 'n', '<leader>fr', function() tb.oldfiles(vlayout) end, {}, 'telescope.oldfiles()' },
+            { 'n', '<leader>fr', tb.oldfiles, {}, 'telescope.oldfiles()' },
             -- find buffers
-            { 'n', '<leader>fb', function() tb.buffers(vlayout) end, {}, 'telescope.buffers()' },
+            { 'n', '<leader>fb', tb.buffers, {}, 'telescope.buffers()' },
             -- find helps
-            { 'n', '<leader>fh', function() tb.help_tags(vlayout) end, {}, 'telescope.help_tags()' },
+            { 'n', '<leader>fh', tb.help_tags, {}, 'telescope.help_tags()' },
             -- find files, ignore hidden files
-            { 'n', '<leader>fnf', function() tb.find_files(vlayout) end, {}, 'telescope.find_files(--no-hidden)' },
+            { 'n', '<leader>fnf', tb.find_files, {}, 'telescope.find_files(--no-hidden)' },
             -- find words, ignore hidden files
-            { 'n', '<leader>fnw', function() tb.live_grep(vlayout) end, {}, 'telescope.live_grep(--no-hidden)' },
+            { 'n', '<leader>fnw', tb.live_grep, {}, 'telescope.live_grep(--no-hidden)' },
             -- grep visual selected text directly
-            { 'v', '<leader>fs', function() tb.grep_string(vlayout) end, {}, 'telescope.grep_string(--visual-mode)' },
-            { 'v', '<leader>*', function() tb.grep_string(vlayout) end, {}, 'telescope.grep_string(--visual-mode)' },
+            { 'v', '<leader>fs', tb.grep_string, {}, 'telescope.grep_string(--visual-mode)' },
+            { 'v', '<leader>*', tb.grep_string, {}, 'telescope.grep_string(--visual-mode)' },
             -- color scheme
-            { 'n', '<leader>fcs', function() tb.colorscheme(vlayout) end, {}, 'telescope.colorscheme()' },
+            { 'n', '<leader>fcs', tb.colorscheme, {}, 'telescope.colorscheme()' },
             -- git navigation
-            { 'n', '<leader>gc', function() tb.git_commits(vlayout) end, {}, 'telescope.git_commits()' },
-            { 'n', '<leader>gbc', function() tb.git_bcommits(vlayout) end, {}, 'telescope.git_bcommits()' },
-            { 'n', '<leader>gd', function() tb.git_status(vlayout) end, {}, 'telescope.git_status()' },
+            { 'n', '<leader>gc', tb.git_commits, {}, 'telescope.git_commits()' },
+            { 'n', '<leader>gbc', tb.git_bcommits, {}, 'telescope.git_bcommits()' },
+            { 'n', '<leader>gd', tb.git_status, {}, 'telescope.git_status()' },
             -- vim commands
-            { 'n', '<leader>f;', function() tb.command_history(vlayout) end, {}, 'telescope.command_history()' },
-            { 'n', '<leader>fch', function() tb.command_history(vlayout) end, {}, 'telescope.command_history()' },
-            { 'n', '<leader>fcc', function() tb.commands(vlayout) end, {}, 'telescope.command_custom()' },
+            { 'n', '<leader>f;', tb.command_history, {}, 'telescope.command_history()' },
+            { 'n', '<leader>fch', tb.command_history, {}, 'telescope.command_history()' },
+            { 'n', '<leader>fcc', tb.commands, {}, 'telescope.command_custom()' },
             -- lsp
-            { 'n', '<leader>fv', function() tb.lsp_references(vlayout) end, {}, 'telescope.lsp_references()' },
-            { 'n', '<leader>fe', function() tb.diagnostics(vlayout) end, {}, 'telescope.diagnostics()' },
-            { 'n', '<leader>fca', function() vim.lsp.buf.code_action() end, {}, 'telescope.code_action()' },
+            { 'n', '<leader>fv', tb.lsp_references, {}, 'telescope.lsp_references()' },
+            { 'n', '<leader>fe', tb.diagnostics, {}, 'telescope.diagnostics()' },
+            { 'n', '<leader>fca', vim.lsp.buf.code_action, {}, 'telescope.code_action()' },
             -- spell
-            { 'n', '<leader>ft', function() tb.spell_suggest(vlayout) end, {}, 'telescope.spell_suggest()' },
+            { 'n', '<leader>ft', tb.spell_suggest, {}, 'telescope.spell_suggest()' },
             -- keymaps
-            { 'n', '<leader>fk', function() tb.keymaps(vlayout) end, {}, 'telescope.keymaps()' },
+            { 'n', '<leader>fk', tb.keymaps, {}, 'telescope.keymaps()' },
             -- fzf current buffer
-            { 'n', '<leader>fz', function() tb.current_buffer_fuzzy_find(vlayout) end, {},
-                'telescope.current_buffer_fuzzy_find()' },
+            { 'n', '<leader>fz', tb.current_buffer_fuzzy_find, {}, 'telescope.current_buffer_fuzzy_find()' },
         }) do
             local mode, keys, command, options, hint = unpack(item)
             require('utils').map(mode, keys, command, options, hint)
