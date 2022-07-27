@@ -13,7 +13,10 @@ M.keymaps = {
     -- find recent files
     { 'n', '<leader>fr', tb.oldfiles, {}, 'telescope.oldfiles()' },
     -- find buffers
-    { 'n', '<leader>fb', tb.buffers, {}, 'telescope.buffers()' },
+    { 'n', '<leader>b', tb.buffers, {}, 'telescope.buffers()' },
+    { 'n', '<leader>fb', function()
+        tb.buffers({ initial_mode = 'insert' })
+    end, {}, 'telescope.buffers()' },
     -- find helps
     { 'n', '<leader>fh', tb.help_tags, {}, 'telescope.help_tags()' },
     -- find files, ignore hidden files
