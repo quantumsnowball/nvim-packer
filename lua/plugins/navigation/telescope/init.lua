@@ -66,6 +66,8 @@ use {
             { 'n', '<leader>fp', function() tb.diagnostics(vlayout) end, {}, 'telescope.diagnostics()' },
             -- spell
             { 'n', '<leader>ft', function() tb.spell_suggest(vlayout) end, {}, 'telescope.spell_suggest()' },
+            -- keymaps
+            { 'n', '<leader>fk', function() tb.keymaps(vlayout) end, {}, 'telescope.keymaps()' },
         }) do
             local mode, keys, command, options, hint = unpack(item)
             require('utils').map(mode, keys, command, options, hint)
