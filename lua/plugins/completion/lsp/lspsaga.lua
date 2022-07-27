@@ -31,7 +31,7 @@ use({
             { "n", "<C-n>", function() require("lspsaga.action").smart_scroll_with_saga(1) end, opts, },
             { "n", "<C-p>", function() require("lspsaga.action").smart_scroll_with_saga(-1) end, opts, },
             -- show signature help
-            { "n", "gk", require("lspsaga.signaturehelp").signature_help, opts, 'lspsaga.signaturehelp()' },
+            { "n", "zk", require("lspsaga.signaturehelp").signature_help, opts, 'lspsaga.signaturehelp()' },
             { "i", "<C-k>", require("lspsaga.signaturehelp").signature_help, opts, 'lspsaga.signaturehelp()' },
             -- rename, close rename win use <C-c> in insert mode or `q` in normal mode or `:q`
             { "n", "<leader>rn", require("lspsaga.rename").lsp_rename, opts, 'lspsaga.rename()' },

@@ -40,8 +40,11 @@ vim.keymap.set('n', '<space>h', ':bprevious<CR>')
 vim.keymap.set('n', '<space>j', ':bprevious<CR>')
 vim.keymap.set('n', '<space>k', ':bnext<CR>')
 vim.keymap.set('n', '<space>l', ':bnext<CR>')
+vim.keymap.set('n', 'gj', ':bprevious<CR>')
+vim.keymap.set('n', 'gk', ':bnext<CR>')
 vim.keymap.set('n', '<space>b', ':e #<CR>')
 vim.keymap.set('n', ':', ':e #<CR>')
+vim.keymap.set('n', 'g;', ':e #<CR>')
 -- default split to right and below
 vim.opt.splitbelow = true
 vim.opt.splitright = true
