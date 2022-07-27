@@ -41,6 +41,11 @@ use {
                         height = 0.7,
                         preview_height = 0.35,
                         prompt_position = "bottom",
+                    },
+                    mappings = {
+                        n = {
+                            x = "delete_buffer"
+                        }
                     }
                 },
                 current_buffer_fuzzy_find = { initial_mode = 'insert' },
