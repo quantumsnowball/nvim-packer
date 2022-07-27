@@ -6,7 +6,7 @@ use {
     'neovim/nvim-lspconfig',
     config = function()
         -- auto format document on save
-        vim.cmd('autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()')
+        vim.cmd('autocmd BufWritePre * lua vim.lsp.buf.formatting_seq_sync()')
     end
 }
 -- LSP installer
