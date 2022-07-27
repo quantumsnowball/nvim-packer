@@ -43,6 +43,8 @@ for _, item in pairs({
     -- utils
     { 'n', '<F7>', require('options.utils').refresh_configs, {}, 'utils.refresh_configs()' },
     { 'n', '<F8>', require('options.utils').clear_spell_highlights, {}, 'utils.clear_spell_highlights()' },
+    -- toggle word wrap
+    { 'n', 'gw', ':set wrap!<cr>' },
     -- use Tab to toggle matching group
     -- -- normal mode: matching brackets or tags (by matchit.vim, need to set remap=true)
     -- -- visual mode: easily select the opposite matching whole section
