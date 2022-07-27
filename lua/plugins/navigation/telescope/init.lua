@@ -32,7 +32,7 @@ use {
             extensions = {
                 ["ui-select"] = {
                     require("telescope.themes").get_dropdown({
-                        border = false
+                        border = true
                     }),
                 }
             },
