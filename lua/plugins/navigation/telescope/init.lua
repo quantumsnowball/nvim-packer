@@ -24,7 +24,7 @@ use {
             pickers = {
                 find_files = {
                     initial_mode = 'insert',
-                    find_command = { "fd", "--type", "f", "--strip-cwd-prefix" }
+                    -- find_command = { "fd", "--type", "f", "--strip-cwd-prefix" }
                 },
                 live_grep = { initial_mode = 'insert' },
                 help_tags = { initial_mode = 'insert' },
@@ -36,6 +36,7 @@ use {
                         prompt_position = "bottom",
                     }
                 },
+                current_buffer_fuzzy_find = { initial_mode = 'insert' },
             },
             extensions = {
                 ["ui-select"] = {
