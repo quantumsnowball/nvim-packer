@@ -16,6 +16,12 @@ use {
                         preview_height = 0.65
                     }
                 },
+                mappings = {
+                    n = {
+                        o = 'toggle_all',
+                        p = require('telescope.actions.layout').toggle_preview
+                    }
+                },
                 scroll_strategy = 'limit',
                 winblend = 10,
                 initial_mode = 'normal',
