@@ -51,6 +51,7 @@ use {
     'kdheepak/lazygit.nvim',
     config = function()
         -- toggle keymap
+        vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>')
         vim.keymap.set('n', '<leader>gl', ':LazyGit<CR>')
     end
 }
