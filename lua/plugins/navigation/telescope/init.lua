@@ -12,13 +12,14 @@ use {
                 layout_strategy = 'vertical',
                 layout_config = {
                     vertical = {
-                        width = 0.85
+                        width = 0.85,
+                        preview_height = 0.65
                     }
                 },
                 scroll_strategy = 'limit',
                 winblend = 10,
                 initial_mode = 'normal',
-                border = false,
+                border = true,
             },
             pickers = {
                 find_files = {
