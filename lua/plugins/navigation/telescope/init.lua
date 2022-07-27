@@ -63,7 +63,7 @@ use {
             { 'n', '<leader>fcc', function() tb.commands(vlayout) end, {}, 'telescope.command_custom()' },
             -- lsp
             { 'n', '<leader>fv', function() tb.lsp_references(vlayout) end, {}, 'telescope.lsp_references()' },
-            { 'n', '<leader>fp', function() tb.diagnostics(vlayout) end, {}, 'telescope.diagnostics()' },
+            { 'n', '<leader>fe', function() tb.diagnostics(vlayout) end, {}, 'telescope.diagnostics()' },
             -- spell
             { 'n', '<leader>ft', function() tb.spell_suggest(vlayout) end, {}, 'telescope.spell_suggest()' },
             -- keymaps
