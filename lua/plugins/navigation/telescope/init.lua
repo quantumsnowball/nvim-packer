@@ -79,6 +79,8 @@ use {
             { 'n', '<leader>fk', tb.keymaps, {}, 'telescope.keymaps()' },
             -- fzf current buffer
             { 'n', '<leader>fz', tb.current_buffer_fuzzy_find, {}, 'telescope.current_buffer_fuzzy_find()' },
+            -- treesitter objects
+            { 'n', '<leader>fm', tb.treesitter, {}, 'telescope.treesitter()' },
         }) do
             local mode, keys, command, options, hint = unpack(item)
             require('utils').map(mode, keys, command, options, hint)
