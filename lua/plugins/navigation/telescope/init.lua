@@ -68,6 +68,9 @@ use {
             { 'n', '<leader>ft', function() tb.spell_suggest(vlayout) end, {}, 'telescope.spell_suggest()' },
             -- keymaps
             { 'n', '<leader>fk', function() tb.keymaps(vlayout) end, {}, 'telescope.keymaps()' },
+            -- fzf current buffer
+            { 'n', '<leader>fz', function() tb.current_buffer_fuzzy_find(vlayout) end, {},
+                'telescope.current_buffer_fuzzy_find()' },
         }) do
             local mode, keys, command, options, hint = unpack(item)
             require('utils').map(mode, keys, command, options, hint)
