@@ -15,7 +15,8 @@ use {
                         width = 0.85
                     }
                 },
-                scroll_strategy = 'limit'
+                scroll_strategy = 'limit',
+                winblend = 30
             },
             pickers = {
                 find_files = {
