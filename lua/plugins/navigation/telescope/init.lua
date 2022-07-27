@@ -16,7 +16,8 @@ use {
                     }
                 },
                 scroll_strategy = 'limit',
-                winblend = 30
+                winblend = 30,
+                initial_mode = 'normal',
             },
             pickers = {
                 find_files = {
@@ -27,7 +28,7 @@ use {
                 ["ui-select"] = {
                     require("telescope.themes").get_dropdown({})
                 }
-            }
+            },
         }
         require("telescope").load_extension("ui-select")
         -- telescope keymaps
@@ -35,12 +36,18 @@ use {
         for _, item in pairs({
             { 'n', '<leader>ff',
                 function()
-                    tb.find_files({ hidden = true })
+                    tb.find_files({
+                        initial_mode = 'insert',
+                        hidden = true
+                    })
                 end, {}, 'telescope.find_files()' },
             -- find words, including hidden
             { 'n', '<leader>fw',
                 function()
-                    tb.live_grep({ additional_args = function() return { "--hidden" } end })
+                    tb.live_grep({
+                        initial_mode = 'insert',
+                        additional_args = function() return { "--hidden" } end
+                    })
                 end, {}, 'telescope.live_grep()' },
             -- find recent files
             { 'n', '<leader>fr', tb.oldfiles, {}, 'telescope.oldfiles()' },
@@ -49,9 +56,13 @@ use {
             -- find helps
             { 'n', '<leader>fh', tb.help_tags, {}, 'telescope.help_tags()' },
             -- find files, ignore hidden files
-            { 'n', '<leader>fnf', tb.find_files, {}, 'telescope.find_files(--no-hidden)' },
+            { 'n', '<leader>fnf', function()
+                tb.find_files({ initial_mode = 'insert' })
+            end, {}, 'telescope.find_files(--no-hidden)' },
             -- find words, ignore hidden files
-            { 'n', '<leader>fnw', tb.live_grep, {}, 'telescope.live_grep(--no-hidden)' },
+            { 'n', '<leader>fnw', function()
+                tb.live_grep({ initial_mode = 'insert' })
+            end, {}, 'telescope.live_grep(--no-hidden)' },
             -- grep visual selected text directly
             { 'v', '<leader>fs', tb.grep_string, {}, 'telescope.grep_string(--visual-mode)' },
             { 'v', '<leader>*', tb.grep_string, {}, 'telescope.grep_string(--visual-mode)' },
