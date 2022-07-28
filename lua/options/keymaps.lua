@@ -44,7 +44,7 @@ for _, item in pairs({
     { 'i', '<C-o>', '<esc>o' },
     -- utils
     { 'n', '<F7>', require('options.utils').refresh_configs, {}, 'utils.refresh_configs()' },
-    { 'n', '<F8>', require('options.utils').clear_spell_highlights, {}, 'utils.clear_spell_highlights()' },
+    { 'n', '<leader>rl', require('options.utils').refresh_configs, {}, 'utils.refresh_configs()' },
     -- toggle word wrap
     { 'n', 'gw', ':set wrap!<cr>' },
     -- use Tab to toggle matching group
