@@ -56,6 +56,8 @@ M.keymaps = {
     { 'n', '<leader>f"', tb.registers, {}, 'telescope.registers()' },
     -- marks
     { 'n', '<leader>f\'', tb.marks, {}, 'telescope.marks()' },
+    -- list all telescop.builtin functions
+    { 'n', '<leader>fp', tb.builtin, {}, 'telescope.builtin()' },
 }
 
 return M

@@ -52,6 +52,7 @@ use {
                 },
                 current_buffer_fuzzy_find = { initial_mode = 'insert' },
                 registers = { initial_mode = 'insert' },
+                builtin = { layout_config = { preview_height = 0.4 } },
             },
             extensions = {
                 ["ui-select"] = {
