@@ -21,6 +21,8 @@ for _, item in pairs({
     -- <leader>Q records macro, q is free
     { 'n', '<leader>q', 'q' },
     { 'n', 'q', '<Nop>' },
+    -- toggle spell checking
+    { 'n', '<leader>sc', ':set spell!<cr>' },
     -- quick set shiftwidth
     { 'n', '<leader>2', ':set shiftwidth=2<cr>' },
     { 'n', '<leader>4', ':set shiftwidth=4<cr>' },
