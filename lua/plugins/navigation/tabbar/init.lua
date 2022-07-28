@@ -15,6 +15,7 @@ use {
         -- close last buffer doesn't play well with nvimtree, using vim-bbye now
         vim.keymap.set('n', '<M-w>', ':Bdelete<CR>')
         vim.keymap.set('n', '<space>x', ':Bdelete<CR>')
+        vim.keymap.set('n', 'qb', ':Bdelete<CR>')
         -- close all and other buffer by close-buffers.nvim
         local delete = require('close_buffers').delete
         for _, item in pairs({
@@ -36,12 +37,16 @@ use {
 
 -- some common related shortcuts
 -- navigate between buffers
-vim.keymap.set('n', '<space>h', ':bprevious<CR>')
-vim.keymap.set('n', '<space>j', ':bprevious<CR>')
-vim.keymap.set('n', '<space>k', ':bnext<CR>')
-vim.keymap.set('n', '<space>l', ':bnext<CR>')
-vim.keymap.set('n', 'gj', ':bprevious<CR>')
-vim.keymap.set('n', 'gk', ':bnext<CR>')
+vim.keymap.set('n', '<space>j', ':BufferLineCyclePrev<CR>')
+vim.keymap.set('n', '<space>k', ':BufferLineCycleNext<CR>')
+vim.keymap.set('n', '<space>h', ':BufferLineMovePrev<CR>')
+vim.keymap.set('n', '<space>l', ':BufferLineMoveNext<CR>')
+vim.keymap.set('n', 'gj', ':BufferLineCyclePrev<CR>')
+vim.keymap.set('n', 'gk', ':BufferLineCycleNext<CR>')
+vim.keymap.set('n', 'qj', ':BufferLineCyclePrev<CR>')
+vim.keymap.set('n', 'qk', ':BufferLineCycleNext<CR>')
+vim.keymap.set('n', 'qh', ':BufferLineMovePrev<CR>')
+vim.keymap.set('n', 'ql', ':BufferLineMoveNext<CR>')
 vim.keymap.set('n', '<space>b', ':e #<CR>')
 vim.keymap.set('n', ':', ':e #<CR>')
 vim.keymap.set('n', 'g;', ':e #<CR>')
