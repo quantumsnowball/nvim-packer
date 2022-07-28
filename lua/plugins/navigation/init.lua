@@ -9,12 +9,25 @@ require('plugins.navigation.telescope')
 -- hjkl navigator in vim and tmux windows
 use 'christoomey/vim-tmux-navigator'
 -- pop up for keymap hints
+-- https://github.com/folke/which-key.nvim
 use {
     "folke/which-key.nvim",
     config = function()
         require("which-key").setup {
             plugins = {
-                -- registers = false -- this window is too big will disrupt workflow
+                marks = false,
+                registers = false,
+                presets = {
+                    q = true
+                },
+            },
+            window = {
+                border = 'double',
+                winblend = 20,
+            },
+            layout = {
+                height = { min = 4, max = 10 },
+                align = 'center'
             }
         }
     end
