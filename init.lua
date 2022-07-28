@@ -16,6 +16,7 @@ return require('packer').startup(function(use)
     -- cache plugins loading enable
     require('plugins.cache')
     -- packer loading itself at beginning
+    -- https://github.com/wbthomason/packer.nvim
     use { "wbthomason/packer.nvim" }
     -- loading individual plugin modules
     require('plugins.completion')

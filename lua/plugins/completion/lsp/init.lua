@@ -2,6 +2,7 @@ local use = require('packer').use
 
 
 -- LSP support for neovim
+-- https://github.com/neovim/nvim-lspconfig
 use {
     'neovim/nvim-lspconfig',
     config = function()

@@ -1,5 +1,7 @@
 local use = require('packer').use
 
+-- neo-tree
+-- https://github.com/nanozuki/tabby.nvim
 use {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v2.x",

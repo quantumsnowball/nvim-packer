@@ -1,6 +1,7 @@
 local use = require('packer').use
 
---
+-- nvim-tree
+-- https://github.com/kyazdani42/nvim-tree.lua
 use {
     'kyazdani42/nvim-tree.lua', tag = 'nightly',
     requires = { 'kyazdani42/nvim-web-devicons' },

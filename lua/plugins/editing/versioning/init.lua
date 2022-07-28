@@ -46,7 +46,7 @@ use {
     end
 }
 -- lazygit version control
---
+-- https://github.com/kdheepak/lazygit.nvim
 use {
     'kdheepak/lazygit.nvim',
     config = function()
@@ -56,6 +56,7 @@ use {
     end
 }
 -- git fugitive
+-- https://github.com/tpope/vim-fugitive
 use {
     'tpope/vim-fugitive',
     config = function()

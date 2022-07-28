@@ -1,5 +1,6 @@
 local use = require('packer').use
 
+-- Alpha
 -- https://github.com/goolord/alpha-nvim
 use {
     'goolord/alpha-nvim',

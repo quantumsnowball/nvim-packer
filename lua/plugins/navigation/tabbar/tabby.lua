@@ -1,5 +1,7 @@
 local use = require('packer').use
 
+-- tabby
+-- https://github.com/nanozuki/tabby.nvim
 use {
     'nanozuki/tabby.nvim',
     config = function()

@@ -5,8 +5,10 @@ require('plugins.editing.diagnostics')
 -- jumping
 require('plugins.editing.jumping')
 -- easy shortcuts to change surrounds
+-- https://github.com/tpope/vim-surround
 use 'tpope/vim-surround'
 -- expand * select-all function to visual mode selection
+-- https://github.com/thinca/vim-visualstar
 use 'thinca/vim-visualstar'
 -- auto pairing brackets
 -- https://github.com/windwp/nvim-autopairs

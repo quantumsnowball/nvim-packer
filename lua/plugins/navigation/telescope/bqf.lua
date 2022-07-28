@@ -53,6 +53,8 @@ use {
     end
 }
 -- optional, as recommended by nvim-bqf
+-- fzf
+-- https://github.com/junegunn/fzf
 use {
     'junegunn/fzf',
     run = function()

@@ -1,5 +1,7 @@
 local use = require('packer').use
 
+-- sidebar
+-- https://github.com/sidebar-nvim/sidebar.nvim
 use {
     'sidebar-nvim/sidebar.nvim',
     config = function()

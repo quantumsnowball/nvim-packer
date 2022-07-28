@@ -7,6 +7,7 @@ require('plugins.navigation.explorer')
 -- fuzzy search for files
 require('plugins.navigation.telescope')
 -- hjkl navigator in vim and tmux windows
+-- https://github.com/christoomey/vim-tmux-navigator
 use 'christoomey/vim-tmux-navigator'
 -- pop up for keymap hints
 -- https://github.com/folke/which-key.nvim

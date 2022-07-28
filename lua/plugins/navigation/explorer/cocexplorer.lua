@@ -1,14 +1,16 @@
 local use = require('packer').use
 
+-- coc
+-- https://github.com/neoclide/coc.nvim
 use {
-    'neoclide/coc.nvim',
-    branch = 'release',
-    config = function()
-        -- may need to manually run `:CocInstall coc-explorer` to install
-        -- vim.cmd ':CocInstall coc-explorer'
-        -- keymaps
-        vim.keymap.set('n', '<leader>e', ':CocCommand explorer<CR>')
-    end
+  'neoclide/coc.nvim',
+  branch = 'release',
+  config = function()
+    -- may need to manually run `:CocInstall coc-explorer` to install
+    -- vim.cmd ':CocInstall coc-explorer'
+    -- keymaps
+    vim.keymap.set('n', '<leader>e', ':CocCommand explorer<CR>')
+  end
 }
 
 --------------------------------------

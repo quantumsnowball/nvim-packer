@@ -1,5 +1,6 @@
 local use = require('packer').use
 
+-- lualine
 -- https://github.com/nvim-lualine/lualine.nvim
 use {
     'nvim-lualine/lualine.nvim',
