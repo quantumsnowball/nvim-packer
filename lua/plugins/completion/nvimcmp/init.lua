@@ -80,7 +80,7 @@ use {
 use {
     'f3fora/cmp-spell',
     config = function()
-        vim.opt.spell = true
+        -- vim.opt.spell = true
         vim.opt.spelllang = { 'en_us' }
     end
 }
