@@ -36,10 +36,14 @@ M.keymaps = {
     { 'n', '<leader>f;', tb.command_history, {}, 'telescope.command_history()' },
     { 'n', '<leader>fch', tb.command_history, {}, 'telescope.command_history()' },
     { 'n', '<leader>fcc', tb.commands, {}, 'telescope.command_custom()' },
+    -- vim autocmds
+    { 'n', '<leader>fac', tb.autocommands, {}, 'telescope.autocommand()' },
     -- lsp
     { 'n', '<leader>fv', tb.lsp_references, {}, 'telescope.lsp_references()' },
     { 'n', '<leader>fe', tb.diagnostics, {}, 'telescope.diagnostics()' },
     { 'n', '<leader>fca', vim.lsp.buf.code_action, {}, 'telescope.code_action()' },
+    -- highlights
+    { 'n', '<leader>fi', tb.highlights, {}, 'telescope.highlights()' },
     -- spell
     { 'n', '<leader>ft', tb.spell_suggest, {}, 'telescope.spell_suggest()' },
     -- keymaps
