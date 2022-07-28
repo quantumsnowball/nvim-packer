@@ -48,6 +48,10 @@ M.keymaps = {
     { 'n', '<leader>fz', tb.current_buffer_fuzzy_find, {}, 'telescope.current_buffer_fuzzy_find()' },
     -- treesitter objects
     { 'n', '<leader>fm', tb.treesitter, {}, 'telescope.treesitter()' },
+    -- registers
+    { 'n', '<leader>f"', tb.registers, {}, 'telescope.registers()' },
+    -- marks
+    { 'n', '<leader>f\'', tb.marks, {}, 'telescope.marks()' },
 }
 
 return M

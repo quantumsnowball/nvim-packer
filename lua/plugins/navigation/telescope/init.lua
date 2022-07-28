@@ -49,6 +49,7 @@ use {
                     }
                 },
                 current_buffer_fuzzy_find = { initial_mode = 'insert' },
+                registers = { initial_mode = 'insert' },
             },
             extensions = {
                 ["ui-select"] = {
