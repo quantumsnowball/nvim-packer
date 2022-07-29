@@ -35,3 +35,14 @@ require('plugins.editing.versioning')
 -- sudo write files with permission
 -- https://github.com/lambdalisue/suda.vim
 use 'lambdalisue/suda.vim'
+
+-- preview markdown
+-- https://github.com/iamcco/markdown-preview.nvim
+use {
+    "iamcco/markdown-preview.nvim",
+    run = "cd app && yarn install",
+    setup = function()
+        vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
+}
