@@ -45,4 +45,9 @@ use {
         vim.g.mkdp_filetypes = { "markdown" }
     end,
     ft = { "markdown" },
+    config = function()
+        vim.g.mkdp_theme = 'dark'
+        -- keymaps
+        vim.keymap.set('n', '<leader>pm', ':MarkdownPreviewToggle<cr>')
+    end
 }
