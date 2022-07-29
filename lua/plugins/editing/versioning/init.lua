@@ -51,6 +51,7 @@ use {
     'kdheepak/lazygit.nvim',
     config = function()
         -- config
+        vim.g.lazygit_floating_window_winblend = 30
         vim.g.lazygit_floating_window_scaling_factor = 1.0
         -- toggle keymap
         vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>')
