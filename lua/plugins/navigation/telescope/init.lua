@@ -32,28 +32,20 @@ use {
                 dynamic_preview_title = true,
             },
             pickers = {
-                find_files = {
-                    initial_mode = 'insert',
-                    -- find_command = { "fd", "--type", "f", "--strip-cwd-prefix" }
-                },
+                find_files = { initial_mode = 'insert', },
                 live_grep = { initial_mode = 'insert' },
                 help_tags = { initial_mode = 'insert' },
                 buffers = {
-                    layout_config = {
-                        width = 0.6,
-                        height = 0.7,
-                        preview_height = 0.35,
-                        prompt_position = "bottom",
-                    },
-                    mappings = {
-                        n = {
-                            x = "delete_buffer"
-                        }
-                    }
+                    layout_config = { width = 0.6, height = 0.7, preview_height = 0.35, },
+                    mappings = { n = { x = "delete_buffer" } },
                 },
                 current_buffer_fuzzy_find = { initial_mode = 'insert' },
                 registers = { initial_mode = 'insert' },
                 builtin = { layout_config = { preview_height = 0.4 } },
+                colorscheme = { layout_config = { width = 0.2, height = 0.7 } },
+                spell_suggest = { layout_config = { width = 0.2, height = 0.7 } },
+                command_history = { layout_config = { width = 0.6 } },
+                highlights = { layout_config = { width = 0.7 } },
             },
             extensions = {
                 ["ui-select"] = {
