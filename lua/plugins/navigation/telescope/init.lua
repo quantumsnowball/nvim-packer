@@ -24,6 +24,7 @@ use {
                         p = require('telescope.actions.layout').toggle_preview
                     }
                 },
+                sorting_strategy = 'ascending',
                 scroll_strategy = 'limit',
                 winblend = 10,
                 initial_mode = 'normal',
