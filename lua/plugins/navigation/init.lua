@@ -64,4 +64,19 @@ use {
             }
         }
     end
+};
+-- show buffer path at top right corner
+-- https://github.com/b0o/incline.nvim
+use {
+    'b0o/incline.nvim',
+    config = function()
+        require('incline').setup({
+            -- output formatting function
+            render = function()
+                -- reference :help filename-modifiers
+                -- relative path from cwd
+                return vim.fn.expand('%:.')
+            end
+        })
+    end
 }
