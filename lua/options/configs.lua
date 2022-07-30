@@ -23,3 +23,5 @@ vim.cmd [[cnoreabbrev wd w\|bd"]]
 vim.opt.virtualedit = 'all'
 -- split border color
 vim.cmd('autocmd VimEnter,ColorScheme * hi VertSplit guifg=#339933')
+-- default nowrap
+vim.opt.wrap = false
