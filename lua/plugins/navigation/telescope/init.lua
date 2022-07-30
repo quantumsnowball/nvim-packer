@@ -21,8 +21,16 @@ use {
                 mappings = {
                     n = {
                         o = 'toggle_all',
-                        p = require('telescope.actions.layout').toggle_preview
-                    }
+                        p = require('telescope.actions.layout').toggle_preview,
+                        J = require('telescope.actions').cycle_history_next,
+                        K = require('telescope.actions').cycle_history_prev,
+                    },
+                    i = {
+                        ["<C-j>"] = require('telescope.actions').cycle_history_next,
+                        ["<C-k>"] = require('telescope.actions').cycle_history_prev,
+                        ["<Down>"] = require('telescope.actions').cycle_history_next,
+                        ["<Up>"] = require('telescope.actions').cycle_history_prev,
+                    },
                 },
                 sorting_strategy = 'ascending',
                 scroll_strategy = 'limit',
@@ -30,6 +38,7 @@ use {
                 initial_mode = 'normal',
                 border = true,
                 dynamic_preview_title = true,
+                prompt_prefix = '🔍 '
             },
             pickers = {
                 find_files = { initial_mode = 'insert', },
