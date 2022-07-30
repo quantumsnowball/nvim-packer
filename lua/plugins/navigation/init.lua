@@ -71,7 +71,8 @@ use {
     'b0o/incline.nvim',
     config = function()
         -- define its own highligh group
-        vim.cmd [[ autocmd VimEnter,ColorScheme * hi Incline guifg=#deff00 guibg=#555555 gui=bold ]]
+        vim.cmd [[ autocmd VimEnter,ColorScheme * hi InclineActive guifg=#deff00 guibg=#555555 gui=bold ]]
+        vim.cmd [[ autocmd VimEnter,ColorScheme * hi InclineInactive guifg=#deff00 guibg=#444444 ]]
         -- config
         require('incline').setup({
             hide = {
@@ -81,11 +82,11 @@ use {
                 groups = {
                     InclineNormal = {
                         default = true,
-                        group = "Incline"
+                        group = "InclineActive"
                     },
                     InclineNormalNC = {
                         default = true,
-                        group = "Incline"
+                        group = "InclineInactive"
                     }
                 }
             },
