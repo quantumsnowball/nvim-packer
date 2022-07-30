@@ -51,3 +51,12 @@ use {
         vim.keymap.set('n', '<leader>pm', ':MarkdownPreviewToggle<cr>')
     end
 }
+
+-- toggle maximize pane and restore
+-- https://github.com/szw/vim-maximizer
+use {
+    'https://github.com/szw/vim-maximizer',
+    config = function()
+        vim.keymap.set('n', 'gm', ':MaximizerToggle<cr>')
+    end
+}
