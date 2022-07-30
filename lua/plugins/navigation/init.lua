@@ -71,7 +71,6 @@ use {
     'b0o/incline.nvim',
     config = function()
         -- define its own highligh group
-        -- vim.cmd [[ autocmd VimEnter,ColorScheme * hi Incline guifg=#dfff00 guibg=#444444 ]]
         vim.cmd [[ autocmd VimEnter,ColorScheme * hi Incline guifg=#deff00 guibg=#555555 gui=bold ]]
         -- config
         require('incline').setup({
@@ -88,10 +87,12 @@ use {
                 }
             },
             -- output formatting function
-            render = function()
+            render = function(props)
                 -- reference :help filename-modifiers
-                -- relative path from cwd
-                return vim.fn.expand('%:.')
+                local path = vim.api.nvim_buf_get_name(props.buf)
+                local cwd = vim.fn.getcwd()
+                -- full path relative to cwd
+                return string.gsub(path, cwd .. '/', '')
             end
         })
     end
