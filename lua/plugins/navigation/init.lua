@@ -70,7 +70,23 @@ use {
 use {
     'b0o/incline.nvim',
     config = function()
+        -- define its own highligh group
+        -- vim.cmd [[ autocmd VimEnter,ColorScheme * hi Incline guifg=#dfff00 guibg=#444444 ]]
+        vim.cmd [[ autocmd VimEnter,ColorScheme * hi Incline guifg=#deff00 guibg=#555555 gui=bold ]]
+        -- config
         require('incline').setup({
+            highlight = {
+                groups = {
+                    InclineNormal = {
+                        default = true,
+                        group = "Incline"
+                    },
+                    InclineNormalNC = {
+                        default = true,
+                        group = "Incline"
+                    }
+                }
+            },
             -- output formatting function
             render = function()
                 -- reference :help filename-modifiers
