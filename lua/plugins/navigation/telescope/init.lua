@@ -34,7 +34,6 @@ use {
                 },
                 sorting_strategy = 'ascending',
                 scroll_strategy = 'limit',
-                winblend = 10,
                 initial_mode = 'normal',
                 border = true,
                 dynamic_preview_title = true,
