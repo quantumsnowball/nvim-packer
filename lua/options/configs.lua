@@ -21,3 +21,5 @@ vim.cmd('set iskeyword+=-')
 vim.cmd [[cnoreabbrev wd w\|bd"]]
 -- virtualedit in all modes
 vim.opt.virtualedit = 'all'
+-- split border color
+vim.cmd('autocmd VimEnter,ColorScheme * hi VertSplit guifg=#339933')
