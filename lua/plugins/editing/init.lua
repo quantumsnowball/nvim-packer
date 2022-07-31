@@ -52,22 +52,5 @@ use {
     end
 }
 
--- toggle maximize pane and restore
--- https://github.com/szw/vim-maximizer
--- use {
---     'https://github.com/szw/vim-maximizer',
---     config = function()
---         vim.keymap.set('n', 'gm', ':MaximizerToggle<cr>')
---     end
--- }
-local isZoomed = false
-vim.keymap.set('n', '<leader>z', function()
-    if (isZoomed) then
-        vim.cmd 'wincmd ='
-        isZoomed = false
-    else
-        vim.api.nvim_win_set_width(0, 99999)
-        vim.api.nvim_win_set_height(0, 99999)
-        isZoomed = true
-    end
-end)
+-- toggle maximize window
+require('plugins.editing.layout')
