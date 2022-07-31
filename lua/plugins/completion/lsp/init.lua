@@ -26,3 +26,9 @@ use {
 }
 -- LSP enhanced - lspsaga
 require('plugins.completion.lsp.lspsaga')
+
+-----------
+-- Debug --
+-----------
+-- try to force FileType autocmd on these events, avoiding the lsp cmd not found startup bug
+vim.cmd('autocmd VimEnter,BufEnter * doautocmd FileType')

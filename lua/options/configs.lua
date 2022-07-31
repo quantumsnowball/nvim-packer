@@ -25,8 +25,3 @@ vim.opt.virtualedit = 'all'
 vim.cmd('autocmd VimEnter,ColorScheme * hi VertSplit guifg=#339933')
 -- default nowrap
 vim.opt.wrap = false
------------
--- Debug --
------------
--- try to force FileType autocmd on these events, avoiding the lsp cmd not found startup bug
-vim.cmd('autocmd VimEnter,BufEnter * doautocmd FileType')
