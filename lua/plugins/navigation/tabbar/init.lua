@@ -18,16 +18,20 @@ use {
         vim.keymap.set('n', 'qb', ':Bdelete<CR>')
         -- close all and other buffer by close-buffers.nvim
         local delete = require('close_buffers').delete
+        local close_other = function()
+            vim.cmd('NvimTreeClose')
+            delete({ type = 'other' })
+        end
+        local close_all = function()
+            vim.cmd('NvimTreeClose')
+            vim.cmd('Alpha')
+            delete({ type = 'all' })
+        end
         for _, item in pairs({
-            { 'n', '<space>co', function()
-                vim.cmd('NvimTreeClose')
-                delete({ type = 'other' })
-            end, 'close_other_buffers()' },
-            { 'n', '<space>ca', function()
-                vim.cmd('NvimTreeClose')
-                vim.cmd('Alpha')
-                delete({ type = 'all' })
-            end, 'close_all_buffers()' }
+            { 'n', '<space>co', close_other, 'close_other_buffers()' },
+            { 'n', '<space>ca', close_all, 'close_all_buffers()' },
+            { 'n', 'qo', close_other, 'close_other_buffers()' },
+            { 'n', 'qa', close_all, 'close_all_buffers()' },
         }) do
             local mode, keys, command, hint = unpack(item)
             require('utils').map(mode, keys, command, nil, hint)
