@@ -7,6 +7,9 @@ for _, item in pairs({
     -------------
     -- general --
     -------------
+    -- quit windo shortcut
+    { 'n', 'qw', ':q<cr>' },
+    { 'n', 'qW', ':qa<cr>' },
     -- show which-key root
     { 'n', '<F1>', ':WhichKey<cr>', { silent = true } },
     -- toggle split windows
