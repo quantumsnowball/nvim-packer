@@ -89,6 +89,10 @@ for _, item in pairs({
     -- visual mode replace without copying the deleted text
     { 'v', 'p', '"_dP' },
     { 'v', 'P', '"_dP' },
+    -- cursor position after paste
+    { 'n', 'P', 'gP' },
+    { 'n', 'gP', 'P' },
+    { 'n', 'p', 'p`]' },
     -- *aa as change all text operation
     { 'n', 'vaa', 'ggVG', {}, 'select all text' },
     { 'n', 'yaa', 'ggVGy', {}, 'copy all text' },
