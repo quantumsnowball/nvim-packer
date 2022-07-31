@@ -61,7 +61,6 @@ M.keymaps = {
     --------------------
     -- other keymspas --
     --------------------
-    -- quickfix list
     { 'n', 'qfo', ':copen<cr>' },
     { 'n', 'qfc', ':cclose<cr>' },
     { 'n', 'qfj', ':cnext<cr>' },

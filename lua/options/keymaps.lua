@@ -7,11 +7,6 @@ for _, item in pairs({
     -------------
     -- general --
     -------------
-    -- word navigation
-    { 'n', 'W', 'b' }, -- w, W search through [w]ords forward and backward
-    { 'n', 'b', 'W' }, -- b, B search through [b]locks of text forward and backward
-    { 'n', 'E', 'ge' }, -- e, E search through [e]end of words forward and backward
-    { 'n', 'ge', 'E' }, -- e, E search through [e]end of words forward and backward
     -- show which-key root
     { 'n', '<F1>', ':WhichKey<cr>', { silent = true } },
     -- toggle split windows
