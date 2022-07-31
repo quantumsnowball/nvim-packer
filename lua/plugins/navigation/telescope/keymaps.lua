@@ -58,6 +58,13 @@ M.keymaps = {
     { 'n', '<leader>f\'', tb.marks, {}, 'telescope.marks()' },
     -- list all telescop.builtin functions
     { 'n', '<leader>fp', tb.builtin, {}, 'telescope.builtin()' },
+    --------------------
+    -- other keymspas --
+    --------------------
+    { 'n', 'qfo', ':copen<cr>' },
+    { 'n', 'qfc', ':cclose<cr>' },
+    { 'n', 'qfj', ':cnext<cr>' },
+    { 'n', 'qfk', ':cprev<cr>' },
 }
 
 return M
