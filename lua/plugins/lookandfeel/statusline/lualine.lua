@@ -23,12 +23,13 @@ use {
                 lualine_c = { { 'filename', path = 1 } },
                 lualine_x = {
                     function() return require('lsp-status').status() end,
+                },
+                lualine_y = {
                     'filetype',
                     'encoding',
                     'fileformat',
                 },
-                -- lualine_y = {},
-                -- lualine_z = {},
+                lualine_z = {},
             },
             inactive_sections = {
                 lualine_c = { { 'filename', path = 1 } }
