@@ -75,6 +75,9 @@ use {
         vim.cmd [[ autocmd VimEnter,ColorScheme * hi InclineInactive guifg=#deff00 guibg=#444444 ]]
         -- config
         require('incline').setup({
+            hide = {
+                cursorline = 'focused_win'
+            },
             highlight = {
                 groups = {
                     InclineNormal = {
