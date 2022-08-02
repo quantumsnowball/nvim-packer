@@ -24,6 +24,7 @@ return require('packer').startup(function(use)
     require('plugins.navigation')
     require('plugins.editing')
     require('plugins.highlight')
+    require('plugins.tools')
     -- Automatically set up your configuration after cloning packer.nvim
     if PACKER_BOOTSTRAP then require('packer').sync() end -- Put this after all plugins
 end)
