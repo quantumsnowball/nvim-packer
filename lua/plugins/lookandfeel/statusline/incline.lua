@@ -32,7 +32,7 @@ use {
                 local path = vim.api.nvim_buf_get_name(props.buf)
                 local cwd = vim.fn.getcwd()
                 -- full path relative to cwd
-                return string.gsub(path, cwd .. '/', '')
+                return string.sub(path, #cwd + 2)
             end
         })
     end
