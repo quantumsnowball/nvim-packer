@@ -2,9 +2,13 @@ local use = require('packer').use
 
 
 -- rest client
+-- original
 -- https://github.com/NTBBloodbath/rest.nvim
+-- my bug fixed fork
+-- https://github.com/quantumsnowball/rest.nvim
 use {
-    "NTBBloodbath/rest.nvim",
+    "quantumsnowball/rest.nvim",
+    branch = 'fix',
     requires = { "nvim-lua/plenary.nvim" },
     config = function()
         require("rest-nvim").setup({
