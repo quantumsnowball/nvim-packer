@@ -7,8 +7,6 @@ use {
     config = function()
         -- enable
         vim.cmd 'colorscheme monokai_ristretto'
-        -- post theme
-        require('plugins.lookandfeel.theme.after')
         -- toggle theme variants
         local current = 0
         local variants = {

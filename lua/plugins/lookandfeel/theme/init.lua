@@ -38,10 +38,3 @@ use {
     end
 
 }
--- autocmd clear after colorscheme change event
--- vim.cmd [[
---     augroup ClearSpell
---         autocmd!
---         autocmd ColorScheme * lua require('options.utils').clear_spell_highlights()
---     augroup END
--- ]]
