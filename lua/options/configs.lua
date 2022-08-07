@@ -25,3 +25,8 @@ vim.opt.virtualedit = 'all'
 vim.cmd('autocmd VimEnter,ColorScheme * hi VertSplit guifg=#339933')
 -- default nowrap
 vim.opt.wrap = false
+-- spell highlight background color
+vim.cmd('autocmd VimEnter,BufEnter,ColorScheme * hi SpellBad guibg=#770000')
+vim.cmd('autocmd VimEnter,BufEnter,ColorScheme * hi SpellCap guibg=#770000')
+vim.cmd('autocmd VimEnter,BufEnter,ColorScheme * hi SpellRare guibg=#770000')
+vim.cmd('autocmd VimEnter,BufEnter,ColorScheme * hi SpellLocal guibg=#770000')
