@@ -51,7 +51,6 @@ vim.keymap.set('n', 'qh', ':BufferLineMovePrev<CR>')
 vim.keymap.set('n', 'ql', ':BufferLineMoveNext<CR>')
 vim.keymap.set('n', '<space>b', ':e #<CR>')
 vim.keymap.set('n', ':', ':e #<CR>')
-vim.keymap.set('n', 'g;', ':e #<CR>')
 vim.keymap.set('n', 'q;', ':e #<CR>')
 -- default split to right and below
 vim.opt.splitbelow = true

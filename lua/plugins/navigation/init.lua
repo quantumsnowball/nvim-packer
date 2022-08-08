@@ -6,6 +6,8 @@ require('plugins.navigation.session')
 require('plugins.navigation.explorer')
 -- fuzzy search for files
 require('plugins.navigation.telescope')
+-- jumplist navigation
+require('plugins.navigation.jumplist')
 -- hjkl navigator in vim and tmux windows
 -- https://github.com/christoomey/vim-tmux-navigator
 use 'christoomey/vim-tmux-navigator'
