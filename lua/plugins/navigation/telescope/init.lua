@@ -6,7 +6,8 @@ use {
     'nvim-telescope/telescope.nvim',
     requires = {
         'nvim-lua/plenary.nvim',
-        'nvim-telescope/telescope-ui-select.nvim'
+        'nvim-telescope/telescope-ui-select.nvim',
+        'nvim-telescope/telescope-media-files.nvim'
     },
     config = function()
         require('telescope').setup {
@@ -61,10 +62,17 @@ use {
                     require("telescope.themes").get_dropdown({
                         border = true
                     }),
+                },
+                media_files = {
+                    -- filetypes whitelist
+                    -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
+                    filetypes = { "png", "webp", "jpg", "jpeg" },
+                    find_cmd = "rg" -- find command (defaults to `fd`)
                 }
             },
         }
         require("telescope").load_extension("ui-select")
+        require("telescope").load_extension("media_files")
         -- telescope keymaps
         local keymaps = require('plugins.navigation.telescope.keymaps').keymaps
         for _, item in pairs(keymaps) do
