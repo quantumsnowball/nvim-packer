@@ -20,3 +20,6 @@ for _, item in pairs({
     local mode, keys, command, options, hint = unpack(item)
     require('utils').map(mode, keys, command, options, hint)
 end
+
+-- autocmd
+vim.cmd('autocmd VimEnter * clearjumps')
