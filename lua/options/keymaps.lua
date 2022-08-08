@@ -57,6 +57,9 @@ for _, item in pairs({
     { { 'n', 'v', 'o' }, '<Tab>', '%', { remap = true } },
     { { 'n', 'v', 'o' }, '[<Tab>', '[m', { remap = true } },
     { { 'n', 'v', 'o' }, ']<Tab>', ']m', { remap = true } },
+    -- back and forward on jumplist
+    { 'n', 'gj', '<C-o>' },
+    { 'n', 'gk', '<C-i>' },
     ---------------
     -- clipboard --
     ---------------

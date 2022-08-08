@@ -19,6 +19,8 @@ M.keymaps = {
     end, {}, 'telescope.buffers()' },
     -- find helps
     { 'n', '<leader>fh', tb.help_tags, {}, 'telescope.help_tags()' },
+    -- find jumplist
+    { 'n', '<leader>fj', tb.jumplist, {}, 'telescope.jumplist()' },
     -- find files, ignore hidden files
     { 'n', '<leader>fnf', tb.find_files, {}, 'telescope.find_files(--no-hidden)' },
     -- find words, ignore hidden files
