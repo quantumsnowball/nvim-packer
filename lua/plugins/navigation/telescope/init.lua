@@ -42,6 +42,7 @@ use {
             pickers = {
                 find_files = { initial_mode = 'insert', },
                 live_grep = { initial_mode = 'insert' },
+                jumplist = { show_line = false },
                 help_tags = { initial_mode = 'insert' },
                 buffers = {
                     layout_config = { width = 0.6, height = 0.7, preview_height = 0.35, },
