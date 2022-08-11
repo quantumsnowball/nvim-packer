@@ -12,7 +12,7 @@ use({
         -- configs
         saga.init_lsp_saga({
             border_style = "single", -- "single" | "double" | "rounded" | "bold" | "plus"
-            saga_winblend = 30,
+            saga_winblend = 10,
             finder_action_keys = {
                 vsplit = "v",
                 split = "x"
@@ -24,8 +24,6 @@ use({
         -- keymaps
         local opts = { silent = true }
         for _, item in pairs({
-            -- lsp finder to find the cursor word definition and reference
-            { "n", "<leader>lv", require("lspsaga.finder").lsp_finder, opts, 'lspsaga.lsp_finder()' },
             -- show hover doc, and scroll the doc
             { "n", "K", require("lspsaga.hover").render_hover_doc, opts, 'lspsaga.render_hover_doc()' },
             { "n", "<C-n>", function() require("lspsaga.action").smart_scroll_with_saga(1) end, opts, },
