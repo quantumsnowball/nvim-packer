@@ -3,6 +3,8 @@ local tb = require('telescope.builtin')
 local M = {}
 
 M.keymaps = {
+    { 'n', '<leader>f.', tb.resume, {}, 'telescope.resume()' },
+    { 'n', '<leader>f/', tb.pickers, {}, 'telescope.pickers()' },
     { 'n', '<leader>ff', function()
         tb.find_files({ hidden = true })
     end, {}, 'telescope.find_files()' },
