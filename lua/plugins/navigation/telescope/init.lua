@@ -16,7 +16,8 @@ use {
                 layout_config = {
                     vertical = {
                         width = 0.85,
-                        preview_height = 0.65
+                        preview_height = 0.65,
+                        preview_cutoff = 20
                     }
                 },
                 mappings = {
