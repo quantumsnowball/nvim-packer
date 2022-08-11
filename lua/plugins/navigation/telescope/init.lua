@@ -38,7 +38,8 @@ use {
                 initial_mode = 'normal',
                 border = true,
                 dynamic_preview_title = true,
-                prompt_prefix = '🔍 '
+                prompt_prefix = '🔍 ',
+                cache_picker = { num_pickers = 50 }
             },
             pickers = {
                 find_files = { initial_mode = 'insert', },
