@@ -22,7 +22,7 @@ return function(client, bufnr)
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
     for _, item in pairs({
         { 'lsp.buf.declaration()', 'n', 'gD', vim.lsp.buf.declaration, bufopts },
-        { 'lsp.buf.definition()', 'n', 'gd', vim.lsp.buf.definition, bufopts },
+        -- { 'lsp.buf.definition()', 'n', 'gd', vim.lsp.buf.definition, bufopts },
         -- { 'lsp.buf.hover()', 'n', 'K', vim.lsp.buf.hover, bufopts },
         { 'lsp.buf.implementation()', 'n', 'gi', vim.lsp.buf.implementation, bufopts },
         -- { 'lsp.buf.signature_help()', 'n', 'zk', vim.lsp.buf.signature_help, bufopts },

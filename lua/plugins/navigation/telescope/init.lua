@@ -58,6 +58,12 @@ use {
                 spell_suggest = { layout_config = { width = 0.2, height = 0.7 } },
                 command_history = { layout_config = { width = 0.6 } },
                 highlights = { layout_config = { width = 0.7 } },
+                lsp_definitions = {
+                    jump_type = 'never',
+                    fname_width = 60,
+                    trim_text = true,
+                    layout_config = { preview_height = 0.73 }
+                }
             },
             extensions = {
                 fzf = {

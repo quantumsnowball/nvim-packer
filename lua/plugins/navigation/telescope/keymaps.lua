@@ -46,6 +46,7 @@ M.keymaps = {
     { 'n', '<leader>fv', tb.lsp_references, {}, 'telescope.lsp_references()' },
     { 'n', '<leader>fe', tb.diagnostics, {}, 'telescope.diagnostics()' },
     { 'n', '<leader>fca', vim.lsp.buf.code_action, {}, 'telescope.code_action()' },
+    { 'n', 'gd', tb.lsp_definitions, {}, 'telescope.lsp_definitions()' },
     -- highlights
     { 'n', '<leader>fi', tb.highlights, {}, 'telescope.highlights()' },
     -- spell
