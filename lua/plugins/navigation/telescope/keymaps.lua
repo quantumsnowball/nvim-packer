@@ -19,7 +19,9 @@ M.keymaps = {
         function() tb.live_grep({ additional_args = function() return { "--hidden", "--no-ignore" } end }) end, {},
         'telescope.live_grep(--everything)' },
     -- find recent files
-    { 'n', '<leader>fr', tb.oldfiles, {}, 'telescope.oldfiles()' },
+    { 'n', '<leader>fr', function()
+        tb.oldfiles({ only_cwd = true })
+    end, {}, 'telescope.oldfiles()' },
     -- find buffers
     { 'n', '<leader>b', tb.buffers, {}, 'telescope.buffers()' },
     { 'n', '<leader>fb', function()
@@ -29,10 +31,6 @@ M.keymaps = {
     { 'n', '<leader>fh', tb.help_tags, {}, 'telescope.help_tags()' },
     -- find jumplist
     { 'n', '<leader>fj', tb.jumplist, {}, 'telescope.jumplist()' },
-    -- find files, ignore hidden files
-    { 'n', '<leader>fnf', tb.find_files, {}, 'telescope.find_files(--no-hidden)' },
-    -- find words, ignore hidden files
-    { 'n', '<leader>fnw', tb.live_grep, {}, 'telescope.live_grep(--no-hidden)' },
     -- grep visual selected text directly
     { 'v', '<leader>fs', tb.grep_string, {}, 'telescope.grep_string(--visual-mode)' },
     { 'v', '<leader>*', tb.grep_string, {}, 'telescope.grep_string(--visual-mode)' },
