@@ -12,14 +12,9 @@ local function toggleMaximize()
     isZoomed = not isZoomed
 end
 
-for _, item in pairs({
-    { 'n', 'gm', toggleMaximize },
-    { 'n', '<leader>z', toggleMaximize },
-
-}) do
-    local mode, keys, command = unpack(item)
-    require('utils').map(mode, keys, command, nil, 'toggleMaximize()')
-end
+local map = require('utils').map
+map('n', 'gm', toggleMaximize)
+map('n', '<leader>z', toggleMaximize)
 
 -- toggle maximize pane and restore
 -- https://github.com/szw/vim-maximizer
