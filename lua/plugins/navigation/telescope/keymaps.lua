@@ -3,15 +3,21 @@ local tb = require('telescope.builtin')
 local M = {}
 
 M.keymaps = {
+    -- general operation
     { 'n', '<leader>f.', tb.resume, {}, 'telescope.resume()' },
     { 'n', '<leader>f/', tb.pickers, {}, 'telescope.pickers()' },
-    { 'n', '<leader>ff', function()
-        tb.find_files({ hidden = true })
-    end, {}, 'telescope.find_files()' },
-    -- find words, including hidden
-    { 'n', '<leader>fw', function()
-        tb.live_grep({ additional_args = function() return { "--hidden" } end })
-    end, {}, 'telescope.live_grep()' },
+    -- find files
+    { 'n', '<leader>ff', function() tb.find_files({ hidden = true }) end, {}, 'telescope.find_files()' },
+    { 'n', '<leader>fnf', tb.find_files, {}, 'telescope.find_files(--no-hidden)' },
+    { 'n', '<leader>faf', function() tb.find_files({ hidden = true, no_ignore = true }) end, {},
+        'telescope.find_files(--everything)' },
+    -- find words
+    { 'n', '<leader>fw', function() tb.live_grep({ additional_args = function() return { "--hidden" } end }) end, {},
+        'telescope.live_grep()' },
+    { 'n', '<leader>fnw', tb.live_grep, {}, 'telescope.live_grep(--no-hidden)' },
+    { 'n', '<leader>faw',
+        function() tb.live_grep({ additional_args = function() return { "--hidden", "--no-ignore" } end }) end, {},
+        'telescope.live_grep(--everything)' },
     -- find recent files
     { 'n', '<leader>fr', tb.oldfiles, {}, 'telescope.oldfiles()' },
     -- find buffers
