@@ -27,15 +27,12 @@ use {
             vim.cmd('Alpha')
             delete({ type = 'all' })
         end
-        for _, item in pairs({
-            { 'n', '<space>co', close_other, 'close_other_buffers()' },
-            { 'n', '<space>ca', close_all, 'close_all_buffers()' },
-            { 'n', 'qo', close_other, 'close_other_buffers()' },
-            { 'n', 'qa', close_all, 'close_all_buffers()' },
-        }) do
-            local mode, keys, command, hint = unpack(item)
-            require('utils').map(mode, keys, command, nil, hint)
-        end
+        -- keymaps
+        local map = require('utils').map
+        map('n', '<space>co', close_other, nil, 'close_other_buffers()')
+        map('n', '<space>ca', close_all, nil, 'close_all_buffers()')
+        map('n', 'qo', close_other, nil, 'close_other_buffers()')
+        map('n', 'qa', close_all, nil, 'close_all_buffers()')
     end
 }
 
