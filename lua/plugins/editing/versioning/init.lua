@@ -63,11 +63,7 @@ use {
 use {
     'tpope/vim-fugitive',
     config = function()
-        for _, item in pairs({
-            { 'n', '<leader>Gd', ':Gvdiff<cr>', {}, 'telescope.diagnostics()' },
-        }) do
-            local mode, keys, command, options, hint = unpack(item)
-            require('utils').map(mode, keys, command, options, hint)
-        end
+        local map = require('utils').map
+        map('n', '<leader>Gd', ':Gvdiff<cr>', {}, 'telescope.diagnostics()')
     end
 }
