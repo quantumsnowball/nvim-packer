@@ -11,15 +11,11 @@ local function toggleJumps()
 end
 
 -- keymaps
-for _, item in pairs({
-    -- back and forward on jumplist
-    { 'n', 'gj', '<C-o>', {}, 'jumpBackward' },
-    { 'n', 'gk', '<C-i>', {}, 'jumpForward' },
-    { 'n', 'g;', toggleJumps, {}, 'toggleJumps()' }
-}) do
-    local mode, keys, command, options, hint = unpack(item)
-    require('utils').map(mode, keys, command, options, hint)
-end
+local map = require('utils').map
+-- back and forward on jumplist
+map('n', 'gj', '<C-o>', {}, 'jumpBackward()')
+map('n', 'gk', '<C-i>', {}, 'jumpForward()')
+map('n', 'g;', toggleJumps, {}, 'toggleJumps()')
 
 -- autocmd
 vim.cmd('autocmd VimEnter * clearjumps')
