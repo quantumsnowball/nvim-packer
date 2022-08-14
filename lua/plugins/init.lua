@@ -1,0 +1,6 @@
+require('plugins.completion')
+require('plugins.lookandfeel')
+require('plugins.navigation')
+require('plugins.editing')
+require('plugins.highlight')
+require('plugins.tools')

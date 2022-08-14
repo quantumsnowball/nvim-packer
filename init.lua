@@ -1,7 +1,5 @@
 -- before loading any lua scripts
-require('options.configs')
-require('options.keymaps')
-require('options.utils')
+require('options')
 
 -- packer bootstrapping setup
 local fn = vim.fn
@@ -19,12 +17,7 @@ return require('packer').startup(function(use)
     -- https://github.com/wbthomason/packer.nvim
     use { "wbthomason/packer.nvim" }
     -- loading individual plugin modules
-    require('plugins.completion')
-    require('plugins.lookandfeel')
-    require('plugins.navigation')
-    require('plugins.editing')
-    require('plugins.highlight')
-    require('plugins.tools')
+    require('plugins')
     -- Automatically set up your configuration after cloning packer.nvim
     if PACKER_BOOTSTRAP then require('packer').sync() end -- Put this after all plugins
 end)
