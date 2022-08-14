@@ -8,4 +8,4 @@ use {
     cmd = 'CodeActionMenu'
 }
 -- this plugin is lazy loading so preconfig the keymap before it is first loaded
-vim.keymap.set('n', '<leader>qf', ':CodeActionMenu<cr>')
+require('utils').map('n', '<leader>qf', ':CodeActionMenu<cr>')

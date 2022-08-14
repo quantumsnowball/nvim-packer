@@ -9,7 +9,7 @@ use {
     -- may need to manually run `:CocInstall coc-explorer` to install
     -- vim.cmd ':CocInstall coc-explorer'
     -- keymaps
-    vim.keymap.set('n', '<leader>e', ':CocCommand explorer<CR>')
+    require('utils').map('n', '<leader>e', ':CocCommand explorer<CR>')
   end
 }
 

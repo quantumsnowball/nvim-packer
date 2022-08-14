@@ -21,7 +21,7 @@ map('n', '<leader>z', toggleMaximize)
 -- use {
 --     'https://github.com/szw/vim-maximizer',
 --     config = function()
---         vim.keymap.set('n', 'gm', ':MaximizerToggle<cr>')
+--         map('n', 'gm', ':MaximizerToggle<cr>')
 --     end
 -- }
 -- P.S. disabled because conflict with winbar/incline

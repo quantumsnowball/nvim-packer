@@ -36,9 +36,10 @@ use {
             yank_dry_run = true,
         })
         -- keymaps
-        vim.keymap.set('n', '<leader>rr', '<Plug>RestNvim')
-        vim.keymap.set('n', '<leader>rp', '<Plug>RestNvimPreview')
-        vim.keymap.set('n', '<leader>ra', '<Plug>RestNvimLast')
+        local map = require('utils').map
+        map('n', '<leader>rr', '<Plug>RestNvim')
+        map('n', '<leader>rp', '<Plug>RestNvimPreview')
+        map('n', '<leader>ra', '<Plug>RestNvimLast')
         -- usage
         -- e.g.
         -- GET https://reqres.in/api/users?page=5

@@ -29,12 +29,13 @@ use {
             }, -- table: groups you don't want to clear
         })
         -- custom key bindings
+        local map = require('utils').map
         -- avaiable commands:
         --   :TransparentEnable
         --   :TransparentDisable
         --   :TransparentToggle
-        vim.keymap.set('n', '<M-u>', ':TransparentToggle<cr>')
-        vim.keymap.set('n', '<F4>', ':TransparentToggle<cr>')
+        map('n', '<M-u>', ':TransparentToggle<cr>')
+        map('n', '<F4>', ':TransparentToggle<cr>')
     end
 
 }

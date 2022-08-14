@@ -20,6 +20,6 @@ use {
             }
         }
         -- toggle keymap
-        vim.keymap.set('n', '<leader>e', ':SidebarNvimFocus<CR>')
+        require('utils').map('n', '<leader>e', ':SidebarNvimFocus<CR>')
     end
 }

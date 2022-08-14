@@ -12,7 +12,7 @@ use {
     },
     config = function()
         -- toggle shortcut
-        vim.keymap.set('n', '<leader>e', ':NeoTreeShowToggle<CR>')
+        require('utils').map('n', '<leader>e', ':NeoTreeShowToggle<CR>')
         require('neo-tree').setup({
             window = {
                 width = 30,

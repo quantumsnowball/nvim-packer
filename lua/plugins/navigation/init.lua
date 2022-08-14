@@ -52,8 +52,9 @@ use {
 use {
     'simrat39/symbols-outline.nvim',
     config = function()
-        vim.keymap.set('n', '<leader>o', ':SymbolsOutline<cr>')
-        vim.keymap.set('n', '<leader>m', ':SymbolsOutline<cr>')
+        local map = require('utils').map
+        map('n', '<leader>o', ':SymbolsOutline<cr>')
+        map('n', '<leader>m', ':SymbolsOutline<cr>')
         -- override defaults
         vim.g.symbols_outline = {
             preview_bg_highlight = 'Pmenu',

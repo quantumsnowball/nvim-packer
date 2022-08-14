@@ -54,8 +54,9 @@ use {
         -- vim.g.lazygit_floating_window_winblend = 30
         vim.g.lazygit_floating_window_scaling_factor = 1.0
         -- toggle keymap
-        vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>')
-        vim.keymap.set('n', '<leader>gl', ':LazyGit<CR>')
+        local map = require('utils').map
+        map('n', '<leader>gg', ':LazyGit<CR>')
+        map('n', '<leader>gl', ':LazyGit<CR>')
     end
 }
 -- git fugitive
@@ -63,7 +64,6 @@ use {
 use {
     'tpope/vim-fugitive',
     config = function()
-        local map = require('utils').map
-        map('n', '<leader>Gd', ':Gvdiff<cr>', {}, 'telescope.diagnostics()')
+        require('utils').map('n', '<leader>Gd', ':Gvdiff<cr>', {}, 'telescope.diagnostics()')
     end
 }

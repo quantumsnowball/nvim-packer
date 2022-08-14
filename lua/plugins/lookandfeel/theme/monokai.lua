@@ -15,7 +15,8 @@ use {
             'monokai_ristretto',
             'monokai_soda',
         }
-        vim.keymap.set('n', '<F3>', function()
+        local map = require('utils').map
+        map('n', '<F3>', function()
             local target = variants[math.fmod(current, 4) + 1]
             vim.cmd('colorscheme ' .. target)
             print(vim.inspect(target))

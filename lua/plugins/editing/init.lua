@@ -48,7 +48,8 @@ use {
     config = function()
         vim.g.mkdp_theme = 'dark'
         -- keymaps
-        vim.keymap.set('n', '<leader>pm', ':MarkdownPreviewToggle<cr>')
+        local map = require('utils').map
+        map('n', '<leader>pm', ':MarkdownPreviewToggle<cr>')
     end
 }
 
