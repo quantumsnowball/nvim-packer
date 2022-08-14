@@ -17,11 +17,7 @@ use {
         require('telescope').load_extension('fzf')
         require("telescope").load_extension("ui-select")
         -- telescope keymaps
-        local keymaps = require('plugins.navigation.telescope.keymaps').keymaps
-        for _, item in pairs(keymaps) do
-            local mode, keys, command, options, hint = unpack(item)
-            require('utils').map(mode, keys, command, options, hint)
-        end
+        require('plugins.navigation.telescope.keymaps')
     end
 }
 
