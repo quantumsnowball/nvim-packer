@@ -25,6 +25,7 @@ map('n', '<leader>q', 'q')
 map('n', 'q', '<Nop>')
 -- t is free
 map('n', 't', '<Nop>')
+map('n', 'T', '<Nop>')
 -- toggle spell checking
 map('n', '<leader>sc', ':set spell!<cr>')
 -- quick set shiftwidth

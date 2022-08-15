@@ -65,11 +65,11 @@ map('n', 'tq', ':tabclose<cr>')
 map('n', 'qt', ':tabclose<cr>')
 map('n', 'tc', ':tabclose<cr>')
 map('n', 'tc', ':tabclose<cr>')
+map('n', 'T', ':tabs<cr>')
 -- default split to right and below
 vim.opt.splitbelow = true
 vim.opt.splitright = true
--- quickly go to a tabpage with number
-map('n', '<M-1>', '1gt')
-map('n', '<M-2>', '2gt')
-map('n', '<M-3>', '3gt')
-map('n', '<M-4>', '4gt')
+-- quickly go to a tabpage with number 1 to 9
+for i = 1, 9, 1 do
+    map('n', 't' .. i, i .. 'gt')
+end
