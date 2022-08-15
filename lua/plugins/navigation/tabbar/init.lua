@@ -66,6 +66,7 @@ map('n', 'qt', ':tabclose<cr>')
 map('n', 'tc', ':tabclose<cr>')
 map('n', 'tc', ':tabclose<cr>')
 map('n', 'T', ':tabs<cr>')
+map('n', 't;', 'g<Tab>')
 -- default split to right and below
 vim.opt.splitbelow = true
 vim.opt.splitright = true
