@@ -30,3 +30,5 @@ vim.cmd('autocmd VimEnter,BufEnter,ColorScheme * hi SpellBad guibg=#770000')
 vim.cmd('autocmd VimEnter,BufEnter,ColorScheme * hi SpellCap guibg=#770000')
 vim.cmd('autocmd VimEnter,BufEnter,ColorScheme * hi SpellRare guibg=#770000')
 vim.cmd('autocmd VimEnter,BufEnter,ColorScheme * hi SpellLocal guibg=#770000')
+-- tabline highlight
+vim.cmd('autocmd VimEnter,ColorScheme * hi BufferLineTabSelected guifg=White guibg=#22aa44')
