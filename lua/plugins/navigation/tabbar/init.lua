@@ -29,7 +29,6 @@ use {
             delete({ type = 'all' })
         end
         -- keymaps
-        local map = require('utils').map
         map('n', '<space>co', close_other, nil, 'close_other_buffers()')
         map('n', '<space>ca', close_all, nil, 'close_all_buffers()')
         map('n', 'qo', close_other, nil, 'close_other_buffers()')
