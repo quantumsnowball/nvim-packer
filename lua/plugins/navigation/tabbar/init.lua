@@ -51,6 +51,16 @@ map('n', 'ql', ':BufferLineMoveNext<CR>')
 map('n', '<space>b', ':e #<CR>')
 map('n', ':', ':e #<CR>')
 map('n', 'q;', ':e #<CR>')
+-- navigate between tabpages
+map('n', 'tj', ':tabprevious<cr>')
+map('n', 'tk', ':tabnext<cr>')
+map('n', 'th', ':tabfirst<cr>')
+map('n', 'tl', ':tablast<cr>')
+map('n', 'tn', ':tabnew<cr>')
+map('n', 'to', ':tabnew<cr>')
+map('n', 'tq', ':tabclose<cr>')
+map('n', 'qt', ':tabclose<cr>')
+map('n', 'tc', ':tabclose<cr>')
 -- default split to right and below
 vim.opt.splitbelow = true
 vim.opt.splitright = true

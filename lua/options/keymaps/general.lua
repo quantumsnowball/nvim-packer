@@ -19,6 +19,8 @@ map('n', 'G', 'Gzz')
 -- <leader>Q records macro, q is free
 map('n', '<leader>q', 'q')
 map('n', 'q', '<Nop>')
+-- t is free
+map('n', 't', '<Nop>')
 -- toggle spell checking
 map('n', '<leader>sc', ':set spell!<cr>')
 -- quick set shiftwidth
