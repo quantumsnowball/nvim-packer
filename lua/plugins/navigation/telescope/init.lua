@@ -29,9 +29,12 @@ use {
     run = 'make'
 }
 
+-- tele-tabby telescope extension
+-- source
 -- https://github.com/TC72/telescope-tele-tabby.nvim.git
 use {
-    'TC72/telescope-tele-tabby.nvim',
+    'quantumsnowball/telescope-tele-tabby.nvim',
+    branch = 'extra',
     config = function()
         local find_tabs = function()
             require('telescope').extensions.tele_tabby.list({
