@@ -30,8 +30,8 @@ map('n', 'T', '<Nop>')
 -- toggle spell checking
 map('n', '<leader>sc', ':set spell!<cr>')
 -- quick set shiftwidth
-map('n', '<leader>2', ':set shiftwidth=2<cr>')
-map('n', '<leader>4', ':set shiftwidth=4<cr>')
+map('n', '<space>2', ':set shiftwidth=2<cr>')
+map('n', '<space>4', ':set shiftwidth=4<cr>')
 -- home and end in normal mode
 map({ 'n', 'v', 'o' }, 'gh', '^', {}, 'Home')
 map({ 'n', 'v', 'o' }, 'gl', '$', {}, 'End')

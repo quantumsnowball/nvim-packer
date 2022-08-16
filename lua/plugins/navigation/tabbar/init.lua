@@ -73,4 +73,5 @@ vim.opt.splitright = true
 -- quickly go to a tabpage with number 1 to 9
 for i = 1, 9, 1 do
     map('n', 't' .. i, i .. 'gt')
+    map('n', '<leader>' .. i, i .. 'gt')
 end
