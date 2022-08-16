@@ -9,6 +9,7 @@ map('v', '<c-s>', '<esc>:w<cr>')
 -- quit windo shortcut
 map('n', 'qw', ':q<cr>')
 map('n', 'qW', ':qa<cr>')
+map('n', 'qv', ':qa<cr>')
 -- show which-key root
 map('n', '<F1>', ':WhichKey<cr>', { silent = true })
 -- toggle split windows
