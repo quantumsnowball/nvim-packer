@@ -42,6 +42,7 @@ use {
             })
         end
         -- keymaps
+        require('utils').map('n', '<leader>t', find_tabs, {}, 'telescope.tabpages()')
         require('utils').map('n', 'T', find_tabs, {}, 'telescope.tabpages()')
     end
 }

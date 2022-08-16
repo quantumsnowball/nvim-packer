@@ -46,6 +46,6 @@ use({
                 require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
             end, opts, 'lspsaga.diagnostic.goto_next(ERROR)')
         -- float terminal
-        map('n', '<leader>tt', require('lspsaga.floaterm').open_float_terminal, opts, 'lspsaga.open_float_terminal()')
+        -- map('n', '<leader>tt', require('lspsaga.floaterm').open_float_terminal, opts, 'lspsaga.open_float_terminal()')
     end,
 })
