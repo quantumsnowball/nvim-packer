@@ -11,8 +11,19 @@ use {
         vim.opt.termguicolors = true
         require("bufferline").setup {
             options = {
+                -- mode = 'tabs', -- enable to show tabpages mode
                 offsets = { { filetype = "NvimTree", text = "NvimTree", text_align = "left" } },
-                show_close_icons = false
+                show_close_icons = false,
+                -- only show active buffer in the current tabpage on bufferline
+                custom_filter = function(cur_buf_num, _)
+                    local win_buf_ls = vim.fn.tabpagebuflist(vim.fn.tabpagenr())
+                    for _, buf_num in pairs(win_buf_ls) do
+                        if cur_buf_num == buf_num then
+                            return true
+                        end
+                    end
+                    return false
+                end
             }
         }
     end
