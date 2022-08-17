@@ -41,6 +41,10 @@ M.pickers = {
         layout_config = { width = 0.7 },
         mappings = { n = { x = "delete_buffer" } },
     },
+    tabpages = {
+        layout_config = { width = 0.7 },
+        mappings = { n = { x = "delete_buffer" } },
+    },
     current_buffer_fuzzy_find = { initial_mode = 'insert' },
     registers = { initial_mode = 'insert' },
     builtin = { layout_config = { preview_height = 0.4 } },

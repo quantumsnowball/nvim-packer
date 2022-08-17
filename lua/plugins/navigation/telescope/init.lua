@@ -3,7 +3,8 @@ local use = require('packer').use
 -- telescope
 -- https://github.com/nvim-telescope/telescope.nvim
 use {
-    'nvim-telescope/telescope.nvim',
+    'quantumsnowball/telescope.nvim',
+    branch = 'builtin-tabpages',
     requires = {
         'nvim-lua/plenary.nvim',
         'nvim-telescope/telescope-fzf-native.nvim',
@@ -42,7 +43,7 @@ use {
             })
         end
         -- keymaps
-        require('utils').map('n', '<leader>t', find_tabs, {}, 'telescope.tabpages()')
+        -- require('utils').map('n', '<leader>t', find_tabs, {}, 'telescope.tabpages()')
         require('utils').map('n', 'T', find_tabs, {}, 'telescope.tabpages()')
     end
 }
