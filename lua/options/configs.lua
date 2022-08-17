@@ -34,3 +34,5 @@ vim.cmd('autocmd VimEnter,BufEnter,ColorScheme * hi SpellLocal guibg=#770000')
 vim.cmd('autocmd VimEnter,ColorScheme * hi BufferLineTab guifg=White guibg=#226622')
 vim.cmd('autocmd VimEnter,ColorScheme * hi BufferLineTabSelected guifg=Black guibg=#22ff44')
 vim.cmd('autocmd VimEnter,ColorScheme * hi BufferLineTabClose guifg=White')
+-- list help buffer
+vim.cmd('autocmd FileType help set buflisted')
