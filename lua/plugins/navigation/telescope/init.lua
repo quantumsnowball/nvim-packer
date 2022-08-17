@@ -38,7 +38,7 @@ use {
     config = function()
         local find_tabs = function()
             require('telescope').extensions.tele_tabby.list({
-                layout_config = { width = 0.7, height = 0.8, preview_height = 0.5, }
+                layout_config = { width = 0.7 }
             })
         end
         -- keymaps
