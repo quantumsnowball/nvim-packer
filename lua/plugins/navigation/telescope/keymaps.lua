@@ -90,6 +90,9 @@ map('n', '<leader>f\'', tb.marks, {}, 'telescope.marks()')
 -- list all telescop.builtin functions
 map('n', '<leader>fp', tb.builtin, {}, 'telescope.builtin()')
 
+-- list vim options
+map('n', '<leader>fo', tb.vim_options, {}, 'telescope.vim_options()')
+
 --------------------
 -- other keymspas --
 --------------------
