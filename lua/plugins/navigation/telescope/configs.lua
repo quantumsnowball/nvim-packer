@@ -38,11 +38,11 @@ M.pickers = {
     jumplist = { show_line = false },
     help_tags = { initial_mode = 'insert' },
     buffers = {
-        layout_config = { width = 0.7 },
+        layout_config = { width = 0.7, preview_height = 0.5, },
         mappings = { n = { x = "delete_buffer" } },
     },
     tabpages = {
-        layout_config = { width = 0.7 },
+        layout_config = { width = 0.7, preview_height = 0.5, },
         mappings = { n = { x = "delete_buffer" } },
     },
     current_buffer_fuzzy_find = { initial_mode = 'insert' },
