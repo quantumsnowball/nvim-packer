@@ -19,20 +19,23 @@ use {
         map('n', 'qb', ':Bdelete<CR>')
         -- close all and other buffer by close-buffers.nvim
         local delete = require('close_buffers').delete
-        local close_other = function()
-            vim.cmd('NvimTreeClose')
-            delete({ type = 'other' })
-        end
-        local close_all = function()
+        local close_all_buffers = function()
             vim.cmd('NvimTreeClose')
             vim.cmd('Alpha')
-            delete({ type = 'all' })
+            vim.cmd('tabonly')
+            delete({ type = 'other' })
+        end
+        local close_hidden_buffers = function()
+            delete({ type = 'hidden' })
+        end
+        local close_other_tabpages = function()
+            vim.cmd('tabonly')
+            delete({ type = 'hidden' })
         end
         -- keymaps
-        map('n', '<space>co', close_other, nil, 'close_other_buffers()')
-        map('n', '<space>ca', close_all, nil, 'close_all_buffers()')
-        map('n', 'qo', close_other, nil, 'close_other_buffers()')
-        map('n', 'qa', close_all, nil, 'close_all_buffers()')
+        map('n', 'qa', close_all_buffers, nil, 'close_all_buffers()')
+        map('n', 'qh', close_hidden_buffers, nil, 'close_all_hidden_buffers()')
+        map('n', 'qo', close_other_tabpages, nil, 'close_other_tabpages()')
     end
 }
 
@@ -49,8 +52,8 @@ local map = require('utils').map
 -- map('n', 'ql', ':BufferLineMoveNext<CR>')
 map('n', 'qj', ':bprev<CR>')
 map('n', 'qk', ':bnext<CR>')
-map('n', 'qh', ':bfirst<CR>')
-map('n', 'ql', ':blast<CR>')
+-- map('n', 'qh', ':bfirst<CR>')
+-- map('n', 'ql', ':blast<CR>')
 map('n', '<space>b', ':e #<CR>')
 map('n', 'q;', ':e #<CR>')
 -- navigate between tabpages
