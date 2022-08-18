@@ -40,6 +40,7 @@ M.pickers = {
     buffers = {
         layout_config = { width = 0.7, preview_height = 0.5, },
         mappings = { n = { x = "delete_buffer" } },
+        sort_mru = true
     },
     tabpages = {
         layout_config = { width = 0.7, preview_height = 0.5, },
