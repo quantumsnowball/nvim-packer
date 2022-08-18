@@ -6,6 +6,7 @@ local map = require('utils').map
 map('n', '<c-s>', ':w<cr>')
 map('i', '<c-s>', '<c-o>:w<cr>')
 map('v', '<c-s>', '<esc>:w<cr>')
+map('n', 'qs', ':noautocmd w<cr>')
 -- quit windo shortcut
 map('n', 'qw', ':q<cr>')
 map('n', 'qW', ':qa<cr>')
