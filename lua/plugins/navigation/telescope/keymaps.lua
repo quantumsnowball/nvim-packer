@@ -33,6 +33,9 @@ end, {}, 'telescope.buffers()')
 
 -- find tabpages
 map('n', '<leader>t', tb.tabpages, {}, 'telescope.tabpages()')
+map('n', '<leader>ft', function()
+    tb.tabpages({ initial_mode = 'insert' })
+end, {}, 'telescope.tabpages()')
 
 -- find helps
 map('n', '<leader>fh', tb.help_tags, {}, 'telescope.help_tags()')
@@ -41,7 +44,7 @@ map('n', '<leader>fh', tb.help_tags, {}, 'telescope.help_tags()')
 map('n', '<leader>fj', tb.jumplist, {}, 'telescope.jumplist()')
 
 -- grep visual selected text directly
-map('v', '<leader>fs', tb.grep_string, {}, 'telescope.grep_string(--visual-mode)')
+map('v', '<leader>fsw', tb.grep_string, {}, 'telescope.grep_string(--visual-mode)')
 map('v', '<leader>*', tb.grep_string, {}, 'telescope.grep_string(--visual-mode)')
 
 -- color scheme
@@ -70,7 +73,7 @@ map('n', 'gd', tb.lsp_definitions, {}, 'telescope.lsp_definitions()')
 map('n', '<leader>fi', tb.highlights, {}, 'telescope.highlights()')
 
 -- spell
-map('n', '<leader>ft', tb.spell_suggest, {}, 'telescope.spell_suggest()')
+map('n', '<leader>fss', tb.spell_suggest, {}, 'telescope.spell_suggest()')
 
 -- keymaps
 map('n', '<leader>fk', tb.keymaps, {}, 'telescope.keymaps()')
