@@ -30,10 +30,22 @@ use {
                     local s = " "
                     for e, n in pairs(diagnostics_dict) do
                         local sym = e == "error" and " "
-                            or (e == "warning" and " " or "")
+                            or (e == "warning" and " " or " ")
                         s = s .. n .. sym
                     end
                     return s
+                end,
+                -- click to focus win containing the buffer
+                left_mouse_command = function(bufnr)
+                    local tabnr = vim.fn.tabpagenr()
+                    local wins = vim.api.nvim_tabpage_list_wins(tabnr)
+                    local targetWin = vim.fn.bufwinid(bufnr)
+                    for _, win in ipairs(wins) do
+                        if win == targetWin then
+                            vim.api.nvim_set_current_win(targetWin)
+                            return
+                        end
+                    end
                 end
             }
         }
