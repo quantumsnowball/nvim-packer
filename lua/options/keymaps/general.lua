@@ -30,6 +30,8 @@ map('n', 't', '<Nop>')
 map('n', 'T', '<Nop>')
 -- toggle spell checking
 map('n', '<leader>sc', ':set spell!<cr>')
+-- switch case
+map('n', 'U', '~')
 -- quick set shiftwidth
 map('n', '<space>2', ':set shiftwidth=2<cr>')
 map('n', '<space>4', ':set shiftwidth=4<cr>')
