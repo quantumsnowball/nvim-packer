@@ -35,13 +35,18 @@ use {
     'quantumsnowball/telescope-tabman.nvim',
     branch = 'dev',
     config = function()
-        require('telescope').load_extension('tabman')
-        local tabman = function()
-            require('telescope').extensions.tabman.tabman({
-                layout_config = { width = 0.7, preview_height = 0.5, },
-            })
-        end
-        require('utils').map('n', 'T', tabman, {}, 'telescope.tabpages()')
+        local t = require('telescope')
+        t.load_extension('tabman')
+        local tabman = t.extensions.tabman.tabman
+        -- configs
+        local layout_config = { width = 0.7, preview_height = 0.5, }
+        -- keymaps
+        require('utils').map('n', '<leader>t', function()
+            tabman({ layout_config = layout_config })
+        end, {}, 'telescope.tabpages()')
+        require('utils').map('n', '<leader>ft', function()
+            tabman({ layout_config = layout_config, initial_mode = 'insert' })
+        end, {}, 'telescope.tabpages()')
     end
 }
 

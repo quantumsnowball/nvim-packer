@@ -32,10 +32,7 @@ map('n', '<leader>fb', function()
 end, {}, 'telescope.buffers()')
 
 -- find tabpages
-map('n', '<leader>t', tb.tabpages, {}, 'telescope.tabpages()')
-map('n', '<leader>ft', function()
-    tb.tabpages({ initial_mode = 'insert' })
-end, {}, 'telescope.tabpages()')
+map('n', 'T', tb.tabpages, {}, 'telescope.tabpages()')
 
 -- find helps
 map('n', '<leader>fh', tb.help_tags, {}, 'telescope.help_tags()')
