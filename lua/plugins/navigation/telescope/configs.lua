@@ -73,9 +73,6 @@ M.extensions = {
         require("telescope.themes").get_cursor({
             border = true
         }),
-    },
-    tele_tabby = {
-        use_highlighter = false,
     }
 }
 

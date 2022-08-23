@@ -17,7 +17,6 @@ use {
         -- load extensions
         require('telescope').load_extension('fzf')
         require("telescope").load_extension("ui-select")
-        require('telescope').load_extension('tele_tabby')
         -- telescope keymaps
         require('plugins.navigation.telescope.keymaps')
     end
@@ -30,21 +29,19 @@ use {
     run = 'make'
 }
 
--- tele-tabby telescope extension
--- source
--- https://github.com/TC72/telescope-tele-tabby.nvim.git
+-- tabman
+-- https://github.com/quantumsnowball/telescope-tabman.nvim
 use {
-    'quantumsnowball/telescope-tele-tabby.nvim',
-    branch = 'extra',
+    'quantumsnowball/telescope-tabman.nvim',
+    branch = 'dev',
     config = function()
-        local find_tabs = function()
-            require('telescope').extensions.tele_tabby.list({
-                layout_config = { width = 0.7 }
+        require('telescope').load_extension('tabman')
+        local tabman = function()
+            require('telescope').extensions.tabman.tabman({
+                layout_config = { width = 0.7, preview_height = 0.5, },
             })
         end
-        -- keymaps
-        -- require('utils').map('n', '<leader>t', find_tabs, {}, 'telescope.tabpages()')
-        require('utils').map('n', 'T', find_tabs, {}, 'telescope.tabpages()')
+        require('utils').map('n', 'T', tabman, {}, 'telescope.tabpages()')
     end
 }
 
