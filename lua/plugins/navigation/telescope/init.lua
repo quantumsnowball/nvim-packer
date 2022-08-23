@@ -7,16 +7,11 @@ use {
     branch = 'builtin-tabpages',
     requires = {
         'nvim-lua/plenary.nvim',
-        'nvim-telescope/telescope-fzf-native.nvim',
-        'nvim-telescope/telescope-ui-select.nvim'
     },
     config = function()
         -- configs
         local configs = require('plugins.navigation.telescope.configs')
         require('telescope').setup(configs)
-        -- load extensions
-        require('telescope').load_extension('fzf')
-        require("telescope").load_extension("ui-select")
         -- telescope keymaps
         require('plugins.navigation.telescope.keymaps')
     end
@@ -26,7 +21,19 @@ use {
 -- https://github.com/nvim-telescope/telescope-fzf-native.nvim
 use {
     'nvim-telescope/telescope-fzf-native.nvim',
-    run = 'make'
+    run = 'make',
+    config = function()
+        require('telescope').load_extension('fzf')
+    end
+}
+
+-- telescope-ui-select
+-- https://github.com/nvim-telescope/telescope-ui-select.nvim
+use {
+    'nvim-telescope/telescope-ui-select.nvim',
+    config = function()
+        require("telescope").load_extension("ui-select")
+    end
 }
 
 -- tabman
