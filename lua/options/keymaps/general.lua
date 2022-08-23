@@ -23,8 +23,8 @@ map('n', 'znn', ':noh<cr>', {}, 'Clear search result highlight')
 -- G also center line
 map('n', 'G', 'Gzz')
 -- <leader>Q records macro, q is free
-map('n', '<leader>q', 'q')
-map('n', 'q', '<Nop>')
+map({ 'n', 'v' }, '<leader>q', 'q')
+map({ 'n', 'v' }, 'q', '<Nop>')
 -- t is free
 map('n', 't', '<Nop>')
 map('n', 'T', '<Nop>')
