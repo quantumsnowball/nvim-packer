@@ -22,8 +22,10 @@ use {
 use {
     'nvim-telescope/telescope-fzf-native.nvim',
     run = 'make',
+    requires = 'quantumsnowball/telescope.nvim',
     config = function()
-        require('telescope').load_extension('fzf')
+        local tele = require('telescope')
+        tele.load_extension('fzf')
     end
 }
 
@@ -31,8 +33,10 @@ use {
 -- https://github.com/nvim-telescope/telescope-ui-select.nvim
 use {
     'nvim-telescope/telescope-ui-select.nvim',
+    requires = 'quantumsnowball/telescope.nvim',
     config = function()
-        require("telescope").load_extension("ui-select")
+        local tele = require('telescope')
+        tele.load_extension("ui-select")
     end
 }
 
@@ -41,10 +45,12 @@ use {
 use {
     'quantumsnowball/telescope-tabman.nvim',
     branch = 'dev',
+    requires = 'quantumsnowball/telescope.nvim',
     config = function()
-        local t = require('telescope')
-        t.load_extension('tabman')
-        local tabman = t.extensions.tabman.tabman
+        local tele = require('telescope')
+        local tabman = tele.extensions.tabman.tabman
+        -- load extension
+        tele.load_extension('tabman')
         -- configs
         local layout_config = { width = 0.7, preview_height = 0.5, }
         -- keymaps
