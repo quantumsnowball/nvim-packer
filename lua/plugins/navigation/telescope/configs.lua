@@ -73,6 +73,9 @@ M.extensions = {
         require("telescope.themes").get_cursor({
             border = true
         }),
+    },
+    tabman = {
+        prompt_title = 'Tabman: find tabpages and windows'
     }
 }
 
