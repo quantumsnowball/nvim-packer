@@ -6,7 +6,7 @@ local use = require('packer').use
 use {
     'nvim-telescope/telescope-fzf-native.nvim',
     run = 'make',
-    requires = 'quantumsnowball/telescope.nvim',
+    requires = 'qnvim-telescop/telescope.nvim',
     config = function()
         local tele = require('telescope')
         tele.load_extension('fzf')
@@ -17,7 +17,7 @@ use {
 -- https://github.com/nvim-telescope/telescope-ui-select.nvim
 use {
     'nvim-telescope/telescope-ui-select.nvim',
-    requires = 'quantumsnowball/telescope.nvim',
+    requires = 'nvim-telescope/telescope.nvim',
     config = function()
         local tele = require('telescope')
         tele.load_extension("ui-select")
@@ -29,7 +29,7 @@ use {
 use {
     'quantumsnowball/telescope-tabman.nvim',
     branch = 'dev',
-    requires = 'quantumsnowball/telescope.nvim',
+    requires = 'nvim-telescope/telescope.nvim',
     config = function()
         local tele = require('telescope')
         local tabman = tele.extensions.tabman.tabman

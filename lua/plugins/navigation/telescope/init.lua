@@ -3,8 +3,7 @@ local use = require('packer').use
 -- telescope
 -- https://github.com/nvim-telescope/telescope.nvim
 use {
-    'quantumsnowball/telescope.nvim',
-    branch = 'builtin-tabpages',
+    'nvim-telescope/telescope.nvim',
     requires = {
         'nvim-lua/plenary.nvim',
     },
