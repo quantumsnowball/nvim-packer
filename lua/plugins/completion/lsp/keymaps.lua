@@ -20,7 +20,8 @@ return function(client, bufnr)
     -- map( 'n', 'gd', vim.lsp.buf.definition, bufopts, 'lsp.buf.definition()' ),
     -- map( 'n', 'K', vim.lsp.buf.hover, bufopts, 'lsp.buf.hover()' ),
     map('n', 'gi', vim.lsp.buf.implementation, bufopts, 'lsp.buf.implementation()')
-    -- map( 'n', 'zk', vim.lsp.buf.signature_help, bufopts, 'lsp.buf.signature_help()' ),
+    map('n', 'zk', vim.lsp.buf.signature_help, bufopts, 'lsp.buf.signature_help()')
+    map('i', '<C-k>', vim.lsp.buf.signature_help, bufopts, 'lsp.buf.signature_help()')
     map('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts, 'lsp.buf.add_workspace_folder()')
     map('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts, 'lsp.buf.remove_workspace_folder()')
     map('n', '<space>wl',

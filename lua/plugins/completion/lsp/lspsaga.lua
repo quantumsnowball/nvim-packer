@@ -29,8 +29,8 @@ use({
         map("n", "<C-n>", function() require("lspsaga.action").smart_scroll_with_saga(1) end, opts)
         map("n", "<C-p>", function() require("lspsaga.action").smart_scroll_with_saga(-1) end, opts)
         -- show signature help
-        map("n", "zk", require("lspsaga.signaturehelp").signature_help, opts, 'lspsaga.signaturehelp()')
-        map("i", "<C-k>", require("lspsaga.signaturehelp").signature_help, opts, 'lspsaga.signaturehelp()')
+        -- map("n", "zk", require("lspsaga.signaturehelp").signature_help, opts, 'lspsaga.signaturehelp()')
+        -- map("i", "<C-k>", require("lspsaga.signaturehelp").signature_help, opts, 'lspsaga.signaturehelp()')
         -- rename, close rename win use <C-c> in insert mode or `q` in normal mode or `:q`
         map("n", "<leader>rn", require("lspsaga.rename").lsp_rename, opts, 'lspsaga.rename()')
         -- diagnostic and errors
