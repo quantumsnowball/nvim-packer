@@ -15,7 +15,7 @@ use {
 require('plugins.completion.lsp.installer')
 
 -- LSP enhanced - lspsaga
-require('plugins.completion.lsp.lspsaga')
+require('plugins.completion.lsp.extensions')
 
 -----------
 -- Debug --
