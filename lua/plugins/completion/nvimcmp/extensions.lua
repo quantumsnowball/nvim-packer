@@ -7,12 +7,17 @@ use {
     'hrsh7th/cmp-nvim-lsp',
     requires = {
         'hrsh7th/nvim-cmp',
-        'neovim/nvim-lspconfig'
+        'neovim/nvim-lspconfig',
+        'williamboman/nvim-lsp-installer',
     },
     config = function()
-        local lspconfig = require('lspconfig')
         local servers = require('plugins.completion.lsp.installer.servers')
+        -- ensure installed
+        require("nvim-lsp-installer").setup({
+            ensure_installed = servers, automatic_installation = true,
+        })
         -- Setup lspconfig.
+        local lspconfig = require('lspconfig')
         local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
         for _, lsp in pairs(servers) do
             -- should only called once on the whole config process

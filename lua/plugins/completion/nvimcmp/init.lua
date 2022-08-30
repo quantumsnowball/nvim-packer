@@ -5,6 +5,8 @@ local use = require('packer').use
 use {
     'hrsh7th/nvim-cmp',
     requires = {
+        'neovim/nvim-lspconfig',
+        'williamboman/nvim-lsp-installer',
         'hrsh7th/cmp-buffer',
         'hrsh7th/cmp-path',
         'f3fora/cmp-spell',
