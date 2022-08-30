@@ -11,7 +11,7 @@ use {
     },
     config = function()
         local lspconfig = require('lspconfig')
-        local servers = require('plugins.completion.lsp.servers.names')
+        local servers = require('plugins.completion.lsp.installer.servers')
         -- Setup lspconfig.
         local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
         for _, lsp in pairs(servers) do
@@ -20,7 +20,7 @@ use {
                 -- update cmp capabilities
                 capabilities = capabilities,
                 -- custom individual language server settings
-                settings = require('plugins.completion.lsp.servers.settings')(lsp),
+                settings = require('plugins.completion.lsp.installer.configs')(lsp),
                 -- lsp related keymaps
                 on_attach = require('plugins.completion.lsp.keymaps')
             })
