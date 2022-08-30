@@ -11,6 +11,9 @@ use {
 use {
     'aca/emmet-ls',
     config = function()
+        -- ensure installed
+        require('plugins.completion.lsp.installer.utils').ensure_installed()
+        -- attach snippets
         local lspconfig = require('lspconfig')
         local capabilities = vim.lsp.protocol.make_client_capabilities()
         capabilities.textDocument.completion.completionItem.snippetSupport = true

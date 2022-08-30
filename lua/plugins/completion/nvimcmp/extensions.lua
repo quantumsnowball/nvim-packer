@@ -13,9 +13,7 @@ use {
     config = function()
         local servers = require('plugins.completion.lsp.installer.servers')
         -- ensure installed
-        require("nvim-lsp-installer").setup({
-            ensure_installed = servers, automatic_installation = true,
-        })
+        require('plugins.completion.lsp.installer.utils').ensure_installed()
         -- Setup lspconfig.
         local lspconfig = require('lspconfig')
         local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())

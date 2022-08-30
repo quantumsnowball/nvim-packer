@@ -8,9 +8,6 @@ use {
     requires = 'neovim/nvim-lspconfig',
     config = function()
         -- ensure installed
-        require("nvim-lsp-installer").setup {
-            ensure_installed = require('plugins.completion.lsp.installer.servers'),
-            automatic_installation = true,
-        }
+        require('plugins.completion.lsp.installer.utils').ensure_installed()
     end
 }
