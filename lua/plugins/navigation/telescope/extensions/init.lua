@@ -6,7 +6,7 @@ local use = require('packer').use
 use {
     'nvim-telescope/telescope-fzf-native.nvim',
     run = 'make',
-    requires = 'qnvim-telescop/telescope.nvim',
+    requires = 'nvim-telescop/telescope.nvim',
     config = function()
         local tele = require('telescope')
         tele.load_extension('fzf')
