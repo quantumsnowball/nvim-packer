@@ -73,6 +73,8 @@ map('n', 'tc', ':tabclose<cr>')
 map('n', 'tc', ':tabclose<cr>')
 map('n', '<leader>T', ':tabs<cr>')
 map('n', 't;', 'g<Tab>')
+map('n', 'tH', ':tabfirst<cr>')
+map('n', 'tL', ':tablast<cr>')
 -- default split to right and below
 vim.opt.splitbelow = true
 vim.opt.splitright = true
