@@ -81,3 +81,5 @@ for i = 1, 9, 1 do
     map('n', 't' .. i, i .. 'gt')
     map('n', '<leader>' .. i, i .. 'gt')
 end
+map('n', 't0', '10gt')
+map('n', '<leader>0', '10gt')
