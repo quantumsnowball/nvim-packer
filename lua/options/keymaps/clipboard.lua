@@ -32,7 +32,7 @@ map('v', '<leader>c', '"+c')
 map('n', '<leader>C', '"+C')
 map('v', '<leader>C', '"+C')
 -- visual mode retain selection after copying
-map('v', 'y', 'ygv')
+map('v', 'Y', 'ygv')
 -- visual mode replace without copying the deleted text
 map('v', 'p', '"_dP')
 map('v', 'P', '"_dP')
