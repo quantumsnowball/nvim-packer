@@ -28,7 +28,7 @@ return function(client, bufnr)
         function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, bufopts,
         'lsp.buf.list_workspace_folders()')
     map('n', '<space>D', vim.lsp.buf.type_definition, bufopts, 'lsp.buf.type_definition()')
-    -- map( 'n', '<space>rn', vim.lsp.buf.rename, bufopts, 'lsp.buf.rename()' ),
+    map('n', '<space>rn', vim.lsp.buf.rename, bufopts, 'lsp.buf.rename()')
     map('n', '<space>qf', vim.lsp.buf.code_action, bufopts, 'lsp.buf.code_action()')
     map('n', 'gr', vim.lsp.buf.references, bufopts, 'lsp.buf.references()')
     map('n', '<space>f', vim.lsp.buf.format, bufopts, 'lsp.buf.formatting()')
