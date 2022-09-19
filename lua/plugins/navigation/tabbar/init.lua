@@ -39,8 +39,11 @@ use {
     end
 }
 
+--
 -- some common related shortcuts
+--
 local map = require('utils').map
+
 -- navigate between buffers
 -- map('n', '<space>j', ':BufferLineCyclePrev<CR>')
 -- map('n', '<space>k', ':BufferLineCycleNext<CR>')
@@ -56,6 +59,7 @@ map('n', 'qk', ':bnext<CR>')
 -- map('n', 'ql', ':blast<CR>')
 map('n', '<space>b', ':e #<CR>')
 map('n', 'q;', ':e #<CR>')
+
 -- navigate between tabpages
 map('n', 'tj', ':tabprevious<cr>')
 map('n', 'tk', ':tabnext<cr>')
@@ -67,17 +71,24 @@ map('n', 'tn', function()
     require('close_buffers').delete({ type = 'nameless' })
 end, {}, 'tabnew_alpha')
 map('n', 'to', ':tab split<cr>', {}, 'tabnew_current')
-map('n', 'tq', ':tabclose<cr>')
-map('n', 'qt', ':tabclose<cr>')
-map('n', 'tc', ':tabclose<cr>')
+
+-- closing tabs
+local close_onto_previous_tab = function()
+    local idx = vim.fn.tabpagenr()
+    local cnt = vim.fn.tabpagenr('$')
+    vim.cmd('tabclose')
+    if ((idx ~= 1) and (idx < cnt)) then
+        vim.cmd('tabprevious')
+    end
+end
+map('n', 'qt', close_onto_previous_tab, {}, 'close_onto_previous_tab()')
+map('n', 'tq', close_onto_previous_tab, {}, 'close_onto_previous_tab()')
 map('n', 'tc', ':tabclose<cr>')
 map('n', '<leader>T', ':tabs<cr>')
 map('n', 't;', 'g<Tab>')
 map('n', 'tH', ':tabfirst<cr>')
 map('n', 'tL', ':tablast<cr>')
--- default split to right and below
-vim.opt.splitbelow = true
-vim.opt.splitright = true
+
 -- quickly go to a tabpage with number 1 to 9
 for i = 1, 9, 1 do
     map('n', 't' .. i, i .. 'gt')
@@ -85,3 +96,7 @@ for i = 1, 9, 1 do
 end
 map('n', 't0', '10gt')
 map('n', '<leader>0', '10gt')
+
+-- default split to right and below
+vim.opt.splitbelow = true
+vim.opt.splitright = true
