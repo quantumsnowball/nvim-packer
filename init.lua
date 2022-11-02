@@ -13,9 +13,11 @@ return require('packer').startup(function(use)
     -- packer loading itself at beginning
     -- https://github.com/wbthomason/packer.nvim
     use { "wbthomason/packer.nvim" }
-    -- nvim options
+    -- essentials
+    require('plugins.essentials')
+    -- options
     require('options')
-    -- loading individual plugin modules
+    -- plugins
     require('plugins')
     -- Automatically set up your configuration after cloning packer.nvim
     if PACKER_BOOTSTRAP then require('packer').sync() end -- Put this after all plugins
