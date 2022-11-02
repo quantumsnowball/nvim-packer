@@ -16,7 +16,7 @@ use {
         require('plugins.completion.lsp.installer.utils').ensure_installed()
         -- Setup lspconfig.
         local lspconfig = require('lspconfig')
-        local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+        local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
         for _, lsp in pairs(servers) do
             -- should only called once on the whole config process
             lspconfig[lsp].setup({
