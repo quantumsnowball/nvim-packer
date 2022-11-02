@@ -1,6 +1,3 @@
--- before loading any lua scripts
-require('options')
-
 -- packer bootstrapping setup
 local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
@@ -16,6 +13,8 @@ return require('packer').startup(function(use)
     -- packer loading itself at beginning
     -- https://github.com/wbthomason/packer.nvim
     use { "wbthomason/packer.nvim" }
+    -- nvim options
+    require('options')
     -- loading individual plugin modules
     require('plugins')
     -- Automatically set up your configuration after cloning packer.nvim
