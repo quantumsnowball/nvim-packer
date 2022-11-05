@@ -17,8 +17,8 @@ use {
         require('leap').setup {
             special_keys = {
                 repeat_search = '<tab>',
-                next_match = '<tab>',
-                prev_match = '<s-tab>',
+                next_target = '<tab>',
+                prev_target = '<s-tab>',
                 next_group = ']',
                 prev_group = '['
             }
