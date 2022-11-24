@@ -20,7 +20,7 @@ vim.cmd('set iskeyword+=-')
 -- write and delete buffer command
 vim.cmd [[cnoreabbrev wd w\|bd"]]
 -- virtualedit in all modes
-vim.opt.virtualedit = 'all'
+vim.opt.virtualedit = 'onemore'
 -- split border color
 vim.cmd('autocmd VimEnter,ColorScheme * hi VertSplit guifg=#339933')
 -- default nowrap
