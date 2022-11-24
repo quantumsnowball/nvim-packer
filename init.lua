@@ -9,12 +9,12 @@ end
 -- startup with packer
 return require('packer').startup(function(use)
     -- cache plugins loading enable
-    require('plugins.cache')
+    -- require('plugins.cache')
     -- packer loading itself at beginning
     -- https://github.com/wbthomason/packer.nvim
     use { "wbthomason/packer.nvim" }
     -- essentials
-    require('plugins.essentials')
+    -- require('plugins.essentials')
     -- options
     require('options')
     -- plugins
