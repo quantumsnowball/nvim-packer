@@ -1,5 +1,3 @@
-local use = require('packer').use
-
 -- theme
 require('plugins.lookandfeel.theme')
 

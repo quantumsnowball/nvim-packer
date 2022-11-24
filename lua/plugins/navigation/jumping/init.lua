@@ -1,3 +1,8 @@
+local use = require('packer').use
+-- hjkl navigator in vim and tmux windows
+-- https://github.com/christoomey/vim-tmux-navigator
+use 'christoomey/vim-tmux-navigator'
+
 -- jumplist related utils function
 -- navigation through jumplist
 local isJumpingForward = true
