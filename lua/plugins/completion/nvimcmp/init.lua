@@ -10,6 +10,7 @@ use {
         'hrsh7th/cmp-buffer',
         'hrsh7th/cmp-path',
         'f3fora/cmp-spell',
+        'hrsh7th/cmp-nvim-lsp-signature-help'
     },
     config = function()
         local configs = require('plugins.completion.nvimcmp.configs')
