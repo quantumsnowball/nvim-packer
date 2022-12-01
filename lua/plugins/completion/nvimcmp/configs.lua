@@ -2,6 +2,7 @@ local cmp = require('cmp')
 local luasnip = require('luasnip')
 
 local menu_items = {
+    calc = "[Calc]",
     nvim_lsp_signature_help = "[Signature Help]",
     nvim_lsp = "[LSP]",
     luasnip = "[LuaSnip]",
@@ -56,6 +57,7 @@ return {
     },
     mapping = require('plugins.completion.nvimcmp.keymaps')(cmp, luasnip),
     sources = {
+        { name = 'calc' },
         { name = 'nvim_lsp_signature_help' },
         { name = 'nvim_lsp' },
         { name = "buffer" },
