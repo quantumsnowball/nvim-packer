@@ -3,7 +3,7 @@ vim.opt.termguicolors = true
 -- enable mouse visual select mode
 vim.opt.mouse = 'a'
 -- vim buildin syntax highlight
-vim.cmd 'syntax on'
+vim.cmd('syntax on')
 -- match parenthesizes formatting
 vim.cmd('autocmd BufEnter * hi MatchParen ctermbg=Gray guibg=Gray')
 -- always open help in a new tab
@@ -26,6 +26,7 @@ vim.cmd('autocmd VimEnter,ColorScheme * hi VertSplit guifg=#339933')
 -- default nowrap
 vim.opt.wrap = false
 -- spell highlight background color
+vim.cmd('autocmd VimEnter,BufEnter,ColorScheme * syntax on')
 vim.cmd('autocmd VimEnter,BufEnter,ColorScheme * hi SpellBad guibg=#770000')
 vim.cmd('autocmd VimEnter,BufEnter,ColorScheme * hi SpellCap guibg=#770000')
 vim.cmd('autocmd VimEnter,BufEnter,ColorScheme * hi SpellRare guibg=#770000')
