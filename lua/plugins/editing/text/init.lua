@@ -1,5 +1,7 @@
 local use = require('packer').use
 
+-- moving selecting text
+require('plugins.editing.text.moving')
 
 -- easy shortcuts to change surrounds
 -- https://github.com/kylechui/nvim-surround
