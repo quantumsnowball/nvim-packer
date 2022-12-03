@@ -17,8 +17,10 @@ use {
         map('v', '<C-up>', ':MoveBlock(-1)<CR>', opts)
         map('v', '<C-left>', ':MoveHBlock(-1)<CR>', opts)
         map('v', '<C-right>', ':MoveHBlock(1)<CR>', opts)
-        --   g + hjkl
-        map('v', 'gj', ':MoveBlock(1)<CR>', opts)
-        map('v', 'gk', ':MoveBlock(-1)<CR>', opts)
+        --   ctrl + hjkl
+        map('v', '<C-j>', ':MoveBlock(1)<CR>', opts)
+        map('v', '<C-k>', ':MoveBlock(-1)<CR>', opts)
+        map('v', '<C-h>', ':MoveHBlock(-1)<CR>', opts)
+        map('v', '<C-l>', ':MoveHBlock(1)<CR>', opts)
     end
 }
