@@ -8,7 +8,10 @@ map('n', 'U', '~')
 -- quick set shiftwidth
 map('n', '<space>2', ':set shiftwidth=2<cr>')
 map('n', '<space>4', ':set shiftwidth=4<cr>')
--- home and end in normal mode
+-- begin and end of Word in visual mode
+map('v', 'gk', 'E')
+map('v', 'gj', 'B')
+-- home and end in normal, visual, operator mode
 map({ 'n', 'v', 'o' }, 'gh', '^', {}, 'Home')
 map({ 'n', 'v', 'o' }, 'gl', '$', {}, 'End')
 -- home and end in insert mode
