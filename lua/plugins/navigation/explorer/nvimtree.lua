@@ -7,6 +7,11 @@ use {
     requires = { 'kyazdani42/nvim-web-devicons' },
     config = function()
         require('nvim-tree').setup {
+            actions = {
+                change_dir = {
+                    enable = false,
+                },
+            },
             reload_on_bufenter = true,
             view = {
                 width = 25,
@@ -19,6 +24,6 @@ use {
             git = { ignore = true }
         }
         -- toggle keymap
-        require('utils').map('n', '<leader>e', ':NvimTreeToggle<CR>', { silent = true })
+        require('utils').map('n', '<leader>e', ':NvimTreeToggle .<CR>', { silent = true })
     end
 }
