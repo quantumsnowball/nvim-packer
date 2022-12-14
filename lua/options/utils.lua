@@ -11,6 +11,7 @@ end
 function M.refresh_configs()
     vim.cmd(':PackerCompile<cr>')
     vim.cmd(':LspRestart<cr>')
+    print('refresh_configs: executed ":PackerCompile" and ":LspRestart"')
 end
 
 return M
