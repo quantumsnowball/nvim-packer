@@ -12,6 +12,5 @@ use {
         -- toggle keymap
         local map = require('utils').map
         map('n', '<leader>gg', ':LazyGit<CR>')
-        map('n', '<leader>gl', ':LazyGit<CR>')
     end
 }
