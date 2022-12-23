@@ -28,7 +28,12 @@ map('n', 'tn', function()
     vim.cmd('tabnew')
     vim.cmd('Alpha')
     require('close_buffers').delete({ type = 'nameless' })
-end, {}, 'tabnew_alpha')
+end, {}, 'tabnew_alpha_after')
+map('n', 'tN', function()
+    vim.cmd('-1tabnew')
+    vim.cmd('Alpha')
+    require('close_buffers').delete({ type = 'nameless' })
+end, {}, 'tabnew_alpha_before')
 map('n', 'to', ':tab split<cr>', {}, 'tabnew_current')
 
 -- closing tabs
