@@ -48,7 +48,7 @@ map('v', '<leader>*', tb.grep_string, {}, 'telescope.grep_string(--visual-mode)'
 map('n', '<leader>fcs', tb.colorscheme, {}, 'telescope.colorscheme()')
 
 -- git navigation
-map('n', '<leader>gc', tb.git_commits, {}, 'telescope.git_commits()')
+map('n', '<leader>gC', tb.git_commits, {}, 'telescope.git_commits()')
 map('n', '<leader>gbc', tb.git_bcommits, {}, 'telescope.git_bcommits()')
 map('n', '<leader>gd', tb.git_status, {}, 'telescope.git_status()')
 
