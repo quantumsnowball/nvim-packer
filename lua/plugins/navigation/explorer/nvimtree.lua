@@ -14,7 +14,12 @@ use {
             },
             reload_on_bufenter = true,
             view = {
-                width = 25,
+                float = {
+                    enable = true,
+                    open_win_config = {
+                        height = 1000,
+                    }
+                },
                 adaptive_size = true
             },
             renderer = { highlight_opened_files = 'all' },
