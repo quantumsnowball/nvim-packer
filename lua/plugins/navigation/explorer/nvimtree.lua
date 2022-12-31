@@ -23,7 +23,12 @@ use {
                         height = 1000,
                     }
                 },
-                adaptive_size = true
+                adaptive_size = true,
+                mappings = {
+                    list = {
+                        { key = "<esc>", action = "close" }
+                    }
+                }
             },
             renderer = { highlight_opened_files = 'all' },
             -- default hide dotfiles and ignored files
