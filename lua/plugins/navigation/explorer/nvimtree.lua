@@ -20,6 +20,7 @@ use {
                 float = {
                     enable = true,
                     open_win_config = {
+                        relative = 'win',
                         height = 1000,
                     }
                 },
