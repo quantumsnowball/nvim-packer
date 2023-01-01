@@ -1,5 +1,18 @@
 local use = require('packer').use
 
+
+-- lsp-status
+-- https://github.com/nvim-lua/lsp-status.nvim#configuration
+use {
+    'nvim-lua/lsp-status.nvim',
+    config = function()
+        require('lsp-status').config({
+            -- this is temp fix for a wrong line spacing that breaks lualine
+            status_symbol = 'LSP'
+        })
+    end
+}
+
 -- lualine
 -- https://github.com/nvim-lualine/lualine.nvim
 use {
@@ -29,7 +42,10 @@ use {
                     'encoding',
                     'fileformat',
                 },
-                lualine_z = {},
+                lualine_z = {
+                    'location',
+                    'progress',
+                },
             },
             inactive_sections = {
                 lualine_c = { { 'filename', path = 1 } }
