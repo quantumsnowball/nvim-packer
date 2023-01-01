@@ -43,5 +43,6 @@ use {
         vim.opt.signcolumn = 'yes'
         -- highlight current line and column
         vim.opt.cursorline = true
+        vim.opt.cursorcolumn = true
     end
 }
