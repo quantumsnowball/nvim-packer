@@ -11,7 +11,7 @@ use {
         vim.opt.listchars:append("eol:↴")
         -- toggle space and eol chars
         vim.opt.list = false
-        require('utils').map('n', '<F5>', ':set list!<CR>')
+        require('utils').map('n', '<F6>', ':set list!<CR>')
         -- setup
         require("indent_blankline").setup {
             show_end_of_line = true,

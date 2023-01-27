@@ -1,5 +1,7 @@
 local map = require('utils').map
 
+-- manual reload the file if modified externally
+map('n', '<F5>', ':checktime<CR>')
 -- t is free
 map('n', 't', '<Nop>')
 map('n', 'T', '<Nop>')
