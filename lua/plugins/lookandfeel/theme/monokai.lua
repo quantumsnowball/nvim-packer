@@ -2,8 +2,11 @@ local use = require('packer').use
 
 -- colorful editor theme
 -- https://github.com/tanvirtin/monokai.nvim
+-- https://github.com/quantumsnowball/monokai.nvim
 use {
-    'tanvirtin/monokai.nvim',
+    -- 'tanvirtin/monokai.nvim',
+    'quantumsnowball/monokai.nvim',
+    branch = 'my-color',
     config = function()
         -- enable
         vim.cmd 'colorscheme monokai_ristretto'
