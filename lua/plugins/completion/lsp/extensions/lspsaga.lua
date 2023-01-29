@@ -6,11 +6,9 @@ local use = require('packer').use
 use({
     "glepnir/lspsaga.nvim",
     branch = "main",
+    requires = { { "nvim-tree/nvim-web-devicons" } },
     config = function()
-        local saga = require("lspsaga")
-
-        -- configs
-        saga.init_lsp_saga({
+        require("lspsaga").setup({
             border_style = "single", -- "single" | "double" | "rounded" | "bold" | "plus"
             saga_winblend = 10,
             finder_action_keys = {
@@ -35,9 +33,9 @@ use({
         -- rename, close rename win use <C-c> in insert mode or `q` in normal mode or `:q`
         map("n", "<leader>rn", ':Lspsaga rename<cr>', opts, 'lspsaga.rename()')
         -- diagnostic and errors
-        map("n", "<space>e", require("lspsaga.diagnostic").show_line_diagnostics, opts, 'lspsaga.diagnostic()')
-        map("n", "[e", require("lspsaga.diagnostic").goto_prev, opts, 'lspsaga.diagnostic.goto_prev()')
-        map("n", "]e", require("lspsaga.diagnostic").goto_next, opts, 'lspsaga.diagnostic.goto_next()')
+        map("n", "<space>e", "<cmd>Lspsaga show_line_diagnostics<CR>", opts, 'lspsaga.diagnostic()')
+        map("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts, 'lspsaga.diagnostic.goto_prev()')
+        map("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts, 'lspsaga.diagnostic.goto_next()')
         map("n", "[E",
             function()
                 require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR })
